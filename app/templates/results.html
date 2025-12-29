@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+
+{% block title %}Career Results{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1 class="display-4">Your Career Recommendations</h1>
+            <p class="lead">Based on your assessment and personality profile</p>
+        </div>
+    </div>
+    
+    <div id="resultsContainer">
+        <!-- Results will be loaded dynamically -->
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Analyzing your profile...</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Load results from URL parameters or localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const resultsData = urlParams.get('data');
+    
+    if (resultsData) {
+        try {
+            const data = JSON.parse(decodeURIComponent(resultsData));
+            displayResults(data);
+        } catch (error) {
+            console.error('Error parsing results data:', error);
+            showError();
+        }
+    } else {
+        // Try to load from localStorage
+        const storedResults = localStorage.getItem('careerResults');
+        if (storedResults) {
+            try {
+                const data = JSON.parse(storedResults);
+                displayResults(data);
+            } catch (error) {
+                console.error('Error parsing stored results:', error);
+                showError();
+            }
+        } else {
+            showError();
+        }
+    }
+});
+
+function displayResults(data) {
+    const container = document.getElementById('resultsContainer');
+    
+    let html = '<div class="row">';
+    
+    data.recommendations.forEach((rec, index) => {
+        const career = rec.career;
+        const explanation = rec.explanation;
+        const skillsGap = rec.skills_gap || null;
+        
+        html += `
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 career-card">
+                    <div class="card-header bg-primary text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">${career.name}</h5>
+                            <span class="badge bg-light text-dark match-percentage">${explanation.overall_match}% Match</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">${career.description}</p>
+                        
+                        <div class="mb-3">
+                            <h6 class="text-primary">Why this matches you:</h6>
+                            <ul class="explanation-list">
+                                ${explanation.reasons.map(reason => `<li>${reason}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        ${skillsGap ? `
+                            <div class="skills-gap-section mb-3">
+                                <h6 class="text-info">
+                                    <i class="fas fa-chart-line me-2"></i>
+                                    Skills Analysis
+                                </h6>
+                                <div class="skills-readiness mb-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Readiness Level:</span>
+                                        <span class="badge bg-${skillsGap.readiness_level.color}">${skillsGap.readiness_level.level}</span>
+                                    </div>
+                                    <div class="progress mt-1" style="height: 8px;">
+                                        <div class="progress-bar bg-${skillsGap.readiness_level.color}" 
+                                             style="width: ${skillsGap.skill_match_percentage}%"></div>
+                                    </div>
+                                    <small class="text-muted">${skillsGap.readiness_level.description}</small>
+                                </div>
+                                
+                                ${skillsGap.current_skills.count > 0 ? `
+                                    <div class="mb-2">
+                                        <small class="text-success fw-bold">✅ You Have (${skillsGap.current_skills.count}):</small>
+                                        <div>
+                                            ${skillsGap.current_skills.skills.map(skill => 
+                                                `<span class="badge bg-success skill-badge">${skill.replace('_', ' ')}</span>`
+                                            ).join('')}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                                
+                                ${skillsGap.missing_skills.count > 0 ? `
+                                    <div class="mb-2">
+                                        <small class="text-warning fw-bold">📚 Need to Learn (${skillsGap.missing_skills.count}):</small>
+                                        <div>
+                                            ${skillsGap.missing_skills.skills.map(skill => 
+                                                `<span class="badge bg-warning skill-badge">${skill.replace('_', ' ')}</span>`
+                                            ).join('')}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                                
+                                <div class="text-center mt-2">
+                                    <button class="btn btn-sm btn-outline-info" onclick="showSkillsGapDetails('${career.name}', ${index})">
+                                        <i class="fas fa-search me-1"></i>
+                                        View Learning Path
+                                    </button>
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        ${explanation.strengths.length > 0 ? `
+                            <div class="mb-3">
+                                <h6 class="text-success">Your Strengths:</h6>
+                                <div>
+                                    ${explanation.strengths.map(strength => `<span class="badge bg-success skill-badge">${strength}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        <div class="row text-center mt-3">
+                            <div class="col-6">
+                                <small class="text-muted">Median Salary</small>
+                                <div class="fw-bold text-success">${career.median_salary}</div>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted">Growth Rate</small>
+                                <div class="fw-bold text-info">${career.growth_rate}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    
+    // Add visualization section
+    html += `
+        <div class="visualization-container mt-5">
+            <h3 class="text-center mb-4">Career Match Visualization</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="matchChart" style="height: 400px;"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="careerNetwork" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add Skills Gap Modal
+    html += `
+        <div class="modal fade" id="skillsGapModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Skills Gap Analysis & Learning Path</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="skillsGapModalBody">
+                        <!-- Content will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    container.innerHTML = html;
+    
+    // Store recommendations data globally for modal access
+    window.currentRecommendations = data.recommendations;
+    
+    // Create visualizations
+    createMatchChart(data.recommendations);
+    CareerRecommender.createNetwork(data.visualization_data, 'careerNetwork');
+}
+
+function createMatchChart(recommendations) {
+    const careers = recommendations.map(rec => rec.career.name);
+    const scores = recommendations.map(rec => rec.explanation.overall_match);
+    
+    const trace = {
+        x: careers,
+        y: scores,
+        type: 'bar',
+        marker: {
+            color: scores.map(score => {
+                if (score >= 80) return '#198754';
+                if (score >= 60) return '#ffc107';
+                return '#dc3545';
+            })
+        }
+    };
+    
+    const layout = {
+        title: 'Career Match Scores',
+        xaxis: { title: 'Careers' },
+        yaxis: { title: 'Match Percentage', range: [0, 100] },
+        margin: { t: 50, l: 50, r: 50, b: 100 }
+    };
+    
+    Plotly.newPlot('matchChart', [trace], layout);
+}
+
+function showError() {
+    const container = document.getElementById('resultsContainer');
+    container.innerHTML = `
+        <div class="text-center">
+            <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+            <h3>No Results Found</h3>
+            <p class="text-muted">Please complete the assessment first to see your career recommendations.</p>
+            <a href="/assessment" class="btn btn-primary">Take Assessment</a>
+        </div>
+    `;
+}
+
+function showSkillsGapDetails(careerName, index) {
+    const recommendation = window.currentRecommendations[index];
+    const skillsGap = recommendation.skills_gap;
+    
+    if (!skillsGap) {
+        alert('Skills gap data not available for this career.');
+        return;
+    }
+    
+    const modalBody = document.getElementById('skillsGapModalBody');
+    
+    let html = `
+        <div class="skills-gap-details">
+            <h4 class="text-primary mb-3">${careerName}</h4>
+            
+            <!-- Readiness Overview -->
+            <div class="card mb-4">
+                <div class="card-header bg-${skillsGap.readiness_level.color} text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-gauge me-2"></i>
+                        Readiness Assessment
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <div class="readiness-score">${skillsGap.skill_match_percentage}%</div>
+                                <div class="readiness-level">${skillsGap.readiness_level.level}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>${skillsGap.readiness_level.description}</p>
+                            <p><strong>Time to Bridge Gap:</strong> ${skillsGap.time_estimate.total}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Current vs Missing Skills -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0">✅ Skills You Have (${skillsGap.current_skills.count})</h6>
+                        </div>
+                        <div class="card-body">
+                            ${skillsGap.current_skills.skills.length > 0 ? 
+                                skillsGap.current_skills.skills.map(skill => 
+                                    `<span class="badge bg-success skill-badge mb-1">${skill.replace('_', ' ')}</span>`
+                                ).join('') : 
+                                '<p class="text-muted">No matching skills identified</p>'
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-dark">
+                            <h6 class="mb-0">📚 Skills to Learn (${skillsGap.missing_skills.count})</h6>
+                        </div>
+                        <div class="card-body">
+                            ${skillsGap.missing_skills.skills.length > 0 ? 
+                                skillsGap.missing_skills.skills.map(skill => 
+                                    `<span class="badge bg-warning skill-badge mb-1">${skill.replace('_', ' ')}</span>`
+                                ).join('') : 
+                                '<p class="text-success">You have all required skills!</p>'
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Learning Path -->
+            ${skillsGap.learning_path.length > 0 ? `
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-route me-2"></i>
+                            Learning Path
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        ${skillsGap.learning_path.map((path, idx) => `
+                            <div class="learning-path-item mb-3">
+                                <h6 class="text-primary">${idx + 1}. ${path.skill.replace('_', ' ')}</h6>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <strong>Beginner Resources:</strong>
+                                        <ul class="mb-2">
+                                            ${path.resources.beginner ? path.resources.beginner.map(resource => 
+                                                `<li>${resource}</li>`
+                                            ).join('') : '<li>Online courses and tutorials</li>'}
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="badge bg-secondary">
+                                            ${path.resources.time_estimate || '2-4 months'}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
+            
+            <!-- Next Steps -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-tasks me-2"></i>
+                        Next Steps
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        ${skillsGap.next_steps.map(step => `<li>${step}</li>`).join('')}
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Development Plan -->
+            ${skillsGap.skill_development_plan && !skillsGap.skill_development_plan.message ? `
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-calendar-alt me-2"></i>
+                            6-Month Development Plan
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        ${Object.entries(skillsGap.skill_development_plan).map(([phase, data]) => `
+                            <div class="development-phase mb-3">
+                                <h6 class="text-info">${data.focus} (${data.duration})</h6>
+                                <p><strong>Skills:</strong> ${data.skills ? data.skills.join(', ') : 'N/A'}</p>
+                                <p><strong>Activities:</strong></p>
+                                <ul>
+                                    ${data.activities ? data.activities.map(activity => `<li>${activity}</li>`).join('') : ''}
+                                </ul>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : skillsGap.skill_development_plan?.message ? `
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle me-2"></i>
+                    ${skillsGap.skill_development_plan.message}
+                </div>
+            ` : ''}
+        </div>
+    `;
+    
+    modalBody.innerHTML = html;
+    
+    // Show the modal
+    const modal = new bootstrap.Modal(document.getElementById('skillsGapModal'));
+    modal.show();
+}
+</script>
+{% endblock %}

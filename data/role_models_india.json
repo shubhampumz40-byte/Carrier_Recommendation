@@ -1,0 +1,274 @@
+[
+  {
+    "name": "Ratan Tata",
+    "career": "Product Manager",
+    "title": "Chairman Emeritus of Tata Sons",
+    "background": "Led Tata Group for over two decades, transformed it into a global conglomerate",
+    "education": "B.S. in Architecture from Cornell University, Advanced Management Program from Harvard",
+    "key_skills": ["leadership", "strategic_thinking", "innovation", "philanthropy"],
+    "inspiration_quote": "I don't believe in taking right decisions. I take decisions and then make them right.",
+    "career_path": ["Trainee at Tata Steel", "General Manager", "Chairman Tata Industries", "Chairman Tata Sons"],
+    "achievements": ["Acquired Jaguar Land Rover", "Launched Tata Nano", "Built $100B+ conglomerate"],
+    "advice": "Lead with humility, think long-term, and always give back to society.",
+    "indian_context": "Icon of Indian industry and ethical business leadership",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/ratan-tata/",
+      "twitter": "@RNTata2000"
+    }
+  },
+  {
+    "name": "Sundar Pichai",
+    "career": "Software Engineer",
+    "title": "CEO of Google and Alphabet",
+    "background": "Started as a software engineer, led Chrome and Android projects before becoming CEO",
+    "education": "B.Tech from IIT Kharagpur, MS from Stanford, MBA from Wharton",
+    "key_skills": ["programming", "leadership", "product_management", "strategic_thinking"],
+    "inspiration_quote": "It is important to follow your dreams and heart. Do something that excites you.",
+    "career_path": ["Software Engineer", "Product Manager", "VP Chrome", "CEO Google", "CEO Alphabet"],
+    "achievements": ["Led Chrome to 70% market share", "Oversaw Android growth", "Became CEO of $1T+ company"],
+    "advice": "Focus on building great products that help people, and opportunities will follow.",
+    "indian_context": "From IIT Kharagpur to global tech leadership",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/sundar-pichai/",
+      "twitter": "@sundarpichai"
+    }
+  },
+  {
+    "name": "Mukesh Ambani",
+    "career": "Startup Founder/Entrepreneur",
+    "title": "Chairman of Reliance Industries",
+    "background": "Built Reliance into India's most valuable company, pioneered telecom revolution with Jio",
+    "education": "Chemical Engineering from ICT Mumbai, Stanford University (dropped out)",
+    "key_skills": ["strategic_vision", "scaling", "innovation", "market_disruption"],
+    "inspiration_quote": "Think big, think fast, think ahead. Ideas are no one's monopoly.",
+    "career_path": ["Joined family business", "Built petrochemicals", "Launched Jio", "Richest Indian"],
+    "achievements": ["Built $200B+ company", "Jio disrupted telecom", "Richest person in Asia"],
+    "advice": "Disrupt yourself before others disrupt you. Scale with speed and vision.",
+    "indian_context": "Transformed Indian telecom and digital landscape",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/mukesh-ambani/",
+      "website": "https://www.ril.com/"
+    }
+  },
+  {
+    "name": "Kiran Mazumdar-Shaw",
+    "career": "Startup Founder/Entrepreneur",
+    "title": "Executive Chairperson of Biocon",
+    "background": "Started Biocon in her garage, built it into India's largest biopharmaceutical company",
+    "education": "Bachelor's in Zoology from Bangalore University, Postgraduate Diploma in Malting and Brewing",
+    "key_skills": ["entrepreneurship", "biotechnology", "leadership", "innovation"],
+    "inspiration_quote": "I believe that entrepreneurship is about solving problems and creating value for society.",
+    "career_path": ["Research Trainee", "Entrepreneur", "CEO", "Executive Chairperson"],
+    "achievements": ["Built ₹30,000 crore company", "Pioneered affordable healthcare", "Padma Shri & Padma Bhushan recipient"],
+    "advice": "Don't let gender or background limit your ambitions. Focus on solving real problems.",
+    "indian_context": "Pioneer of Indian biotech industry and women entrepreneurship",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/kiran-mazumdar-shaw/",
+      "twitter": "@kiranshaw"
+    }
+  },
+  {
+    "name": "N.R. Narayana Murthy",
+    "career": "Software Engineer",
+    "title": "Co-founder of Infosys",
+    "background": "Co-founded Infosys with ₹10,000, built it into a global IT services giant",
+    "education": "B.E. in Electrical Engineering from University of Mysore, M.Tech from IIT Kanpur",
+    "key_skills": ["programming", "leadership", "values_based_management", "global_thinking"],
+    "inspiration_quote": "Progress is often equal to the difference between mind and mindset.",
+    "career_path": ["Software Engineer", "Co-founder Infosys", "CEO", "Chairman"],
+    "achievements": ["Built $15B+ IT company", "Created 200,000+ jobs", "Father of Indian IT industry"],
+    "advice": "Lead by example, maintain highest ethical standards, and create value for all stakeholders.",
+    "indian_context": "Pioneer who put Indian IT on the global map",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/nrnarayanamurthy/",
+      "website": "https://www.infosys.com/"
+    }
+  },
+  {
+    "name": "Radhika Gupta",
+    "career": "Investment Banking Analyst",
+    "title": "CEO of Edelweiss Asset Management",
+    "background": "Youngest CEO of an asset management company in India, overcame personal challenges",
+    "education": "Economics from University of Pennsylvania, MBA from Wharton",
+    "key_skills": ["financial_analysis", "leadership", "communication", "resilience"],
+    "inspiration_quote": "Your struggles don't define you, your response to them does.",
+    "career_path": ["Investment Banker", "Private Equity", "Co-founder Forefront Capital", "CEO Edelweiss AMC"],
+    "achievements": ["Youngest AMC CEO", "Built ₹1 lakh crore AUM", "Inspiring speaker and author"],
+    "advice": "Turn your vulnerabilities into strengths and never let setbacks define your future.",
+    "indian_context": "Breaking barriers in male-dominated financial services industry",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/radhika-gupta/",
+      "twitter": "@radhika_gupta"
+    }
+  },
+  {
+    "name": "Byju Raveendran",
+    "career": "Digital Marketing Manager",
+    "title": "Founder and CEO of BYJU'S",
+    "background": "Started as a teacher, built BYJU'S into India's most valuable edtech startup",
+    "education": "B.Tech in Mechanical Engineering from Government Engineering College Kannur",
+    "key_skills": ["teaching", "digital_marketing", "product_development", "scaling"],
+    "inspiration_quote": "Learning should be engaging, effective, and enjoyable for every student.",
+    "career_path": ["Engineer", "CAT Teacher", "Entrepreneur", "EdTech CEO"],
+    "achievements": ["Built $22B valued company", "Revolutionized Indian education", "Reached 100M+ students"],
+    "advice": "Focus on solving real problems with passion and persistence.",
+    "indian_context": "Transformed Indian education through technology and marketing",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/byju-raveendran/",
+      "twitter": "@byjuraveendran"
+    }
+  },
+  {
+    "name": "Dr. A.P.J. Abdul Kalam",
+    "career": "Aerospace Engineer",
+    "title": "Former President of India, Missile Man of India",
+    "background": "Aerospace scientist who became India's most beloved President, inspired millions",
+    "education": "Aerospace Engineering from Madras Institute of Technology",
+    "key_skills": ["aerospace_engineering", "leadership", "inspiration", "scientific_research"],
+    "inspiration_quote": "Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.",
+    "career_path": ["Scientist at DRDO", "ISRO Scientist", "Project Director", "President of India"],
+    "achievements": ["Developed India's missile program", "People's President", "Bharat Ratna recipient"],
+    "advice": "Dream big, work hard, and never stop learning. Science should serve humanity.",
+    "indian_context": "Icon of scientific achievement and humble leadership",
+    "social_links": {
+      "website": "https://www.abdulkalam.com/",
+      "memorial": "Dr. A.P.J. Abdul Kalam Memorial"
+    }
+  },
+  {
+    "name": "Nandan Nilekani",
+    "career": "Management Consultant",
+    "title": "Co-founder of Infosys, Architect of Aadhaar",
+    "background": "Co-founded Infosys, later led India's digital identity project Aadhaar",
+    "education": "B.Tech in Electrical Engineering from IIT Bombay",
+    "key_skills": ["strategic_thinking", "technology", "public_policy", "leadership"],
+    "inspiration_quote": "Technology is best when it brings people together and solves real problems.",
+    "career_path": ["Software Engineer", "Infosys Co-founder", "CEO", "Government Advisor"],
+    "achievements": ["Built Infosys into global IT giant", "Architected Aadhaar system", "Padma Bhushan recipient"],
+    "advice": "Think big, start small, and scale fast. Technology should serve humanity.",
+    "indian_context": "Pioneer of Indian IT industry and digital governance",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/nandan-nilekani/",
+      "twitter": "@nandan_nilekani"
+    }
+  },
+  {
+    "name": "Falguni Nayar",
+    "career": "Product Manager",
+    "title": "Founder and CEO of Nykaa",
+    "background": "Former investment banker who founded India's leading beauty e-commerce platform",
+    "education": "MBA from IIM Ahmedabad, CA",
+    "key_skills": ["product_management", "e_commerce", "brand_building", "customer_focus"],
+    "inspiration_quote": "It's never too late to chase your entrepreneurial dreams.",
+    "career_path": ["Investment Banker", "Kotak Mahindra MD", "Entrepreneur", "Nykaa CEO"],
+    "achievements": ["Built ₹1 lakh crore company", "IPO success", "Transformed beauty retail in India"],
+    "advice": "Understand your customers deeply and build products they truly love.",
+    "indian_context": "Success story of women entrepreneurship in Indian e-commerce",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/falguni-nayar/",
+      "twitter": "@falguninayar"
+    }
+  },
+  {
+    "name": "Ritesh Agarwal",
+    "career": "Startup Founder/Entrepreneur",
+    "title": "Founder and CEO of OYO Hotels",
+    "background": "Started OYO at age 19, built it into one of the world's largest hotel chains",
+    "education": "College dropout, self-taught entrepreneur",
+    "key_skills": ["entrepreneurship", "scaling", "hospitality", "technology"],
+    "inspiration_quote": "Age is just a number when you have the passion to solve real problems.",
+    "career_path": ["College Student", "Startup Founder", "CEO", "Global Entrepreneur"],
+    "achievements": ["Built $10B valued company", "Youngest Indian billionaire", "Revolutionized budget hospitality"],
+    "advice": "Start early, think big, and never stop learning from failures.",
+    "indian_context": "Young entrepreneur who built global business from India",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/ritesh-agarwal/",
+      "twitter": "@riteshagar"
+    }
+  },
+  {
+    "name": "Dr. Devi Shetty",
+    "career": "Doctor (MBBS)",
+    "title": "Cardiac Surgeon, Chairman of Narayana Health",
+    "background": "Renowned cardiac surgeon who made healthcare affordable and accessible",
+    "education": "MBBS from Kasturba Medical College, Cardiac Surgery training in UK",
+    "key_skills": ["surgery", "healthcare_management", "innovation", "cost_optimization"],
+    "inspiration_quote": "Healthcare is a basic human right, not a privilege for the wealthy.",
+    "career_path": ["Medical Student", "Cardiac Surgeon", "Hospital Founder", "Healthcare Innovator"],
+    "achievements": ["Performed 50,000+ heart surgeries", "Made cardiac surgery affordable", "Padma Shri & Padma Bhushan"],
+    "advice": "Combine clinical excellence with innovation to serve more people effectively.",
+    "indian_context": "Revolutionized affordable healthcare delivery in India",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/dr-devi-shetty/",
+      "website": "https://www.narayanahealth.org/"
+    }
+  },
+  {
+    "name": "Raghuram Rajan",
+    "career": "Investment Banking Analyst",
+    "title": "Former RBI Governor, Professor at Chicago Booth",
+    "background": "Distinguished economist who served as RBI Governor and Chief Economist at IMF",
+    "education": "B.Tech from IIT Delhi, MBA and PhD from MIT Sloan",
+    "key_skills": ["financial_analysis", "monetary_policy", "research", "leadership"],
+    "inspiration_quote": "In a democracy, the well-being, individuality and happiness of every citizen is important.",
+    "career_path": ["Academic", "IMF Economist", "Chicago Professor", "RBI Governor"],
+    "achievements": ["Predicted 2008 financial crisis", "Reformed Indian banking", "Time 100 Most Influential"],
+    "advice": "Combine rigorous analysis with practical understanding of ground realities.",
+    "indian_context": "From IIT to global financial leadership and RBI governance",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/raghuram-rajan/",
+      "website": "https://www.chicagobooth.edu/faculty/directory/r/raghuram-g-rajan"
+    }
+  },
+  {
+    "name": "Vinod Rai",
+    "career": "Civil Services Officer (IAS/IPS)",
+    "title": "Former CAG of India, Former Chairman of Banks Board Bureau",
+    "background": "Distinguished civil servant who served as Comptroller and Auditor General of India",
+    "education": "B.A. from St. Stephen's College, Delhi, IAS 1972 batch",
+    "key_skills": ["public_administration", "audit", "governance", "leadership"],
+    "inspiration_quote": "Public service is about serving the nation with integrity and dedication.",
+    "career_path": ["IAS Officer", "District Collector", "Secretary", "CAG of India"],
+    "achievements": ["Reformed government auditing", "Exposed 2G spectrum scam", "Improved governance standards"],
+    "advice": "Maintain integrity and focus on public welfare in all decisions.",
+    "indian_context": "Exemplary civil servant who strengthened Indian governance",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/vinod-rai/",
+      "website": "https://cag.gov.in/"
+    }
+  },
+  {
+    "name": "Vijay Shekhar Sharma",
+    "career": "Software Engineer",
+    "title": "Founder and CEO of Paytm",
+    "background": "Built Paytm into India's largest digital payments platform",
+    "education": "B.Tech from Delhi College of Engineering",
+    "key_skills": ["programming", "fintech", "scaling", "digital_payments"],
+    "inspiration_quote": "Build for India, build for the world. Technology should democratize access.",
+    "career_path": ["Software Developer", "Entrepreneur", "Paytm Founder", "Fintech Pioneer"],
+    "achievements": ["Built $16B valued company", "Pioneered digital payments in India", "IPO success"],
+    "advice": "Focus on solving problems for the masses, not just the elite.",
+    "indian_context": "Democratized digital payments across urban and rural India",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/vijayshekhar/",
+      "twitter": "@vijayshekhar"
+    }
+  },
+  {
+    "name": "Priyanka Chopra Jonas",
+    "career": "Digital Marketing Manager",
+    "title": "Global Actress, Producer, UNICEF Goodwill Ambassador",
+    "background": "Bollywood actress who became global star, built personal brand across entertainment and business",
+    "education": "Various schools due to family transfers, self-taught in business and branding",
+    "key_skills": ["brand_building", "global_marketing", "content_creation", "cross_cultural_communication"],
+    "inspiration_quote": "I've always been someone who has believed that you have to reinvent yourself.",
+    "career_path": ["Miss World", "Bollywood Actress", "Hollywood Star", "Producer & Entrepreneur"],
+    "achievements": ["Global entertainment success", "Built personal brand empire", "UNICEF Goodwill Ambassador"],
+    "advice": "Be authentic, work hard, and don't be afraid to take risks in new markets.",
+    "indian_context": "Successful global brand ambassador for Indian talent and culture",
+    "social_links": {
+      "instagram": "@priyankachopra",
+      "twitter": "@priyankachopra"
+    }
+  }
+]

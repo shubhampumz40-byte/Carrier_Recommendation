@@ -1,0 +1,1374 @@
+/* Custom styles for Career Recommender */
+
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 4s infinite;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Enhanced Career Compass Title */
+.career-compass-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ffffff, #f8f9fa, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { 
+        filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        transform: scale(1);
+    }
+    to { 
+        filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+        transform: scale(1.02);
+    }
+}
+
+.compass-icon {
+    display: inline-block;
+    animation: compassSpin 8s linear infinite;
+    margin-right: 15px;
+    font-size: 3.5rem;
+    color: #ffd700;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes compassSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Enhanced subtitle */
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Enhanced description text */
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.question-slide {
+    min-height: 200px;
+    padding: 20px;
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+.progress {
+    height: 8px;
+}
+
+.personality-type {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.match-percentage {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.skill-badge {
+    margin: 2px;
+    font-size: 0.8rem;
+}
+
+.career-card {
+    border-left: 4px solid #0d6efd;
+}
+
+.explanation-list {
+    font-size: 0.9rem;
+}
+
+.visualization-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .btn-group .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    
+    .question-slide {
+        min-height: 150px;
+        padding: 10px;
+    }
+}
+
+/* Animation for loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom checkbox and radio styles */
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-check:checked + .btn {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* Career match visualization */
+.match-bar {
+    height: 20px;
+    background: linear-gradient(90deg, #dc3545 0%, #ffc107 50%, #198754 100%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.match-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Role Models and Tips Styles */
+.avatar-sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.quote-mini {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    border-left: 3px solid #28a745;
+    font-size: 0.85rem;
+}
+
+.notification-badge {
+    position: relative;
+}
+
+.notification-badge::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background: #dc3545;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Daily Tips Notification Styles */
+.tip-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 350px;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.tip-notification .notification-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+}
+
+.tip-notification .notification-body {
+    padding: 15px;
+}
+
+.tip-notification .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Role Model Cards Enhancement */
+.role-model-highlight {
+    border: 2px solid #28a745;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+}
+
+.career-path-badge {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin: 2px;
+    display: inline-block;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .tip-notification {
+        max-width: 90%;
+        right: 5%;
+    }
+    
+    .avatar-sm {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+    
+    .quote-mini {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+}
+/* Trending Careers Radar Styles */
+.trending-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+    color: white;
+    border: none;
+}
+
+.trending-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.trending-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.trending-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff6b6b;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+.trending-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+}
+
+/* Radar Chart Enhancements */
+.radar-icon {
+    display: inline-block;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Hot Factor Styling */
+.hot-factor-extreme {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    color: white;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hot-factor-high {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.hot-factor-medium-high {
+    background: linear-gradient(45deg, #45b7d1, #96c93d);
+    color: white;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); }
+    to { box-shadow: 0 0 20px rgba(255, 107, 107, 0.8); }
+}
+
+/* Career Category Cards */
+.category-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+}
+
+/* Timeline Cards */
+.timeline-card {
+    border-left: 4px solid #007bff;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    position: relative;
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 20px;
+    width: 8px;
+    height: 8px;
+    background: #007bff;
+    border-radius: 50%;
+}
+
+/* Trending Careers Page Specific */
+.trend-score {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Mobile Responsiveness for Trending Page */
+@media (max-width: 768px) {
+    .trending-badge {
+        font-size: 0.6rem;
+        padding: 1px 6px;
+    }
+    
+    .radar-icon {
+        font-size: 1rem;
+    }
+    
+    .trend-score {
+        font-size: 1.5rem;
+    }
+}
+/* Reality Check Card Styles */
+.reality-check-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%);
+    color: white;
+    border: none;
+}
+
+.reality-check-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.reality-check-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+.reality-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ffc107;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.reality-check-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 193, 7, 0.3);
+}
+
+/* Reality Check Page Specific Styles */
+.reality-icon {
+    display: inline-block;
+    animation: think 2s infinite;
+}
+
+@keyframes think {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.reality-header-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.reality-stat {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.risk-category {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.high-risk {
+    background: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.medium-risk {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+}
+
+.low-risk {
+    background: rgba(40, 167, 69, 0.1);
+    border-left: 4px solid #28a745;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+.challenge-item {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.success-factor {
+    background: #d1ecf1;
+    border-left: 4px solid #17a2b8;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.backup-career-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.backup-career-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #e9ecef;
+}
+
+.failure-stat {
+    background: rgba(220, 53, 69, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #721c24;
+}
+
+.reality-breakdown p {
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Mobile Responsiveness for Reality Check */
+@media (max-width: 768px) {
+    .reality-badge {
+        font-size: 0.6rem;
+        padding: 1px 6px;
+    }
+    
+    .reality-stat {
+        padding: 10px;
+        margin: 5px 0;
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    
+    .risk-category {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .backup-career-card {
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+/* Skills Gap Analyzer Card Styles */
+.skills-gap-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: white;
+    border: none;
+}
+
+.skills-gap-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.skills-gap-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+.skills-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #17a2b8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 5px rgba(23, 162, 184, 0.5); }
+    to { box-shadow: 0 0 15px rgba(23, 162, 184, 0.8); }
+}
+
+.skills-gap-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(23, 162, 184, 0.3);
+}
+
+/* Skills Gap Analyzer Page Styles */
+.skills-icon {
+    display: inline-block;
+    animation: analyze 2s infinite;
+}
+
+@keyframes analyze {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.skills-input-container {
+    position: relative;
+}
+
+.selected-skills {
+    min-height: 40px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 8px;
+    background: #f8f9fa;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.skill-tag:hover {
+    background: #dc3545;
+}
+
+.readiness-score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.readiness-level {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.learning-path-item {
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    background: rgba(0, 123, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.development-phase {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f8f9fa;
+    height: 100%;
+}
+
+.skills-gap-results .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-gap-results .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Skills Gap in Results Page */
+.skills-gap-section {
+    background: rgba(23, 162, 184, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 4px solid #17a2b8;
+}
+
+.skills-readiness {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Mobile Responsiveness for Skills Gap */
+@media (max-width: 768px) {
+    .skills-badge {
+        font-size: 0.6rem;
+        padding: 1px 6px;
+    }
+    
+    .readiness-score {
+        font-size: 2rem;
+    }
+    
+    .learning-path-item {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .development-phase {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .skills-gap-section {
+        padding: 10px;
+    }
+}
+/* Career Comparison Card Styles */
+.comparison-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #6f42c1 0%, #5a2d91 100%);
+    color: white;
+    border: none;
+}
+
+.comparison-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.comparison-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+.comparison-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #6f42c1;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: balance 2s infinite;
+}
+
+@keyframes balance {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+.comparison-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(111, 66, 193, 0.3);
+}
+
+.text-purple {
+    color: #6f42c1 !important;
+}
+
+.btn-purple {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5a2d91;
+    border-color: #5a2d91;
+    color: white;
+}
+
+/* Career Comparison Page Styles */
+.comparison-icon {
+    display: inline-block;
+    animation: compare 2s infinite;
+}
+
+@keyframes compare {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(-2deg); }
+    75% { transform: scale(1.05) rotate(2deg); }
+}
+
+.career-comparison-results {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.comparison-overview-card {
+    border: 2px solid #6f42c1;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.comparison-overview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(111, 66, 193, 0.2);
+}
+
+.ranking-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.ranking-card:hover {
+    transform: scale(1.02);
+}
+
+.skills-comparison-item {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: background-color 0.2s ease;
+}
+
+.skills-comparison-item:hover {
+    background: #e9ecef;
+}
+
+.comparison-table th {
+    background: linear-gradient(135deg, #6f42c1, #5a2d91);
+    color: white;
+    border: none;
+}
+
+.comparison-table td {
+    vertical-align: middle;
+    border-color: #dee2e6;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: rgba(111, 66, 193, 0.05);
+}
+
+/* Stress Level Colors */
+.stress-low { color: #28a745 !important; }
+.stress-medium-low { color: #6c757d !important; }
+.stress-medium { color: #ffc107 !important; }
+.stress-medium-high { color: #fd7e14 !important; }
+.stress-high { color: #dc3545 !important; }
+
+/* Work-Life Balance Colors */
+.balance-excellent { color: #28a745 !important; }
+.balance-good { color: #6c757d !important; }
+.balance-moderate { color: #ffc107 !important; }
+.balance-challenging { color: #fd7e14 !important; }
+.balance-poor { color: #dc3545 !important; }
+
+/* Mobile Responsiveness for Career Comparison */
+@media (max-width: 768px) {
+    .comparison-badge {
+        font-size: 0.6rem;
+        padding: 1px 6px;
+    }
+    
+    .comparison-overview-card {
+        margin-bottom: 15px;
+    }
+    
+    .ranking-card {
+        margin-bottom: 15px;
+    }
+    
+    .skills-comparison-item {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    .comparison-table {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 8px 4px;
+    }
+}
+/* Career Simulation Card Styles */
+.simulation-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+}
+
+.simulation-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.simulation-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+.simulation-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #28a745;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.simulation-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(40, 167, 69, 0.3);
+}
+
+/* Career Simulation Page Styles */
+.simulation-header-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.simulation-stat {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.simulation-stat .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.simulation-stat .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.career-simulation-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.career-simulation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-time {
+    font-weight: bold;
+    color: #495057;
+}
+
+.timeline-content {
+    background: #f8f9fa;
+    border-radius: 8px;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #007bff;
+}
+
+/* Stress level indicators */
+.stress-very-low { background-color: #28a745 !important; }
+.stress-low { background-color: #6c757d !important; }
+.stress-medium { background-color: #ffc107 !important; }
+.stress-high { background-color: #fd7e14 !important; }
+.stress-very-high { background-color: #dc3545 !important; }
+
+/* Simulation insights cards */
+.simulation-insights .card {
+    transition: transform 0.2s ease;
+}
+
+.simulation-insights .card:hover {
+    transform: scale(1.05);
+}
+
+/* Why Choose Career Compass Section Enhancement */
+.features-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23000" opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23000" opacity="0.02"/><circle cx="50" cy="10" r="1" fill="%23000" opacity="0.02"/><circle cx="10" cy="90" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.features-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.features-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.features-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 2rem;
+    height: 100%;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.9);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.feature-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+}
+
+.feature-description {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Mobile Responsiveness for Career Simulation */
+@media (max-width: 768px) {
+    .simulation-badge {
+        font-size: 0.6rem;
+        padding: 1px 6px;
+    }
+    
+    .simulation-stat {
+        padding: 10px;
+        margin: 5px 0;
+    }
+    
+    .simulation-stat .stat-value {
+        font-size: 1.2rem;
+    }
+    
+    .timeline-content {
+        padding: 15px !important;
+    }
+    
+    .timeline-time {
+        font-size: 0.9rem;
+    }
+    
+    .career-simulation-card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Mobile Responsiveness for Enhanced Features */
+@media (max-width: 768px) {
+    .career-compass-title {
+        font-size: 2.5rem;
+    }
+    
+    .compass-icon {
+        font-size: 2.5rem;
+        margin-right: 10px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .features-section {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+    
+    .features-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .feature-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .feature-title {
+        font-size: 1.1rem;
+    }
+    
+    .feature-description {
+        font-size: 0.9rem;
+    }
+}
+/* Section Group Styling */
+.section-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.section-group:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-icon {
+    font-size: 2rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Section-specific styling */
+.section-group:nth-child(odd) {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+}
+
+.section-group:nth-child(even) {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.05), rgba(23, 162, 184, 0.05));
+}
+
+/* Mobile responsiveness for sections */
+@media (max-width: 768px) {
+    .section-group {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .section-icon {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+}

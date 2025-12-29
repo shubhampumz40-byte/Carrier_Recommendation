@@ -1,0 +1,318 @@
+{% extends "base.html" %}
+
+{% block title %}Career Visualization Demo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1 class="display-4">
+                <i class="fas fa-chart-network me-3"></i>
+                Career Visualization Demo
+            </h1>
+            <p class="lead">Interactive career exploration and matching visualizations</p>
+        </div>
+    </div>
+    
+    <!-- Sample Profile Display -->
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Sample Student Profile</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <strong>Interests:</strong>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-laptop-code text-primary"></i> Technology</li>
+                                <li><i class="fas fa-puzzle-piece text-success"></i> Problem Solving</li>
+                                <li><i class="fas fa-lightbulb text-warning"></i> Innovation</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <strong>Skills:</strong>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-code text-info"></i> Programming</li>
+                                <li><i class="fas fa-chart-line text-success"></i> Data Analysis</li>
+                                <li><i class="fas fa-brain text-purple"></i> Logical Thinking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Visualization Controls -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary" onclick="showMatchChart()">
+                    <i class="fas fa-chart-bar me-2"></i>Match Scores
+                </button>
+                <button type="button" class="btn btn-success" onclick="showNetworkGraph()">
+                    <i class="fas fa-project-diagram me-2"></i>Career Network
+                </button>
+                <button type="button" class="btn btn-info" onclick="showSkillsRadar()">
+                    <i class="fas fa-radar me-2"></i>Skills Radar
+                </button>
+                <button type="button" class="btn btn-warning" onclick="generateNewData()">
+                    <i class="fas fa-refresh me-2"></i>Generate New Data
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Visualization Container -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h5 class="mb-0" id="vizTitle">Career Match Visualization</h5>
+                </div>
+                <div class="card-body">
+                    <div id="visualizationContainer" style="height: 500px;">
+                        <!-- Visualizations will be rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Career Details -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">Career Recommendations</h5>
+                </div>
+                <div class="card-body">
+                    <div id="careerDetails" class="row">
+                        <!-- Career cards will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Sample data for demonstration
+const sampleData = {
+    careers: [
+        { name: 'Software Engineer', match: 85, salary: '$110,000', growth: '22%', color: '#0d6efd' },
+        { name: 'Data Scientist', match: 78, salary: '$126,000', growth: '35%', color: '#198754' },
+        { name: 'UX Designer', match: 65, salary: '$77,000', growth: '13%', color: '#ffc107' },
+        { name: 'Product Manager', match: 72, salary: '$131,000', growth: '19%', color: '#dc3545' },
+        { name: 'Research Scientist', match: 58, salary: '$89,000', growth: '8%', color: '#6f42c1' }
+    ],
+    skills: [
+        { skill: 'Programming', level: 4.2 },
+        { skill: 'Data Analysis', level: 3.8 },
+        { skill: 'Design', level: 2.5 },
+        { skill: 'Communication', level: 3.2 },
+        { skill: 'Leadership', level: 2.8 },
+        { skill: 'Research', level: 3.5 }
+    ]
+};
+
+function showMatchChart() {
+    document.getElementById('vizTitle').textContent = 'Career Match Scores';
+    
+    const trace = {
+        x: sampleData.careers.map(c => c.name),
+        y: sampleData.careers.map(c => c.match),
+        type: 'bar',
+        marker: {
+            color: sampleData.careers.map(c => c.color)
+        },
+        text: sampleData.careers.map(c => c.match + '%'),
+        textposition: 'auto'
+    };
+    
+    const layout = {
+        title: 'Career Compatibility Scores',
+        xaxis: { title: 'Career Options' },
+        yaxis: { title: 'Match Percentage', range: [0, 100] },
+        margin: { t: 50, l: 50, r: 50, b: 100 }
+    };
+    
+    Plotly.newPlot('visualizationContainer', [trace], layout);
+    updateCareerDetails();
+}
+
+function showNetworkGraph() {
+    document.getElementById('vizTitle').textContent = 'Career Network Graph';
+    
+    // Create network data
+    const nodes = [
+        { x: 0, y: 0, name: 'You', size: 30, color: '#ff6b6b' }
+    ];
+    
+    const careers = sampleData.careers.slice(0, 4);
+    careers.forEach((career, i) => {
+        const angle = (i * 2 * Math.PI) / careers.length;
+        const radius = 2;
+        nodes.push({
+            x: Math.cos(angle) * radius,
+            y: Math.sin(angle) * radius,
+            name: career.name,
+            size: career.match / 3,
+            color: career.color
+        });
+    });
+    
+    // Create traces for nodes
+    const nodeTrace = {
+        x: nodes.map(n => n.x),
+        y: nodes.map(n => n.y),
+        mode: 'markers+text',
+        type: 'scatter',
+        text: nodes.map(n => n.name),
+        textposition: 'middle center',
+        marker: {
+            size: nodes.map(n => n.size),
+            color: nodes.map(n => n.color),
+            line: { width: 2, color: 'white' }
+        },
+        hovertemplate: '<b>%{text}</b><extra></extra>'
+    };
+    
+    // Create connection lines
+    const connections = [];
+    for (let i = 1; i < nodes.length; i++) {
+        connections.push({
+            x: [0, nodes[i].x, null],
+            y: [0, nodes[i].y, null],
+            mode: 'lines',
+            type: 'scatter',
+            line: { color: 'rgba(128,128,128,0.5)', width: 2 },
+            showlegend: false,
+            hoverinfo: 'none'
+        });
+    }
+    
+    const layout = {
+        title: 'Your Career Network',
+        showlegend: false,
+        xaxis: { visible: false, range: [-3, 3] },
+        yaxis: { visible: false, range: [-3, 3] },
+        margin: { t: 50, l: 50, r: 50, b: 50 }
+    };
+    
+    Plotly.newPlot('visualizationContainer', [nodeTrace, ...connections], layout);
+    updateCareerDetails();
+}
+
+function showSkillsRadar() {
+    document.getElementById('vizTitle').textContent = 'Skills Assessment Radar';
+    
+    const trace = {
+        type: 'scatterpolar',
+        r: sampleData.skills.map(s => s.level),
+        theta: sampleData.skills.map(s => s.skill),
+        fill: 'toself',
+        fillcolor: 'rgba(13, 110, 253, 0.2)',
+        line: { color: 'rgba(13, 110, 253, 1)' },
+        name: 'Your Skills'
+    };
+    
+    const layout = {
+        title: 'Skills Profile Assessment',
+        polar: {
+            radialaxis: {
+                visible: true,
+                range: [0, 5],
+                tickvals: [1, 2, 3, 4, 5],
+                ticktext: ['Beginner', 'Basic', 'Intermediate', 'Advanced', 'Expert']
+            }
+        },
+        margin: { t: 50, l: 50, r: 50, b: 50 }
+    };
+    
+    Plotly.newPlot('visualizationContainer', [trace], layout);
+    updateSkillsDetails();
+}
+
+function generateNewData() {
+    // Randomize match scores
+    sampleData.careers.forEach(career => {
+        career.match = Math.floor(Math.random() * 40) + 50; // 50-90% range
+    });
+    
+    // Randomize skill levels
+    sampleData.skills.forEach(skill => {
+        skill.level = Math.random() * 3 + 2; // 2-5 range
+    });
+    
+    // Refresh current visualization
+    const currentTitle = document.getElementById('vizTitle').textContent;
+    if (currentTitle.includes('Match Scores')) {
+        showMatchChart();
+    } else if (currentTitle.includes('Network')) {
+        showNetworkGraph();
+    } else if (currentTitle.includes('Skills')) {
+        showSkillsRadar();
+    }
+}
+
+function updateCareerDetails() {
+    const container = document.getElementById('careerDetails');
+    let html = '';
+    
+    sampleData.careers.forEach(career => {
+        html += `
+            <div class="col-md-6 col-lg-4 mb-3">
+                <div class="card h-100" style="border-left: 4px solid ${career.color}">
+                    <div class="card-body">
+                        <h6 class="card-title">${career.name}</h6>
+                        <div class="mb-2">
+                            <span class="badge" style="background-color: ${career.color}">${career.match}% Match</span>
+                        </div>
+                        <small class="text-muted">
+                            💰 ${career.salary} | 📈 ${career.growth}
+                        </small>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+function updateSkillsDetails() {
+    const container = document.getElementById('careerDetails');
+    let html = '<div class="col-12"><h6>Skills Assessment Results:</h6><div class="row">';
+    
+    sampleData.skills.forEach(skill => {
+        const percentage = (skill.level / 5) * 100;
+        const color = percentage >= 80 ? 'success' : percentage >= 60 ? 'warning' : 'danger';
+        
+        html += `
+            <div class="col-md-6 mb-3">
+                <div class="d-flex justify-content-between">
+                    <span>${skill.skill}</span>
+                    <span>${skill.level.toFixed(1)}/5</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-${color}" style="width: ${percentage}%"></div>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div></div>';
+    container.innerHTML = html;
+}
+
+// Initialize with match chart
+document.addEventListener('DOMContentLoaded', function() {
+    showMatchChart();
+});
+</script>
+{% endblock %}

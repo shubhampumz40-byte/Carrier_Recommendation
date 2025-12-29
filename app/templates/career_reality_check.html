@@ -1,0 +1,473 @@
+{% extends "base.html" %}
+
+{% block title %}What If I Choose This? - Career Reality Check{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="display-4 mb-3">
+                <span class="reality-icon">🤔</span> What If I Choose This?
+            </h1>
+            <p class="lead text-muted">Get realistic insights about any career - challenges, risks, and backup plans</p>
+        </div>
+    </div>
+
+    <!-- Career Selection -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-search me-2"></i>
+                        Choose a Career to Explore
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto">
+                            <select id="careerSelect" class="form-select form-select-lg">
+                                <option value="">Select a career to see realistic insights...</option>
+                                <option value="AI/ML Engineer">AI/ML Engineer</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                                <option value="Product Manager">Product Manager</option>
+                                <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="UX Designer">UX Designer</option>
+                                <option value="Digital Marketing Manager">Digital Marketing Manager</option>
+                                <option value="Doctor (MBBS)">Doctor (MBBS)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="text-center py-5" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading career insights...</span>
+        </div>
+        <p class="mt-3">Analyzing career reality...</p>
+    </div>
+
+    <!-- Career Reality Check Results -->
+    <div id="realityCheckResults" style="display: none;">
+        <!-- Career Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card reality-header-card">
+                    <div class="card-body text-center">
+                        <h2 id="careerTitle" class="display-5 mb-3"></h2>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="reality-stat">
+                                    <div class="stat-value" id="difficultyLevel"></div>
+                                    <div class="stat-label">Difficulty Level</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="reality-stat">
+                                    <div class="stat-value" id="timeToMaster"></div>
+                                    <div class="stat-label">Time to Master</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="reality-stat">
+                                    <div class="stat-value" id="stressLevel"></div>
+                                    <div class="stat-label">Stress Level</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="reality-stat">
+                                    <div class="stat-value" id="jobSecurity"></div>
+                                    <div class="stat-label">Job Security</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Needed -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-tools me-2"></i>
+                            Skills You'll Need
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="text-success">Technical Skills:</h6>
+                        <div id="technicalSkills" class="mb-3"></div>
+                        
+                        <h6 class="text-info">Soft Skills:</h6>
+                        <div id="softSkills"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Daily Challenges
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="challenges"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Failure Risks -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-skull-crossbones me-2"></i>
+                            Failure Risks & Reality Check
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="risk-category high-risk">
+                                    <h6>🔴 High Risk</h6>
+                                    <p id="highRisk"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="risk-category medium-risk">
+                                    <h6>🟡 Medium Risk</h6>
+                                    <p id="mediumRisk"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="risk-category low-risk">
+                                    <h6>🟢 Low Risk</h6>
+                                    <p id="lowRisk"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="failure-stat">
+                                    <strong>Failure Rate:</strong> <span id="failureRate"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="failure-reasons">
+                                    <strong>Common Reasons:</strong>
+                                    <ul id="failureReasons"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day-to-Day Reality -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-calendar-day me-2"></i>
+                            Day-to-Day Reality
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="reality-breakdown">
+                            <p><strong>Typical Day:</strong> <span id="dayToDay"></span></p>
+                            <p><strong>Work-Life Balance:</strong> <span id="workLifeBalance"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-lightbulb me-2"></i>
+                            Success Factors
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="successFactors"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backup Careers -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-life-ring me-2"></i>
+                            Backup Career Options
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">If this career doesn't work out, here are related paths with transferable skills:</p>
+                        <div id="backupCareers" class="row"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-success btn-lg me-3" onclick="proceedWithCareer()">
+                    <i class="fas fa-check me-2"></i>
+                    I'm Still Interested
+                </button>
+                <button class="btn btn-outline-primary btn-lg me-3" onclick="exploreBackups()">
+                    <i class="fas fa-search me-2"></i>
+                    Explore Backup Options
+                </button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="chooseAnother()">
+                    <i class="fas fa-redo me-2"></i>
+                    Choose Another Career
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.reality-icon {
+    font-size: 1.2em;
+    animation: think 2s infinite;
+}
+
+@keyframes think {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.reality-header-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.reality-stat {
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.risk-category {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.high-risk {
+    background: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+}
+
+.medium-risk {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+}
+
+.low-risk {
+    background: rgba(40, 167, 69, 0.1);
+    border-left: 4px solid #28a745;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+.challenge-item {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.success-factor {
+    background: #d1ecf1;
+    border-left: 4px solid #17a2b8;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.backup-career-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.backup-career-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.failure-stat {
+    background: rgba(220, 53, 69, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.reality-breakdown p {
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+</style>
+
+<script>
+let currentCareerData = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const careerSelect = document.getElementById('careerSelect');
+    careerSelect.addEventListener('change', function() {
+        if (this.value) {
+            loadCareerReality(this.value);
+        } else {
+            document.getElementById('realityCheckResults').style.display = 'none';
+        }
+    });
+});
+
+function loadCareerReality(careerName) {
+    document.getElementById('loadingState').style.display = 'block';
+    document.getElementById('realityCheckResults').style.display = 'none';
+    
+    fetch(`/api/career-reality-check/${encodeURIComponent(careerName)}`)
+        .then(response => response.json())
+        .then(data => {
+            currentCareerData = data;
+            displayCareerReality(data);
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('realityCheckResults').style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error loading career reality:', error);
+            document.getElementById('loadingState').innerHTML = 
+                '<div class="alert alert-danger">Error loading career data</div>';
+        });
+}
+
+function displayCareerReality(data) {
+    const reality = data.reality_check;
+    
+    // Header
+    document.getElementById('careerTitle').textContent = data.career_name;
+    document.getElementById('difficultyLevel').textContent = reality.skills_needed.difficulty_level;
+    document.getElementById('timeToMaster').textContent = reality.skills_needed.time_to_master;
+    document.getElementById('stressLevel').textContent = reality.reality_check.stress_level;
+    document.getElementById('jobSecurity').textContent = reality.reality_check.job_security;
+    
+    // Skills
+    const technicalSkills = reality.skills_needed.technical.map(skill => 
+        `<span class="skill-badge">${skill}</span>`
+    ).join('');
+    document.getElementById('technicalSkills').innerHTML = technicalSkills;
+    
+    const softSkills = reality.skills_needed.soft.map(skill => 
+        `<span class="skill-badge">${skill}</span>`
+    ).join('');
+    document.getElementById('softSkills').innerHTML = softSkills;
+    
+    // Challenges
+    const challenges = reality.challenges.map(challenge => 
+        `<div class="challenge-item">${challenge}</div>`
+    ).join('');
+    document.getElementById('challenges').innerHTML = challenges;
+    
+    // Failure Risks
+    document.getElementById('highRisk').textContent = reality.failure_risks.high_risk;
+    document.getElementById('mediumRisk').textContent = reality.failure_risks.medium_risk;
+    document.getElementById('lowRisk').textContent = reality.failure_risks.low_risk;
+    document.getElementById('failureRate').textContent = reality.failure_risks.failure_rate;
+    
+    const failureReasons = reality.failure_risks.common_reasons.map(reason => 
+        `<li>${reason}</li>`
+    ).join('');
+    document.getElementById('failureReasons').innerHTML = failureReasons;
+    
+    // Day-to-Day Reality
+    document.getElementById('dayToDay').textContent = reality.reality_check.day_to_day;
+    document.getElementById('workLifeBalance').textContent = reality.reality_check.work_life_balance;
+    
+    // Success Factors
+    const successFactors = reality.success_factors.map(factor => 
+        `<div class="success-factor">${factor}</div>`
+    ).join('');
+    document.getElementById('successFactors').innerHTML = successFactors;
+    
+    // Backup Careers
+    const backupCareers = reality.backup_careers.map(career => 
+        `<div class="col-md-4">
+            <div class="backup-career-card" onclick="exploreCareer('${career}')">
+                <h6>${career}</h6>
+                <small class="text-muted">Click to explore</small>
+            </div>
+        </div>`
+    ).join('');
+    document.getElementById('backupCareers').innerHTML = backupCareers;
+}
+
+function proceedWithCareer() {
+    alert('Great choice! Consider taking our full assessment to get personalized recommendations and next steps.');
+    window.location.href = '/assessment';
+}
+
+function exploreBackups() {
+    if (currentCareerData) {
+        const backups = currentCareerData.reality_check.backup_careers.join(', ');
+        alert(`Backup careers to consider: ${backups}\n\nThese careers share similar skills and offer good transition paths.`);
+    }
+}
+
+function chooseAnother() {
+    document.getElementById('careerSelect').value = '';
+    document.getElementById('realityCheckResults').style.display = 'none';
+}
+
+function exploreCareer(careerName) {
+    document.getElementById('careerSelect').value = careerName;
+    loadCareerReality(careerName);
+}
+</script>
+{% endblock %}

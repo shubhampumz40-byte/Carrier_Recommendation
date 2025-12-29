@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+
+{% block title %}Trending Careers Radar 2025-2035{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="display-4 mb-3">
+                <span class="radar-icon">📡</span> Trending Careers Radar
+            </h1>
+            <p class="lead text-muted">Discover the hottest career opportunities for 2025-2035</p>
+            
+            <!-- Region Toggle -->
+            <div class="btn-group mb-4" role="group">
+                <button type="button" class="btn btn-outline-primary" id="globalBtn" onclick="switchRegion('global')">
+                    🌐 Global
+                </button>
+                <button type="button" class="btn btn-outline-primary" id="indiaBtn" onclick="switchRegion('india')">
+                    🇮🇳 India
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading trending careers...</span>
+        </div>
+        <p class="mt-3">Loading trending careers data...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" style="display: none;">
+        <!-- Radar Chart -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-chart-radar me-2"></i>
+                            Career Trend Radar
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="radarChart" style="height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Categories -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">
+                    <i class="fas fa-layer-group me-2"></i>
+                    Trending Categories
+                </h3>
+                <div id="categoriesGrid" class="row">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Trending Careers -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">
+                    <i class="fas fa-fire me-2"></i>
+                    Hottest Careers
+                </h3>
+                <div id="trendingCareers" class="row">
+                    <!-- Trending careers will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Time Horizons -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">
+                    <i class="fas fa-clock me-2"></i>
+                    Career Timeline
+                </h3>
+                <div id="timeHorizons" class="row">
+                    <!-- Time horizons will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="/assessment" class="btn btn-primary btn-lg me-3">
+                    <i class="fas fa-compass me-2"></i>
+                    Find My Career Path
+                </a>
+                <a href="/role-models" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-users me-2"></i>
+                    See Success Stories
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.radar-icon {
+    font-size: 1.2em;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.career-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.trend-score {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hot-factor-extreme {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    color: white;
+}
+
+.hot-factor-high {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+}
+
+.hot-factor-medium-high {
+    background: linear-gradient(45deg, #45b7d1, #96c93d);
+    color: white;
+}
+
+.category-card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.timeline-card {
+    border-left: 4px solid #007bff;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+</style>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+let currentRegion = 'global';
+let trendingData = null;
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+    // Get user preferences
+    fetch('/api/get-preferences')
+        .then(response => response.json())
+        .then(data => {
+            currentRegion = data.region || 'global';
+            updateRegionButtons();
+            loadTrendingCareers();
+        })
+        .catch(() => {
+            loadTrendingCareers();
+        });
+});
+
+function switchRegion(region) {
+    currentRegion = region;
+    updateRegionButtons();
+    
+    // Update session preferences
+    fetch('/api/set-preferences', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            region: region,
+            mode: 'student' // Default mode
+        })
+    });
+    
+    loadTrendingCareers();
+}
+
+function updateRegionButtons() {
+    document.getElementById('globalBtn').classList.toggle('active', currentRegion === 'global');
+    document.getElementById('indiaBtn').classList.toggle('active', currentRegion === 'india');
+}
+
+function loadTrendingCareers() {
+    document.getElementById('loadingState').style.display = 'block';
+    document.getElementById('mainContent').style.display = 'none';
+    
+    fetch(`/api/trending-careers?region=${currentRegion}`)
+        .then(response => response.json())
+        .then(data => {
+            trendingData = data;
+            renderRadarChart();
+            renderCategories();
+            renderTrendingCareers();
+            renderTimeHorizons();
+            
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error loading trending careers:', error);
+            document.getElementById('loadingState').innerHTML = 
+                '<div class="alert alert-danger">Error loading trending careers data</div>';
+        });
+}
+
+function renderRadarChart() {
+    const careers = trendingData.careers.slice(0, 8); // Top 8 for radar
+    
+    const data = [{
+        type: 'scatterpolar',
+        r: careers.map(career => career.trend_score),
+        theta: careers.map(career => career.name),
+        fill: 'toself',
+        fillcolor: 'rgba(0, 123, 255, 0.2)',
+        line: {
+            color: 'rgb(0, 123, 255)',
+            width: 3
+        },
+        marker: {
+            color: careers.map(career => {
+                if (career.hot_factor === 'Extreme') return '#ff6b6b';
+                if (career.hot_factor === 'High') return '#4ecdc4';
+                return '#45b7d1';
+            }),
+            size: 8
+        },
+        name: 'Trend Score'
+    }];
+    
+    const layout = {
+        polar: {
+            radialaxis: {
+                visible: true,
+                range: [0, 100],
+                tickfont: { size: 12 }
+            },
+            angularaxis: {
+                tickfont: { size: 11 }
+            }
+        },
+        showlegend: false,
+        title: {
+            text: `Trending Careers Radar - ${currentRegion.charAt(0).toUpperCase() + currentRegion.slice(1)}`,
+            font: { size: 16 }
+        },
+        margin: { t: 50, b: 50, l: 50, r: 50 }
+    };
+    
+    const config = {
+        responsive: true,
+        displayModeBar: false
+    };
+    
+    Plotly.newPlot('radarChart', data, layout, config);
+}
+
+function renderCategories() {
+    const categoriesHtml = Object.entries(trendingData.categories).map(([key, category]) => `
+        <div class="col-md-4 col-lg-2 mb-3">
+            <div class="card category-card h-100 text-center">
+                <div class="card-body">
+                    <div style="font-size: 2rem;">${category.icon}</div>
+                    <h6 class="card-title mt-2">${key}</h6>
+                    <small class="text-muted">${category.description}</small>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    document.getElementById('categoriesGrid').innerHTML = categoriesHtml;
+}
+
+function renderTrendingCareers() {
+    const topCareers = trendingData.careers.slice(0, 6);
+    
+    const careersHtml = topCareers.map(career => `
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card career-card">
+                <div class="card-header ${getHotFactorClass(career.hot_factor)}">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0">${career.name}</h6>
+                        <span class="badge bg-light text-dark">${career.trend_score}</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text small">${career.description}</p>
+                    <div class="mb-2">
+                        <strong>💰 ${career.median_salary}</strong>
+                        ${career.salary_range ? `<br><small class="text-muted">Range: ${career.salary_range}</small>` : ''}
+                    </div>
+                    <div class="mb-2">
+                        <strong>📈 Growth:</strong> ${career.growth_projection}
+                    </div>
+                    <div class="mb-2">
+                        <strong>🔥 Hot Factor:</strong> 
+                        <span class="badge ${getHotFactorBadgeClass(career.hot_factor)}">${career.hot_factor}</span>
+                    </div>
+                    ${career.remote_friendly ? '<span class="badge bg-success">🏠 Remote Friendly</span>' : ''}
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <strong>Why trending:</strong> ${career.why_trending}
+                    </small>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    document.getElementById('trendingCareers').innerHTML = careersHtml;
+}
+
+function renderTimeHorizons() {
+    const horizonsHtml = Object.entries(trendingData.time_horizons).map(([year, description]) => `
+        <div class="col-md-4 mb-3">
+            <div class="card timeline-card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">${year}</h5>
+                    <p class="card-text">${description}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    document.getElementById('timeHorizons').innerHTML = horizonsHtml;
+}
+
+function getHotFactorClass(hotFactor) {
+    switch(hotFactor) {
+        case 'Extreme': return 'hot-factor-extreme';
+        case 'High': return 'hot-factor-high';
+        case 'Medium-High': return 'hot-factor-medium-high';
+        default: return 'bg-secondary text-white';
+    }
+}
+
+function getHotFactorBadgeClass(hotFactor) {
+    switch(hotFactor) {
+        case 'Extreme': return 'bg-danger';
+        case 'High': return 'bg-warning';
+        case 'Medium-High': return 'bg-info';
+        default: return 'bg-secondary';
+    }
+}
+</script>
+{% endblock %}

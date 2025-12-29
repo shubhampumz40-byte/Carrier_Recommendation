@@ -1,0 +1,298 @@
+{
+  "failure_warning_criteria": {
+    "academic_consistency": {
+      "description": "Measures academic performance patterns and consistency over time",
+      "risk_factors": [
+        {
+          "factor": "declining_grades",
+          "description": "Consistent decline in academic performance",
+          "weight": 0.3,
+          "indicators": [
+            "Grade drop of 10%+ over 2 semesters",
+            "Failing grades in core subjects",
+            "Inconsistent performance across subjects"
+          ]
+        },
+        {
+          "factor": "attendance_issues",
+          "description": "Poor attendance and engagement patterns",
+          "weight": 0.2,
+          "indicators": [
+            "Attendance below 75%",
+            "Frequent absences from important classes",
+            "Missing assignment deadlines regularly"
+          ]
+        },
+        {
+          "factor": "study_habits",
+          "description": "Poor study discipline and time management",
+          "weight": 0.25,
+          "indicators": [
+            "Last-minute cramming patterns",
+            "Inability to maintain study schedule",
+            "Poor time management skills"
+          ]
+        },
+        {
+          "factor": "subject_difficulty",
+          "description": "Struggling with prerequisite subjects",
+          "weight": 0.25,
+          "indicators": [
+            "Failing in foundational subjects",
+            "Difficulty with mathematical concepts",
+            "Poor language/communication skills"
+          ]
+        }
+      ],
+      "warning_levels": {
+        "low_risk": {
+          "score_range": [0, 0.3],
+          "description": "Strong academic foundation with consistent performance",
+          "recommendations": ["Continue current study methods", "Consider advanced courses"]
+        },
+        "moderate_risk": {
+          "score_range": [0.31, 0.6],
+          "description": "Some academic concerns that need attention",
+          "recommendations": ["Improve study habits", "Seek academic support", "Focus on weak subjects"]
+        },
+        "high_risk": {
+          "score_range": [0.61, 1.0],
+          "description": "Significant academic challenges requiring immediate intervention",
+          "recommendations": ["Consider academic counseling", "Reassess career goals", "Focus on foundational skills"]
+        }
+      }
+    },
+    "interest_stability": {
+      "description": "Evaluates consistency and depth of career interests over time",
+      "risk_factors": [
+        {
+          "factor": "frequent_changes",
+          "description": "Constantly changing career interests",
+          "weight": 0.35,
+          "indicators": [
+            "Changed career goals 3+ times in past year",
+            "No clear preference in interest assessments",
+            "Influenced easily by external opinions"
+          ]
+        },
+        {
+          "factor": "shallow_exploration",
+          "description": "Superficial understanding of chosen careers",
+          "weight": 0.25,
+          "indicators": [
+            "Limited research about career requirements",
+            "Unrealistic expectations about career",
+            "Focus only on glamorous aspects"
+          ]
+        },
+        {
+          "factor": "external_pressure",
+          "description": "Career choice driven by external factors rather than genuine interest",
+          "weight": 0.2,
+          "indicators": [
+            "Parents/family pressure for specific career",
+            "Choosing based on salary alone",
+            "Following friends' career choices"
+          ]
+        },
+        {
+          "factor": "lack_of_passion",
+          "description": "No genuine enthusiasm for chosen field",
+          "weight": 0.2,
+          "indicators": [
+            "No extracurricular activities related to career",
+            "Lack of curiosity about field developments",
+            "Choosing career as 'safe option'"
+          ]
+        }
+      ],
+      "warning_levels": {
+        "low_risk": {
+          "score_range": [0, 0.3],
+          "description": "Strong, consistent interests with deep exploration",
+          "recommendations": ["Continue exploring chosen field", "Seek internships/shadowing opportunities"]
+        },
+        "moderate_risk": {
+          "score_range": [0.31, 0.6],
+          "description": "Some uncertainty about career direction",
+          "recommendations": ["Take career exploration courses", "Talk to professionals in field", "Try related activities"]
+        },
+        "high_risk": {
+          "score_range": [0.61, 1.0],
+          "description": "Unstable interests with high risk of career dissatisfaction",
+          "recommendations": ["Career counseling recommended", "Explore multiple options", "Focus on self-discovery"]
+        }
+      }
+    },
+    "stress_tolerance": {
+      "description": "Assesses ability to handle pressure and stress in demanding careers",
+      "risk_factors": [
+        {
+          "factor": "anxiety_levels",
+          "description": "High anxiety and stress in academic/social situations",
+          "weight": 0.3,
+          "indicators": [
+            "Panic attacks during exams",
+            "Excessive worry about performance",
+            "Physical symptoms of stress (headaches, insomnia)"
+          ]
+        },
+        {
+          "factor": "pressure_response",
+          "description": "Poor performance under pressure",
+          "weight": 0.25,
+          "indicators": [
+            "Performance drops significantly under pressure",
+            "Avoids challenging situations",
+            "Procrastination when facing deadlines"
+          ]
+        },
+        {
+          "factor": "coping_mechanisms",
+          "description": "Lack of healthy stress management strategies",
+          "weight": 0.25,
+          "indicators": [
+            "No stress management techniques",
+            "Unhealthy coping (excessive gaming, social media)",
+            "Isolation when stressed"
+          ]
+        },
+        {
+          "factor": "resilience",
+          "description": "Difficulty bouncing back from setbacks",
+          "weight": 0.2,
+          "indicators": [
+            "Takes long time to recover from failures",
+            "Gives up easily when facing obstacles",
+            "Negative self-talk and low confidence"
+          ]
+        }
+      ],
+      "warning_levels": {
+        "low_risk": {
+          "score_range": [0, 0.3],
+          "description": "Good stress tolerance with healthy coping mechanisms",
+          "recommendations": ["Can handle high-stress careers", "Continue developing resilience skills"]
+        },
+        "moderate_risk": {
+          "score_range": [0.31, 0.6],
+          "description": "Moderate stress tolerance, may struggle in high-pressure careers",
+          "recommendations": ["Learn stress management techniques", "Consider moderate-stress careers", "Build resilience gradually"]
+        },
+        "high_risk": {
+          "score_range": [0.61, 1.0],
+          "description": "Low stress tolerance, high risk in demanding careers",
+          "recommendations": ["Avoid high-stress careers", "Seek counseling for anxiety", "Focus on low-stress career options"]
+        }
+      }
+    }
+  },
+  "career_risk_mapping": {
+    "high_stress_careers": [
+      {
+        "career": "Investment Banker",
+        "stress_level": 4.1,
+        "dropout_rate": "35%",
+        "common_reasons": ["Burnout", "Work-life imbalance", "High pressure"]
+      },
+      {
+        "career": "Doctor",
+        "stress_level": 3.2,
+        "dropout_rate": "20%",
+        "common_reasons": ["Emotional burnout", "Long hours", "Life-death pressure"]
+      },
+      {
+        "career": "IAS Officer",
+        "stress_level": 3.4,
+        "dropout_rate": "15%",
+        "common_reasons": ["Political pressure", "Public scrutiny", "Bureaucratic frustration"]
+      },
+      {
+        "career": "Cybersecurity Analyst",
+        "stress_level": 3.2,
+        "dropout_rate": "25%",
+        "common_reasons": ["24/7 pressure", "Constant learning", "High responsibility"]
+      }
+    ],
+    "moderate_stress_careers": [
+      {
+        "career": "Software Engineer",
+        "stress_level": 2.3,
+        "dropout_rate": "18%",
+        "common_reasons": ["Technology changes", "Deadline pressure", "Repetitive work"]
+      },
+      {
+        "career": "Teacher",
+        "stress_level": 2.7,
+        "dropout_rate": "22%",
+        "common_reasons": ["Student behavior", "Low pay", "Administrative burden"]
+      },
+      {
+        "career": "DevOps Engineer",
+        "stress_level": 2.8,
+        "dropout_rate": "20%",
+        "common_reasons": ["On-call pressure", "Rapid technology changes", "Production incidents"]
+      }
+    ],
+    "low_stress_careers": [
+      {
+        "career": "UX/UI Designer",
+        "stress_level": 2.1,
+        "dropout_rate": "12%",
+        "common_reasons": ["Creative differences", "Client feedback", "Market competition"]
+      },
+      {
+        "career": "Data Scientist",
+        "stress_level": 2.3,
+        "dropout_rate": "15%",
+        "common_reasons": ["Unrealistic expectations", "Data quality issues", "Business alignment"]
+      }
+    ]
+  },
+  "intervention_strategies": {
+    "academic_support": [
+      "Study skills workshops",
+      "Time management training",
+      "Subject-specific tutoring",
+      "Academic counseling",
+      "Peer study groups"
+    ],
+    "interest_exploration": [
+      "Career shadowing programs",
+      "Informational interviews",
+      "Industry visits",
+      "Internship opportunities",
+      "Career exploration courses"
+    ],
+    "stress_management": [
+      "Mindfulness and meditation training",
+      "Stress reduction techniques",
+      "Counseling and therapy",
+      "Physical exercise programs",
+      "Time management skills"
+    ],
+    "career_alternatives": [
+      "Lower-stress career options",
+      "Part-time or flexible careers",
+      "Entrepreneurship opportunities",
+      "Creative and artistic careers",
+      "Remote work options"
+    ]
+  },
+  "success_predictors": {
+    "high_success_indicators": [
+      "Consistent academic performance",
+      "Deep interest in chosen field",
+      "Good stress management skills",
+      "Strong support system",
+      "Realistic career expectations"
+    ],
+    "warning_signs": [
+      "Declining academic performance",
+      "Frequent career changes",
+      "High anxiety levels",
+      "Lack of career research",
+      "External pressure driving choices"
+    ]
+  }
+}

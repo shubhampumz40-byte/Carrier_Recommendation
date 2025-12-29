@@ -1,0 +1,72 @@
+{
+  "regions": {
+    "global": {
+      "name": "Global",
+      "currency": "USD",
+      "salary_prefix": "$",
+      "career_file": "careers.json",
+      "description": "International career opportunities with global salary standards",
+      "focus_areas": ["Technology", "Healthcare", "Sustainability", "Finance"],
+      "job_market_context": "Competitive global market with remote work opportunities"
+    },
+    "india": {
+      "name": "India",
+      "currency": "INR",
+      "salary_prefix": "₹",
+      "career_file": "careers_india.json",
+      "description": "Indian job market with local salary standards and career paths",
+      "focus_areas": ["IT Services", "Startups", "Government", "Healthcare", "Finance"],
+      "job_market_context": "Rapidly growing market with strong IT and startup ecosystem"
+    }
+  },
+  "modes": {
+    "student": {
+      "name": "Student Mode",
+      "description": "For students exploring career options and planning their education",
+      "focus": [
+        "Educational requirements",
+        "Entry-level positions",
+        "Skill development",
+        "Internship opportunities",
+        "Career exploration"
+      ],
+      "tip_categories": ["education", "skill_development", "internships", "networking"],
+      "assessment_weight": {
+        "interests": 0.45,
+        "subjects": 0.25,
+        "skills": 0.20,
+        "personality": 0.10
+      }
+    },
+    "professional": {
+      "name": "Professional Mode",
+      "description": "For working professionals looking to advance or change careers",
+      "focus": [
+        "Career advancement",
+        "Skill transitions",
+        "Leadership development",
+        "Industry switching",
+        "Salary growth"
+      ],
+      "tip_categories": ["career_advancement", "leadership", "industry_transition", "networking"],
+      "assessment_weight": {
+        "skills": 0.40,
+        "interests": 0.30,
+        "personality": 0.20,
+        "subjects": 0.10
+      }
+    }
+  },
+  "experience_levels": {
+    "student": {
+      "0-1": "Final year student/Fresh graduate",
+      "1-2": "Recent graduate with internship experience"
+    },
+    "professional": {
+      "1-3": "Junior professional (1-3 years)",
+      "3-7": "Mid-level professional (3-7 years)",
+      "7-12": "Senior professional (7-12 years)",
+      "12+": "Executive level (12+ years)"
+    }
+  }
+}

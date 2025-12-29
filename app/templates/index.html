@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section text-center py-5 mb-5">
+    <div class="container">
+        <h1 class="career-compass-title">
+            <i class="fas fa-compass compass-icon"></i>
+            Career Compass
+        </h1>
+        <p class="hero-subtitle">
+            Discover your ideal career path with personalized, explainable recommendations
+        </p>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <p class="hero-description">
+                    Our intelligent system analyzes your interests, skills, favorite subjects, and personality 
+                    to provide career recommendations with clear explanations of why each career matches your profile.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Get Started Section -->
+<div class="section-group mb-5">
+    <div class="section-header text-center mb-4">
+        <h2 class="section-title">
+            <i class="fas fa-rocket section-icon"></i>
+            Get Started
+        </h2>
+        <p class="section-subtitle">Begin your career discovery journey</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-globe-asia fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Choose Your Path</h5>
+                    <p class="card-text">
+                        Select your region (Global/India) and career stage (Student/Professional) for personalized recommendations.
+                    </p>
+                    <a href="{{ url_for('main.mode_selection') }}" class="btn btn-primary">
+                        Choose Path
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-clipboard-list fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Complete Assessment</h5>
+                    <p class="card-text">
+                        Tell us about your interests, skills, and favorite subjects to get personalized recommendations.
+                    </p>
+                    <a href="{{ url_for('main.assessment') }}" class="btn btn-success">
+                        Start Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-brain fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Personality Test</h5>
+                    <p class="card-text">
+                        Take our MBTI-style personality test to understand how your personality fits different careers.
+                    </p>
+                    <a href="{{ url_for('main.personality_test') }}" class="btn btn-success">
+                        Take Test
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Career Exploration Tools Section -->
+<div class="section-group mb-5">
+    <div class="section-header text-center mb-4">
+        <h2 class="section-title">
+            <i class="fas fa-search section-icon"></i>
+            Career Exploration Tools
+        </h2>
+        <p class="section-subtitle">Deep dive into career possibilities</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm trending-card">
+                <div class="card-body text-center">
+                    <div class="trending-badge">🔥 HOT</div>
+                    <i class="fas fa-radar fa-3x text-danger mb-3"></i>
+                    <h5 class="card-title">Trending Careers Radar</h5>
+                    <p class="card-text">
+                        Discover the hottest career opportunities for 2025-2035 including AI, Cybersecurity, and Space Tech.
+                    </p>
+                    <a href="{{ url_for('main.trending_careers') }}" class="btn btn-danger">
+                        📡 Explore Trends
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm comparison-card">
+                <div class="card-body text-center">
+                    <div class="comparison-badge">⚖️ COMPARE</div>
+                    <i class="fas fa-balance-scale fa-3x text-purple mb-3"></i>
+                    <h5 class="card-title">Career Comparison Tool</h5>
+                    <p class="card-text">
+                        Compare careers side-by-side across salary, stress level, work-life balance, growth rate, and required skills.
+                    </p>
+                    <a href="{{ url_for('main.career_comparison') }}" class="btn btn-purple">
+                        ⚖️ Compare Careers
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm simulation-card">
+                <div class="card-body text-center">
+                    <div class="simulation-badge">🎮 LIVE</div>
+                    <i class="fas fa-play-circle fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Career Simulation</h5>
+                    <p class="card-text">
+                        Experience "A Day in the Life" of different careers - see tasks, stress levels, and working hours in action.
+                    </p>
+                    <a href="{{ url_for('main.career_simulation') }}" class="btn btn-success">
+                        🎮 Simulate Career
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Smart Analysis Section -->
+<div class="section-group mb-5">
+    <div class="section-header text-center mb-4">
+        <h2 class="section-title">
+            <i class="fas fa-brain section-icon"></i>
+            Smart Analysis
+        </h2>
+        <p class="section-subtitle">AI-powered insights for better decisions</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm reality-check-card">
+                <div class="card-body text-center">
+                    <div class="reality-badge">💡 NEW</div>
+                    <i class="fas fa-question-circle fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">What If I Choose This?</h5>
+                    <p class="card-text">
+                        Get realistic insights about any career - challenges, failure risks, backup plans, and day-to-day reality.
+                    </p>
+                    <a href="{{ url_for('main.career_reality_check') }}" class="btn btn-warning">
+                        🤔 Reality Check
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm skills-gap-card">
+                <div class="card-body text-center">
+                    <div class="skills-badge">🎯 SMART</div>
+                    <i class="fas fa-chart-line fa-3x text-info mb-3"></i>
+                    <h5 class="card-title">Skills Gap Analyzer</h5>
+                    <p class="card-text">
+                        Discover exactly what skills you need to develop for your target career with personalized learning paths.
+                    </p>
+                    <a href="{{ url_for('main.skills_gap_analyzer_page') }}" class="btn btn-info">
+                        📊 Analyze Skills
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inspiration & Growth Section -->
+<div class="section-group mb-5">
+    <div class="section-header text-center mb-4">
+        <h2 class="section-title">
+            <i class="fas fa-star section-icon"></i>
+            Inspiration & Growth
+        </h2>
+        <p class="section-subtitle">Learn from the best and grow daily</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-star fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Role Models</h5>
+                    <p class="card-text">
+                        Get inspired by successful professionals like Satya Nadella, Fei-Fei Li, and other industry leaders.
+                    </p>
+                    <a href="{{ url_for('main.role_models_page') }}" class="btn btn-warning">
+                        Meet Role Models
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-lightbulb fa-3x text-info mb-3"></i>
+                    <h5 class="card-title">Daily Career Tips</h5>
+                    <p class="card-text">
+                        Receive personalized daily tips and actionable advice to advance your career journey.
+                    </p>
+                    <a href="{{ url_for('main.daily_tips_page') }}" class="btn btn-info">
+                        Get Daily Tips
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="container">
+        <h2 class="features-title">Why Choose Career Compass?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb feature-icon text-warning"></i>
+                    <h5 class="feature-title">Explainable AI</h5>
+                    <p class="feature-description">Clear explanations for every recommendation</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-globe-asia feature-icon text-primary"></i>
+                    <h5 class="feature-title">Global & India Paths</h5>
+                    <p class="feature-description">Region-specific career guidance</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-user-graduate feature-icon text-success"></i>
+                    <h5 class="feature-title">Student & Professional</h5>
+                    <p class="feature-description">Tailored for your career stage</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-chart-network feature-icon text-info"></i>
+                    <h5 class="feature-title">Interactive Visualizations</h5>
+                    <p class="feature-description">Visual career exploration and matching</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-star feature-icon text-warning"></i>
+                    <h5 class="feature-title">Role Model Inspiration</h5>
+                    <p class="feature-description">Learn from successful professionals</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-item">
+                    <i class="fas fa-bell feature-icon text-success"></i>
+                    <h5 class="feature-title">Daily Career Tips</h5>
+                    <p class="feature-description">Actionable advice delivered daily</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function showVisualizationDemo() {
+    alert('Complete the assessment first to see your personalized career visualization!');
+}
+</script>
+{% endblock %}

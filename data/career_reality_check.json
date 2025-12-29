@@ -1,0 +1,355 @@
+{
+  "career_reality_data": {
+    "AI/ML Engineer": {
+      "skills_needed": {
+        "technical": ["Python", "TensorFlow/PyTorch", "Statistics", "Linear Algebra", "Data Structures"],
+        "soft": ["Problem Solving", "Continuous Learning", "Communication", "Critical Thinking"],
+        "time_to_master": "2-4 years intensive study",
+        "difficulty_level": "High"
+      },
+      "challenges": [
+        "Rapidly evolving field - constant learning required",
+        "High competition for top positions",
+        "Complex mathematical concepts",
+        "Long debugging sessions and failed experiments",
+        "Pressure to deliver business results from research"
+      ],
+      "failure_risks": {
+        "high_risk": "Not keeping up with latest technologies",
+        "medium_risk": "Lack of domain expertise beyond coding",
+        "low_risk": "Poor communication of technical concepts",
+        "failure_rate": "30% switch careers within 5 years",
+        "common_reasons": ["Burnout from constant learning", "Unrealistic expectations", "Lack of business understanding"]
+      },
+      "backup_careers": [
+        "Data Scientist",
+        "Software Engineer", 
+        "Product Manager (Technical)",
+        "Research Scientist",
+        "Technical Consultant"
+      ],
+      "reality_check": {
+        "day_to_day": "70% coding/experimenting, 20% meetings, 10% research",
+        "work_life_balance": "Moderate - can be intense during project deadlines",
+        "job_security": "High demand but need to stay current",
+        "stress_level": "Medium-High"
+      },
+      "success_factors": [
+        "Strong mathematical foundation",
+        "Passion for continuous learning",
+        "Business acumen",
+        "Patience with trial and error"
+      ]
+    },
+    "Software Engineer": {
+      "skills_needed": {
+        "technical": ["Programming Languages", "Data Structures", "Algorithms", "System Design", "Version Control"],
+        "soft": ["Problem Solving", "Teamwork", "Communication", "Time Management"],
+        "time_to_master": "1-3 years",
+        "difficulty_level": "Medium-High"
+      },
+      "challenges": [
+        "Long hours debugging code",
+        "Constant technology changes",
+        "Sitting for extended periods",
+        "Dealing with legacy code",
+        "Meeting tight deadlines"
+      ],
+      "failure_risks": {
+        "high_risk": "Not adapting to new technologies",
+        "medium_risk": "Poor code quality and testing habits",
+        "low_risk": "Weak communication skills",
+        "failure_rate": "25% change careers within 7 years",
+        "common_reasons": ["Burnout", "Lack of career growth", "Repetitive work"]
+      },
+      "backup_careers": [
+        "Product Manager",
+        "Technical Writer",
+        "DevOps Engineer",
+        "Data Analyst",
+        "IT Consultant"
+      ],
+      "reality_check": {
+        "day_to_day": "60% coding, 25% meetings/collaboration, 15% planning",
+        "work_life_balance": "Good in most companies, varies by startup vs corporate",
+        "job_security": "Very high demand",
+        "stress_level": "Medium"
+      },
+      "success_factors": [
+        "Strong logical thinking",
+        "Attention to detail",
+        "Continuous learning mindset",
+        "Good debugging skills"
+      ]
+    },
+    "Product Manager": {
+      "skills_needed": {
+        "technical": ["Basic coding understanding", "Data Analysis", "Market Research", "User Experience"],
+        "soft": ["Leadership", "Communication", "Strategic Thinking", "Negotiation"],
+        "time_to_master": "2-5 years",
+        "difficulty_level": "Medium-High"
+      },
+      "challenges": [
+        "Balancing multiple stakeholder demands",
+        "Making decisions with incomplete information",
+        "No direct authority over team members",
+        "Blamed when products fail",
+        "Constant context switching"
+      ],
+      "failure_risks": {
+        "high_risk": "Poor stakeholder management",
+        "medium_risk": "Lack of technical understanding",
+        "low_risk": "Weak data analysis skills",
+        "failure_rate": "35% struggle in first 2 years",
+        "common_reasons": ["Unclear role expectations", "Lack of influence", "Poor prioritization"]
+      },
+      "backup_careers": [
+        "Business Analyst",
+        "Marketing Manager",
+        "Strategy Consultant",
+        "Startup Founder",
+        "Sales Engineer"
+      ],
+      "reality_check": {
+        "day_to_day": "40% meetings, 30% analysis/planning, 20% communication, 10% strategy",
+        "work_life_balance": "Challenging - always on call for product issues",
+        "job_security": "High demand but performance-dependent",
+        "stress_level": "High"
+      },
+      "success_factors": [
+        "Strong communication skills",
+        "Customer empathy",
+        "Data-driven decision making",
+        "Ability to influence without authority"
+      ]
+    },
+    "Cybersecurity Analyst": {
+      "skills_needed": {
+        "technical": ["Network Security", "Ethical Hacking", "Risk Assessment", "Incident Response", "Compliance"],
+        "soft": ["Attention to Detail", "Critical Thinking", "Communication", "Stress Management"],
+        "time_to_master": "2-4 years + certifications",
+        "difficulty_level": "High"
+      },
+      "challenges": [
+        "Constantly evolving threat landscape",
+        "High-pressure incident response",
+        "24/7 monitoring requirements",
+        "Dealing with sophisticated attackers",
+        "Balancing security vs usability"
+      ],
+      "failure_risks": {
+        "high_risk": "Not staying current with threats",
+        "medium_risk": "Poor incident response skills",
+        "low_risk": "Weak communication with non-technical staff",
+        "failure_rate": "20% burnout within 5 years",
+        "common_reasons": ["High stress", "Constant learning pressure", "Work-life balance issues"]
+      },
+      "backup_careers": [
+        "IT Consultant",
+        "Risk Analyst",
+        "Compliance Officer",
+        "Network Administrator",
+        "Security Sales Engineer"
+      ],
+      "reality_check": {
+        "day_to_day": "50% monitoring/analysis, 30% incident response, 20% planning/training",
+        "work_life_balance": "Challenging - on-call rotations common",
+        "job_security": "Extremely high demand",
+        "stress_level": "High"
+      },
+      "success_factors": [
+        "Strong technical foundation",
+        "Continuous learning commitment",
+        "Ability to work under pressure",
+        "Detail-oriented mindset"
+      ]
+    },
+    "Data Scientist": {
+      "skills_needed": {
+        "technical": ["Statistics", "Python/R", "SQL", "Machine Learning", "Data Visualization"],
+        "soft": ["Business Acumen", "Communication", "Curiosity", "Problem Solving"],
+        "time_to_master": "2-4 years",
+        "difficulty_level": "High"
+      },
+      "challenges": [
+        "Messy, incomplete data",
+        "Translating business problems to data problems",
+        "Long experimentation cycles",
+        "Explaining complex results to non-technical stakeholders",
+        "Unrealistic expectations from management"
+      ],
+      "failure_risks": {
+        "high_risk": "Weak business understanding",
+        "medium_risk": "Poor communication of insights",
+        "low_risk": "Limited technical skills",
+        "failure_rate": "40% switch roles within 3 years",
+        "common_reasons": ["Unrealistic job expectations", "Lack of business impact", "Isolation from business"]
+      },
+      "backup_careers": [
+        "Business Analyst",
+        "Market Research Analyst",
+        "AI/ML Engineer",
+        "Quantitative Analyst",
+        "Product Analyst"
+      ],
+      "reality_check": {
+        "day_to_day": "60% data cleaning/analysis, 25% modeling, 15% presentation",
+        "work_life_balance": "Good, but project deadlines can be intense",
+        "job_security": "High demand but need to show business value",
+        "stress_level": "Medium"
+      },
+      "success_factors": [
+        "Strong statistical foundation",
+        "Business curiosity",
+        "Communication skills",
+        "Patience with data cleaning"
+      ]
+    },
+    "UX Designer": {
+      "skills_needed": {
+        "technical": ["Design Tools (Figma, Sketch)", "Prototyping", "User Research", "Usability Testing"],
+        "soft": ["Empathy", "Creativity", "Communication", "Collaboration"],
+        "time_to_master": "1-3 years",
+        "difficulty_level": "Medium"
+      },
+      "challenges": [
+        "Subjective feedback and criticism",
+        "Balancing user needs vs business goals",
+        "Tight deadlines for design iterations",
+        "Convincing stakeholders of design decisions",
+        "Keeping up with design trends"
+      ],
+      "failure_risks": {
+        "high_risk": "Poor user research skills",
+        "medium_risk": "Inability to handle criticism",
+        "low_risk": "Weak technical skills",
+        "failure_rate": "30% change careers within 5 years",
+        "common_reasons": ["Burnout from constant revisions", "Lack of user research budget", "Undervalued by organization"]
+      },
+      "backup_careers": [
+        "Product Manager",
+        "Marketing Designer",
+        "User Researcher",
+        "Front-end Developer",
+        "Design Consultant"
+      ],
+      "reality_check": {
+        "day_to_day": "50% designing, 30% user research, 20% meetings/collaboration",
+        "work_life_balance": "Good, but can be intense during product launches",
+        "job_security": "Growing demand, especially in tech",
+        "stress_level": "Medium"
+      },
+      "success_factors": [
+        "Strong empathy for users",
+        "Ability to take feedback",
+        "Continuous learning of tools",
+        "Good presentation skills"
+      ]
+    },
+    "Digital Marketing Manager": {
+      "skills_needed": {
+        "technical": ["Analytics Tools", "SEO/SEM", "Social Media Platforms", "Email Marketing", "Content Management"],
+        "soft": ["Creativity", "Communication", "Data Analysis", "Strategic Thinking"],
+        "time_to_master": "1-2 years",
+        "difficulty_level": "Medium"
+      },
+      "challenges": [
+        "Constantly changing algorithms and platforms",
+        "Proving ROI of marketing activities",
+        "Managing multiple campaigns simultaneously",
+        "Dealing with negative feedback online",
+        "Budget constraints and pressure for results"
+      ],
+      "failure_risks": {
+        "high_risk": "Not adapting to platform changes",
+        "medium_risk": "Poor data analysis skills",
+        "low_risk": "Weak creative abilities",
+        "failure_rate": "35% switch roles within 4 years",
+        "common_reasons": ["High pressure for results", "Constant platform changes", "Burnout from always-on nature"]
+      },
+      "backup_careers": [
+        "Content Manager",
+        "Brand Manager",
+        "Sales Manager",
+        "Public Relations Specialist",
+        "Business Development"
+      ],
+      "reality_check": {
+        "day_to_day": "40% campaign management, 30% analysis/reporting, 20% content creation, 10% strategy",
+        "work_life_balance": "Challenging - social media never sleeps",
+        "job_security": "High demand but results-driven",
+        "stress_level": "Medium-High"
+      },
+      "success_factors": [
+        "Adaptability to change",
+        "Strong analytical skills",
+        "Creative thinking",
+        "Understanding of customer psychology"
+      ]
+    },
+    "Doctor (MBBS)": {
+      "skills_needed": {
+        "technical": ["Medical Knowledge", "Diagnostic Skills", "Treatment Planning", "Emergency Response"],
+        "soft": ["Empathy", "Communication", "Decision Making", "Stress Management"],
+        "time_to_master": "8-12 years (including specialization)",
+        "difficulty_level": "Very High"
+      },
+      "challenges": [
+        "Life and death decisions daily",
+        "Long and irregular hours",
+        "Emotional toll of patient suffering",
+        "Malpractice lawsuit risks",
+        "Continuous medical education requirements"
+      ],
+      "failure_risks": {
+        "high_risk": "Burnout and mental health issues",
+        "medium_risk": "Medical errors and malpractice",
+        "low_risk": "Poor bedside manner",
+        "failure_rate": "15% leave medicine within 10 years",
+        "common_reasons": ["Burnout", "Work-life balance", "Malpractice stress"]
+      },
+      "backup_careers": [
+        "Medical Consultant",
+        "Healthcare Administrator",
+        "Medical Writer",
+        "Pharmaceutical Sales",
+        "Health Tech Entrepreneur"
+      ],
+      "reality_check": {
+        "day_to_day": "70% patient care, 20% documentation, 10% continuing education",
+        "work_life_balance": "Very challenging - long hours and on-call duties",
+        "job_security": "Very high - always in demand",
+        "stress_level": "Very High"
+      },
+      "success_factors": [
+        "Strong academic foundation",
+        "Emotional resilience",
+        "Excellent communication",
+        "Commitment to lifelong learning"
+      ]
+    }
+  },
+  "general_insights": {
+    "common_failure_patterns": [
+      "Unrealistic expectations about day-to-day work",
+      "Underestimating time needed to master skills",
+      "Poor work-life balance leading to burnout",
+      "Not staying current with industry changes",
+      "Weak soft skills despite strong technical abilities"
+    ],
+    "success_predictors": [
+      "Continuous learning mindset",
+      "Strong communication skills",
+      "Adaptability to change",
+      "Realistic expectations",
+      "Good mentorship and networking"
+    ],
+    "backup_career_strategy": [
+      "Choose careers with transferable skills",
+      "Build a diverse skill set early",
+      "Network across multiple industries",
+      "Consider adjacent roles in same field",
+      "Develop both technical and soft skills"
+    ]
+  }
+}

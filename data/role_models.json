@@ -1,0 +1,320 @@
+[
+  {
+    "name": "Steve Jobs",
+    "career": "Product Manager",
+    "title": "Co-founder and CEO of Apple Inc.",
+    "background": "Visionary entrepreneur who revolutionized personal computing, mobile phones, and digital media",
+    "education": "Dropped out of Reed College, audited calligraphy classes",
+    "key_skills": ["product_design", "innovation", "marketing", "leadership", "user_experience"],
+    "inspiration_quote": "Innovation distinguishes between a leader and a follower.",
+    "career_path": ["Co-founder Apple", "Founder NeXT", "CEO Pixar", "CEO Apple"],
+    "achievements": ["Created iPhone revolution", "Built Apple into most valuable company", "Pioneered personal computing"],
+    "advice": "Stay hungry, stay foolish. Focus on creating products that people don't know they need yet.",
+    "social_links": {
+      "website": "https://www.apple.com/stevejobs/"
+    }
+  },
+  {
+    "name": "Elon Musk",
+    "career": "Software Engineer",
+    "title": "CEO of Tesla and SpaceX",
+    "background": "Serial entrepreneur revolutionizing electric vehicles, space exploration, and sustainable energy",
+    "education": "Bachelor's in Economics and Physics from University of Pennsylvania",
+    "key_skills": ["engineering", "innovation", "strategic_thinking", "problem_solving", "leadership"],
+    "inspiration_quote": "When something is important enough, you do it even if the odds are not in your favor.",
+    "career_path": ["Software Developer", "Co-founder Zip2", "Co-founder PayPal", "CEO Tesla/SpaceX"],
+    "achievements": ["Made electric cars mainstream", "First private company to send humans to space", "Richest person in world"],
+    "advice": "Think from first principles and don't be afraid to challenge conventional wisdom.",
+    "social_links": {
+      "twitter": "@elonmusk",
+      "linkedin": "https://www.linkedin.com/in/elon-musk/"
+    }
+  },
+  {
+    "name": "Bill Gates",
+    "career": "Software Engineer",
+    "title": "Co-founder of Microsoft, Philanthropist",
+    "background": "Built Microsoft into world's largest software company, now focuses on global health and education",
+    "education": "Dropped out of Harvard University to start Microsoft",
+    "key_skills": ["programming", "strategic_thinking", "business_development", "philanthropy"],
+    "inspiration_quote": "Your most unhappy customers are your greatest source of learning.",
+    "career_path": ["Programmer", "Co-founder Microsoft", "CEO Microsoft", "Philanthropist"],
+    "achievements": ["Built Microsoft empire", "Richest person for decades", "Donated $50B+ to charity"],
+    "advice": "Focus on learning continuously and use your success to help solve the world's biggest problems.",
+    "social_links": {
+      "twitter": "@BillGates",
+      "linkedin": "https://www.linkedin.com/in/williamhgates/"
+    }
+  },
+  {
+    "name": "Oprah Winfrey",
+    "career": "Digital Marketing Manager",
+    "title": "Media Executive, Actress, Talk Show Host",
+    "background": "Built media empire from humble beginnings, became one of most influential people in entertainment",
+    "education": "Tennessee State University (Communications)",
+    "key_skills": ["communication", "marketing", "brand_building", "leadership", "empathy"],
+    "inspiration_quote": "The biggest adventure you can take is to live the life of your dreams.",
+    "career_path": ["Radio Host", "TV News Anchor", "Talk Show Host", "Media Mogul"],
+    "achievements": ["First African American female billionaire", "Most influential talk show in history", "Media empire worth $2.8B"],
+    "advice": "Turn your wounds into wisdom and use your platform to lift others up.",
+    "social_links": {
+      "twitter": "@Oprah",
+      "instagram": "@oprah"
+    }
+  },
+  {
+    "name": "Jeff Bezos",
+    "career": "Product Manager",
+    "title": "Founder and Executive Chairman of Amazon",
+    "background": "Started Amazon as online bookstore, grew it into world's largest e-commerce and cloud company",
+    "education": "Bachelor's in Electrical Engineering and Computer Science from Princeton",
+    "key_skills": ["strategic_thinking", "customer_focus", "innovation", "long_term_planning"],
+    "inspiration_quote": "I knew that if I failed I wouldn't regret that, but I knew the one thing I might regret is not trying.",
+    "career_path": ["Wall Street Analyst", "VP at D.E. Shaw", "Founder Amazon", "Executive Chairman"],
+    "achievements": ["Built Amazon into $1.7T company", "Pioneered cloud computing with AWS", "Richest person in world"],
+    "advice": "Be stubborn on vision but flexible on details. Always start with the customer and work backwards.",
+    "social_links": {
+      "twitter": "@JeffBezos",
+      "instagram": "@jeffbezos"
+    }
+  },
+  {
+    "name": "Satya Nadella",
+    "career": "Software Engineer",
+    "title": "CEO of Microsoft",
+    "background": "Started as a software engineer, worked his way up through various technical and leadership roles",
+    "education": "Computer Science degree from Manipal Institute of Technology, MS in Computer Science from University of Wisconsin",
+    "key_skills": ["programming", "leadership", "strategic_thinking", "cloud_computing"],
+    "inspiration_quote": "Our industry does not respect tradition - it only respects innovation.",
+    "career_path": ["Software Engineer", "Product Manager", "VP of Cloud Services", "CEO"],
+    "achievements": ["Transformed Microsoft to cloud-first company", "Grew Microsoft's market cap from $300B to $3T+"],
+    "advice": "Focus on learning continuously and empowering others around you.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/satyanadella/",
+      "twitter": "@satyanadella"
+    }
+  },
+  {
+    "name": "Sheryl Sandberg",
+    "career": "Digital Marketing Manager",
+    "title": "Former COO of Meta (Facebook)",
+    "background": "Built Facebook's advertising business from $9M to $100B+, advocate for women in leadership",
+    "education": "BA in Economics from Harvard, MBA from Harvard Business School",
+    "key_skills": ["digital_marketing", "business_strategy", "leadership", "operations"],
+    "inspiration_quote": "Leadership is about making others better as a result of your presence.",
+    "career_path": ["Management Consultant", "Treasury Department", "Google VP", "Facebook COO"],
+    "achievements": ["Built Facebook's ad business", "Author of 'Lean In'", "Advocate for women in tech"],
+    "advice": "Lean in to challenges and don't let fear hold you back from pursuing leadership roles.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/sherylsandberg/",
+      "facebook": "@sherylsandberg"
+    }
+  },
+  {
+    "name": "Tim Cook",
+    "career": "Product Manager",
+    "title": "CEO of Apple Inc.",
+    "background": "Succeeded Steve Jobs as Apple CEO, led company to become first $3 trillion company",
+    "education": "Bachelor's in Industrial Engineering from Auburn, MBA from Duke",
+    "key_skills": ["operations", "supply_chain", "leadership", "strategic_planning"],
+    "inspiration_quote": "Life's most persistent and urgent question is: What are you doing for others?",
+    "career_path": ["Engineer at IBM", "COO at Apple", "CEO of Apple"],
+    "achievements": ["Led Apple to $3T valuation", "Launched Apple Watch and Services", "Advocate for privacy and environment"],
+    "advice": "Focus on leaving the world better than you found it, and never compromise on your values.",
+    "social_links": {
+      "twitter": "@tim_cook",
+      "linkedin": "https://www.linkedin.com/in/tim-cook/"
+    }
+  },
+  {
+    "name": "Reed Hastings",
+    "career": "Software Engineer",
+    "title": "Co-founder and Executive Chairman of Netflix",
+    "background": "Transformed entertainment industry by pioneering streaming and original content",
+    "education": "Bachelor's in Mathematics from Bowdoin College, Master's in Computer Science from Stanford",
+    "key_skills": ["software_engineering", "innovation", "strategic_thinking", "data_analytics"],
+    "inspiration_quote": "The best managers figure out how to get great outcomes by setting the appropriate context.",
+    "career_path": ["Software Engineer", "Founder Pure Software", "Co-founder Netflix", "CEO Netflix"],
+    "achievements": ["Killed Blockbuster with streaming", "Built Netflix to 260M+ subscribers", "Revolutionized entertainment"],
+    "advice": "Be willing to cannibalize your own business model before someone else does.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/reed-hastings/",
+      "twitter": "@reedhastings"
+    }
+  },
+  {
+    "name": "Fei-Fei Li",
+    "career": "AI/ML Engineer",
+    "title": "Professor at Stanford, Co-Director of Human-Centered AI Institute",
+    "background": "Pioneer in computer vision and AI, created ImageNet dataset that revolutionized machine learning",
+    "education": "PhD in Electrical Engineering from Caltech, BA in Physics from Princeton",
+    "key_skills": ["machine_learning", "research", "computer_vision", "leadership"],
+    "inspiration_quote": "AI is not just about technology, it's about humanity.",
+    "career_path": ["Research Assistant", "PhD Student", "Professor", "Chief Scientist at Google Cloud"],
+    "achievements": ["Created ImageNet dataset", "Founded AI4ALL nonprofit", "Time 100 Most Influential People"],
+    "advice": "Pursue your passion with persistence, and always consider the human impact of your work.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/fei-fei-li-4541247/",
+      "twitter": "@drfeifei"
+    }
+  },
+  {
+    "name": "Jensen Huang",
+    "career": "AI/ML Engineer",
+    "title": "Co-founder and CEO of NVIDIA",
+    "background": "Built NVIDIA into world's most valuable semiconductor company, pioneering AI and graphics computing",
+    "education": "Bachelor's in Electrical Engineering from Oregon State, Master's from Stanford",
+    "key_skills": ["engineering", "artificial_intelligence", "strategic_vision", "innovation"],
+    "inspiration_quote": "The more successful you are, the more help you should give.",
+    "career_path": ["Engineer at LSI Logic", "Co-founder NVIDIA", "CEO NVIDIA"],
+    "achievements": ["Built NVIDIA to $2T+ valuation", "Pioneered GPU computing", "Enabled AI revolution"],
+    "advice": "Focus on solving problems that others think are impossible - that's where the biggest opportunities lie.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/jenhsunhuang/",
+      "twitter": "@JenHsun"
+    }
+  },
+  {
+    "name": "Demis Hassabis",
+    "career": "AI/ML Engineer",
+    "title": "CEO and Co-founder of DeepMind (Google)",
+    "background": "Neuroscientist turned AI researcher, co-founded DeepMind which created AlphaGo and AlphaFold",
+    "education": "PhD in Cognitive Neuroscience from University College London",
+    "key_skills": ["artificial_intelligence", "neuroscience", "strategic_thinking", "research"],
+    "inspiration_quote": "AI will be one of the most important technologies ever developed by humanity.",
+    "career_path": ["Game Designer", "Neuroscience Researcher", "AI Researcher", "DeepMind CEO"],
+    "achievements": ["Co-founded DeepMind", "Created AlphaGo and AlphaFold", "Nobel Prize in Chemistry 2024"],
+    "advice": "Combine different disciplines to create breakthrough innovations.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/demis-hassabis/",
+      "twitter": "@demishassabis"
+    }
+  },
+  {
+    "name": "Susan Kare",
+    "career": "UX Designer",
+    "title": "Iconic Digital Designer",
+    "background": "Designed the original icons and interface elements for Apple Macintosh, including the trash can and command symbol",
+    "education": "BA in Art from Mount Holyoke College, MA in Fine Arts from New York University",
+    "key_skills": ["design", "user_interface", "iconography", "visual_communication"],
+    "inspiration_quote": "Good design is about making things understandable, memorable, and delightful.",
+    "career_path": ["Museum Curator", "Graphic Designer", "Apple Interface Designer", "Design Consultant"],
+    "achievements": ["Designed original Mac icons", "Created typefaces for Apple", "Pioneered pixel art"],
+    "advice": "Pay attention to details that others might overlook - they often make the biggest difference.",
+    "social_links": {
+      "website": "http://www.kare.com/",
+      "twitter": "@susankare"
+    }
+  },
+  {
+    "name": "Melinda French Gates",
+    "career": "Digital Marketing Manager",
+    "title": "Co-founder of Pivotal Ventures, Philanthropist",
+    "background": "Former Microsoft executive turned philanthropist, focusing on gender equity and social impact",
+    "education": "Bachelor's in Computer Science and Economics from Duke, MBA from Fuqua School of Business",
+    "key_skills": ["digital_strategy", "marketing", "social_impact", "leadership"],
+    "inspiration_quote": "When we invest in women and girls, we invest in the people who invest in everyone else.",
+    "career_path": ["Software Developer", "Marketing Manager", "General Manager", "Philanthropist"],
+    "achievements": ["Led Microsoft's multimedia products", "Co-founded Gates Foundation", "Pivotal Ventures founder"],
+    "advice": "Use your skills and platform to create positive change in the world.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/melindafrenchgates/",
+      "twitter": "@melindagates"
+    }
+  },
+  {
+    "name": "Kiran Mazumdar-Shaw",
+    "career": "Sustainability Specialist",
+    "title": "Executive Chairperson of Biocon",
+    "background": "Pioneered biotechnology in India, built Biocon into a global biopharmaceutical company",
+    "education": "Bachelor's in Zoology from Bangalore University, Postgraduate Diploma in Malting and Brewing",
+    "key_skills": ["biotechnology", "sustainability", "leadership", "innovation"],
+    "inspiration_quote": "I believe that entrepreneurship is about solving problems and creating value.",
+    "career_path": ["Research Trainee", "Entrepreneur", "CEO", "Executive Chairperson"],
+    "achievements": ["Built Biocon from garage startup to $1B+ company", "Pioneered affordable healthcare", "Time 100 Most Influential"],
+    "advice": "Focus on solving real problems that matter to society and the environment.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/kiran-mazumdar-shaw/",
+      "twitter": "@kiranshaw"
+    }
+  },
+  {
+    "name": "Brian Chesky",
+    "career": "Product Manager",
+    "title": "Co-founder and CEO of Airbnb",
+    "background": "Co-founded Airbnb from his apartment, grew it into a $100B+ company",
+    "education": "BFA in Industrial Design from Rhode Island School of Design",
+    "key_skills": ["product_management", "design_thinking", "leadership", "customer_focus"],
+    "inspiration_quote": "Build something 100 people love, not something 1 million people kind of like.",
+    "career_path": ["Industrial Designer", "Startup Founder", "CEO"],
+    "achievements": ["Built Airbnb to 4M+ hosts", "Revolutionized travel industry", "Time 100 Most Influential"],
+    "advice": "Focus obsessively on your users and create experiences that people love.",
+    "social_links": {
+      "twitter": "@bchesky",
+      "linkedin": "https://www.linkedin.com/in/brianchesky/"
+    }
+  },
+  {
+    "name": "Katie Bouman",
+    "career": "Data Scientist",
+    "title": "Assistant Professor at Caltech, Computer Vision Researcher",
+    "background": "Led development of algorithms that created the first image of a black hole",
+    "education": "PhD in Electrical Engineering and Computer Science from MIT",
+    "key_skills": ["computer_vision", "machine_learning", "signal_processing", "research"],
+    "inspiration_quote": "Science is a collaborative effort, and breakthroughs come from diverse teams working together.",
+    "career_path": ["PhD Student", "Postdoc Researcher", "Assistant Professor"],
+    "achievements": ["Led black hole imaging algorithms", "TED Talk with 3M+ views", "Breakthrough Prize recipient"],
+    "advice": "Don't be afraid to tackle seemingly impossible problems - that's where the biggest discoveries happen.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/katie-bouman/",
+      "website": "https://people.csail.mit.edu/klbouman/"
+    }
+  },
+  {
+    "name": "Alex Karp",
+    "career": "Cybersecurity Analyst",
+    "title": "CEO of Palantir Technologies",
+    "background": "Co-founded Palantir, a data analytics company focused on big data analytics and cybersecurity",
+    "education": "PhD in Philosophy from University of Frankfurt, JD from Stanford Law School",
+    "key_skills": ["data_analytics", "cybersecurity", "strategic_thinking", "leadership"],
+    "inspiration_quote": "The future belongs to those who can make sense of vast amounts of data.",
+    "career_path": ["Academic", "Investment Analyst", "Co-founder", "CEO"],
+    "achievements": ["Co-founded Palantir", "Built $20B+ data analytics company", "Pioneered big data security"],
+    "advice": "Combine technical skills with deep thinking about societal implications.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/alex-karp-palantir/"
+    }
+  },
+  {
+    "name": "Mary Barra",
+    "career": "Renewable Energy Engineer",
+    "title": "CEO of General Motors",
+    "background": "Leading GM's transformation to electric vehicles and sustainable transportation",
+    "education": "Bachelor's in Electrical Engineering from General Motors Institute, MBA from Stanford",
+    "key_skills": ["engineering", "leadership", "sustainability", "strategic_planning"],
+    "inspiration_quote": "The future is electric, and we're committed to leading that transformation.",
+    "career_path": ["Engineer", "Plant Manager", "VP of Manufacturing", "CEO"],
+    "achievements": ["First female CEO of major automaker", "Leading EV transformation", "Fortune Most Powerful Women"],
+    "advice": "Embrace change and lead transformation rather than waiting for it to happen to you.",
+    "social_links": {
+      "linkedin": "https://www.linkedin.com/in/mary-barra/",
+      "twitter": "@mtbarra"
+    }
+  },
+  {
+    "name": "Marc Benioff",
+    "career": "Software Engineer",
+    "title": "Chairman and CEO of Salesforce",
+    "background": "Pioneered cloud-based software-as-a-service (SaaS) model with Salesforce CRM",
+    "education": "Bachelor's in Business Administration from USC",
+    "key_skills": ["software_engineering", "cloud_computing", "business_strategy", "philanthropy"],
+    "inspiration_quote": "The business of business is improving the state of the world.",
+    "career_path": ["Software Developer at Oracle", "Founder Salesforce", "CEO Salesforce"],
+    "achievements": ["Built Salesforce to $250B+ company", "Pioneered SaaS model", "Leading philanthropist"],
+    "advice": "Use business as a platform for change and always give back to the community.",
+    "social_links": {
+      "twitter": "@Benioff",
+      "linkedin": "https://www.linkedin.com/in/marcbenioff/"
+    }
+  }
+]

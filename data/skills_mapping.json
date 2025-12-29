@@ -1,0 +1,38 @@
+{
+  "subjects_to_skills": {
+    "mathematics": ["logical_thinking", "problem_solving", "analysis", "statistics", "machine_learning"],
+    "computer_science": ["programming", "logical_thinking", "problem_solving", "algorithms", "artificial_intelligence"],
+    "psychology": ["empathy", "research", "communication", "user_research", "behavioral_analysis"],
+    "art": ["creativity", "design", "visual_thinking", "aesthetics", "user_interface"],
+    "business": ["strategy", "communication", "leadership", "analytics", "project_management"],
+    "physics": ["analytical", "problem_solving", "mathematics", "research", "renewable_energy"],
+    "chemistry": ["research", "analysis", "critical_thinking", "laboratory_skills", "sustainability"],
+    "biology": ["research", "analysis", "critical_thinking", "observation", "healthcare"],
+    "communications": ["communication", "writing", "presentation", "media", "digital_marketing"],
+    "economics": ["analysis", "statistics", "critical_thinking", "research", "data_analysis"],
+    "environmental_science": ["sustainability", "environmental_analysis", "research", "policy", "conservation"],
+    "health_sciences": ["patient_care", "medical_knowledge", "empathy", "healthcare", "diagnosis"],
+    "information_technology": ["cybersecurity", "networking", "cloud_computing", "system_administration"]
+  },
+  "interests_to_skills": {
+    "technology": ["programming", "innovation", "problem_solving", "artificial_intelligence"],
+    "design": ["creativity", "visual_thinking", "user_research", "prototyping"],
+    "research": ["analysis", "critical_thinking", "writing", "data_analysis"],
+    "business": ["strategy", "communication", "leadership", "project_management"],
+    "science": ["research", "analysis", "critical_thinking", "experimentation"],
+    "healthcare": ["patient_care", "empathy", "medical_knowledge", "communication"],
+    "environment": ["sustainability", "conservation", "renewable_energy", "policy"],
+    "artificial_intelligence": ["machine_learning", "data_analysis", "programming", "deep_learning"],
+    "cybersecurity": ["security", "risk_assessment", "networking", "incident_response"],
+    "cloud_computing": ["system_architecture", "scalability", "security", "automation"]
+  },
+  "emerging_skills_2025": {
+    "ai_ml": ["machine_learning", "deep_learning", "neural_networks", "natural_language_processing", "computer_vision"],
+    "sustainability": ["carbon_footprint_analysis", "renewable_energy", "circular_economy", "esg_reporting"],
+    "cybersecurity": ["zero_trust_architecture", "threat_intelligence", "incident_response", "compliance"],
+    "cloud_native": ["containerization", "microservices", "serverless", "devops", "kubernetes"],
+    "data_science": ["big_data", "data_visualization", "statistical_modeling", "predictive_analytics"],
+    "digital_health": ["telemedicine", "health_informatics", "medical_ai", "patient_data_privacy"],
+    "remote_collaboration": ["virtual_leadership", "digital_communication", "async_collaboration", "remote_team_management"]
+  }
+}

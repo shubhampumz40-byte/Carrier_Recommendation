@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block title %}Personality Test{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">
+                    <i class="fas fa-brain me-2"></i>
+                    Personality Assessment
+                </h3>
+                <p class="mb-0 mt-2">Discover your personality type and how it relates to different careers</p>
+            </div>
+            <div class="card-body">
+                <form id="personalityForm">
+                    <div class="progress mb-4">
+                        <div class="progress-bar" role="progressbar" style="width: 0%" id="progressBar"></div>
+                    </div>
+                    
+                    <div id="questionsContainer">
+                        {% for question in questions %}
+                        <div class="question-slide" data-question="{{ loop.index0 }}" style="display: {% if loop.first %}block{% else %}none{% endif %}">
+                            <h5 class="mb-4">Question {{ loop.index }} of {{ questions|length }}</h5>
+                            <p class="lead">{{ question.question }}</p>
+                            
+                            <div class="row justify-content-center">
+                                <div class="col-md-10">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="text-muted">Strongly Disagree</span>
+                                        <span class="text-muted">Strongly Agree</span>
+                                    </div>
+                                    <div class="btn-group w-100" role="group">
+                                        <input type="radio" class="btn-check" name="q{{ loop.index0 }}" id="q{{ loop.index0 }}_1" value="1">
+                                        <label class="btn btn-outline-danger" for="q{{ loop.index0 }}_1">1</label>
+                                        
+                                        <input type="radio" class="btn-check" name="q{{ loop.index0 }}" id="q{{ loop.index0 }}_2" value="2">
+                                        <label class="btn btn-outline-warning" for="q{{ loop.index0 }}_2">2</label>
+                                        
+                                        <input type="radio" class="btn-check" name="q{{ loop.index0 }}" id="q{{ loop.index0 }}_3" value="3">
+                                        <label class="btn btn-outline-secondary" for="q{{ loop.index0 }}_3">3</label>
+                                        
+                                        <input type="radio" class="btn-check" name="q{{ loop.index0 }}" id="q{{ loop.index0 }}_4" value="4">
+                                        <label class="btn btn-outline-info" for="q{{ loop.index0 }}_4">4</label>
+                                        
+                                        <input type="radio" class="btn-check" name="q{{ loop.index0 }}" id="q{{ loop.index0 }}_5" value="5">
+                                        <label class="btn btn-outline-success" for="q{{ loop.index0 }}_5">5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" onclick="changeQuestion(-1)" disabled>
+                            <i class="fas fa-arrow-left me-2"></i>Previous
+                        </button>
+                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="changeQuestion(1)">
+                            Next<i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                        <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">
+                            <i class="fas fa-check me-2"></i>Get Results
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Modal -->
+<div class="modal fade" id="personalityResultModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Your Personality Type</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="personalityResultContent">
+                <!-- Results will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="goToAssessment()">
+                    Take Career Assessment
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentQuestion = 0;
+const totalQuestions = {{ questions|length }};
+let answers = new Array(totalQuestions);
+
+function changeQuestion(direction) {
+    const currentSlide = document.querySelector(`[data-question="${currentQuestion}"]`);
+    currentSlide.style.display = 'none';
+    
+    currentQuestion += direction;
+    
+    const newSlide = document.querySelector(`[data-question="${currentQuestion}"]`);
+    newSlide.style.display = 'block';
+    
+    updateProgress();
+    updateButtons();
+}
+
+function updateProgress() {
+    const progress = ((currentQuestion + 1) / totalQuestions) * 100;
+    document.getElementById('progressBar').style.width = progress + '%';
+}
+
+function updateButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    prevBtn.disabled = currentQuestion === 0;
+    
+    if (currentQuestion === totalQuestions - 1) {
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'block';
+    } else {
+        nextBtn.style.display = 'block';
+        submitBtn.style.display = 'none';
+    }
+}
+
+// Auto-advance when answer is selected
+document.addEventListener('change', function(e) {
+    if (e.target.type === 'radio') {
+        const questionIndex = parseInt(e.target.name.replace('q', ''));
+        answers[questionIndex] = parseInt(e.target.value);
+        
+        // Auto-advance after a short delay
+        setTimeout(() => {
+            if (currentQuestion < totalQuestions - 1) {
+                changeQuestion(1);
+            }
+        }, 500);
+    }
+});
+
+document.getElementById('personalityForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Collect all answers
+    const formData = new FormData(this);
+    const answersArray = [];
+    
+    for (let i = 0; i < totalQuestions; i++) {
+        const answer = formData.get(`q${i}`);
+        answersArray.push(answer ? parseInt(answer) : 3); // Default to neutral if not answered
+    }
+    
+    try {
+        const response = await fetch('/api/personality-result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ answers: answersArray })
+        });
+        
+        const result = await response.json();
+        displayPersonalityResult(result);
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while calculating your personality type. Please try again.');
+    }
+});
+
+function displayPersonalityResult(result) {
+    const content = document.getElementById('personalityResultContent');
+    
+    content.innerHTML = `
+        <div class="text-center mb-4">
+            <h2 class="text-primary">${result.type}</h2>
+            <h4 class="text-muted">${result.name}</h4>
+            <p class="lead">${result.description}</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Your Personality Traits</h5>
+                <div class="mb-3">
+                    ${result.traits.map(trait => `<span class="badge bg-primary me-1 mb-1">${trait}</span>`).join('')}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Suggested Career Areas</h5>
+                <ul class="list-unstyled">
+                    ${result.suggested_careers.map(career => `<li><i class="fas fa-check text-success me-2"></i>${career}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-4">
+            <h5>Personality Dimension Scores</h5>
+            <div id="personalityChart" style="height: 300px;"></div>
+        </div>
+    `;
+    
+    // Show modal
+    const modal = new bootstrap.Modal(document.getElementById('personalityResultModal'));
+    modal.show();
+    
+    // Create personality chart
+    createPersonalityChart(result.scores);
+    
+    // Store personality result for later use
+    localStorage.setItem('personalityResult', JSON.stringify(result));
+}
+
+function createPersonalityChart(scores) {
+    const dimensions = Object.keys(scores);
+    const values = Object.values(scores);
+    
+    const trace = {
+        x: dimensions,
+        y: values,
+        type: 'bar',
+        marker: {
+            color: values.map(v => v > 15 ? '#198754' : '#dc3545')
+        }
+    };
+    
+    const layout = {
+        title: 'Personality Dimension Scores',
+        xaxis: { title: 'Dimensions' },
+        yaxis: { title: 'Score' }
+    };
+    
+    Plotly.newPlot('personalityChart', [trace], layout);
+}
+
+function goToAssessment() {
+    window.location.href = '/assessment';
+}
+</script>
+{% endblock %}

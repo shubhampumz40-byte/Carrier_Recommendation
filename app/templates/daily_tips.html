@@ -1,0 +1,425 @@
+{% extends "base.html" %}
+
+{% block title %}Daily Career Tips{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1 class="display-4">
+                <i class="fas fa-lightbulb me-3"></i>
+                Daily Career Tips
+            </h1>
+            <p class="lead">Actionable advice to advance your career journey every day</p>
+        </div>
+    </div>
+    
+    <!-- Today's Tip Highlight -->
+    <div class="row mb-5">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-lg border-0" id="todaysTipCard">
+                <div class="card-header bg-gradient-primary text-white text-center">
+                    <h4 class="mb-0">
+                        <i class="fas fa-calendar-day me-2"></i>
+                        Today's Career Tip
+                    </h4>
+                    <small id="todaysDate"></small>
+                </div>
+                <div class="card-body" id="todaysTipContent">
+                    <!-- Today's tip will be loaded here -->
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Inspiration Quote -->
+    <div class="row mb-4">
+        <div class="col-md-10 offset-md-1">
+            <div class="card bg-light border-0" id="inspirationCard">
+                <!-- Inspiration will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Career Focus Filter -->
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Customize Your Tips</h6>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <select class="form-select" id="careerFocusSelect" onchange="updateTips()">
+                                <option value="">All Careers</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="UX Designer">UX Designer</option>
+                                <option value="Marketing Manager">Marketing Manager</option>
+                                <option value="Research Scientist">Research Scientist</option>
+                                <option value="Product Manager">Product Manager</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary w-100" onclick="getWeeklyTips()">
+                                <i class="fas fa-calendar-week me-1"></i>
+                                Weekly Plan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tip Categories -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 class="text-center mb-4">Explore by Category</h4>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="card tip-category-card" onclick="filterByCategory('skill_development')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-2x text-primary mb-2"></i>
+                            <h6>Skill Development</h6>
+                            <small class="text-muted">Build your expertise</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="card tip-category-card" onclick="filterByCategory('networking')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-2x text-success mb-2"></i>
+                            <h6>Networking</h6>
+                            <small class="text-muted">Connect with professionals</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="card tip-category-card" onclick="filterByCategory('portfolio')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-briefcase fa-2x text-warning mb-2"></i>
+                            <h6>Portfolio</h6>
+                            <small class="text-muted">Showcase your work</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <div class="card tip-category-card" onclick="filterByCategory('leadership')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-crown fa-2x text-info mb-2"></i>
+                            <h6>Leadership</h6>
+                            <small class="text-muted">Develop leadership skills</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Weekly Tips Container -->
+    <div id="weeklyTipsContainer" style="display: none;">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="text-center mb-4">Your Weekly Career Development Plan</h4>
+                <div id="weeklyTipsContent" class="row">
+                    <!-- Weekly tips will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification Settings -->
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h6 class="mb-0">
+                        <i class="fas fa-bell me-2"></i>
+                        Daily Tip Notifications
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Get personalized career tips delivered daily!</p>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" id="enableNotifications">
+                        <label class="form-check-label" for="enableNotifications">
+                            Enable browser notifications
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="notificationTime" class="form-label">Preferred time:</label>
+                        <input type="time" class="form-control" id="notificationTime" value="09:00">
+                    </div>
+                    <button class="btn btn-primary" onclick="setupNotifications()">
+                        <i class="fas fa-bell me-1"></i>
+                        Setup Notifications
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentTips = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Set today's date
+    const today = new Date();
+    document.getElementById('todaysDate').textContent = today.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    loadTodaysTip();
+    checkNotificationPermission();
+});
+
+async function loadTodaysTip() {
+    try {
+        const response = await fetch('/api/daily-tip');
+        const data = await response.json();
+        
+        displayTodaysTip(data.tip);
+        if (data.inspiration) {
+            displayInspiration(data.inspiration);
+        }
+    } catch (error) {
+        console.error('Error loading today\'s tip:', error);
+        document.getElementById('todaysTipContent').innerHTML = 
+            '<p class="text-danger">Error loading tip. Please refresh the page.</p>';
+    }
+}
+
+function displayTodaysTip(tip) {
+    const content = document.getElementById('todaysTipContent');
+    content.innerHTML = `
+        <div class="text-center mb-3">
+            <span class="badge bg-primary fs-6">${tip.category.replace('_', ' ').toUpperCase()}</span>
+        </div>
+        <h5 class="text-center text-primary mb-3">${tip.title}</h5>
+        <p class="lead text-center mb-4">${tip.tip}</p>
+        <div class="alert alert-success">
+            <h6><i class="fas fa-rocket me-2"></i>Action for Today:</h6>
+            <p class="mb-0">${tip.action}</p>
+        </div>
+        <div class="text-center">
+            <small class="text-muted">
+                <i class="fas fa-target me-1"></i>
+                Focus areas: ${tip.career_focus.join(', ')}
+            </small>
+        </div>
+    `;
+}
+
+function displayInspiration(inspiration) {
+    const card = document.getElementById('inspirationCard');
+    card.innerHTML = `
+        <div class="card-body text-center">
+            <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+            <blockquote class="blockquote">
+                <p class="mb-3">"${inspiration.quote}"</p>
+                <footer class="blockquote-footer">
+                    <strong>${inspiration.author}</strong>, ${inspiration.title}
+                </footer>
+            </blockquote>
+        </div>
+    `;
+}
+
+async function updateTips() {
+    const career = document.getElementById('careerFocusSelect').value;
+    try {
+        const response = await fetch(`/api/daily-tip?career=${encodeURIComponent(career)}`);
+        const data = await response.json();
+        
+        displayTodaysTip(data.tip);
+        if (data.inspiration) {
+            displayInspiration(data.inspiration);
+        }
+    } catch (error) {
+        console.error('Error updating tips:', error);
+    }
+}
+
+async function getWeeklyTips() {
+    const career = document.getElementById('careerFocusSelect').value;
+    try {
+        const response = await fetch(`/api/weekly-tips?career=${encodeURIComponent(career)}`);
+        const data = await response.json();
+        
+        displayWeeklyTips(data.tips);
+    } catch (error) {
+        console.error('Error loading weekly tips:', error);
+    }
+}
+
+function displayWeeklyTips(tips) {
+    const container = document.getElementById('weeklyTipsContainer');
+    const content = document.getElementById('weeklyTipsContent');
+    
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    
+    let html = '';
+    tips.forEach((tip, index) => {
+        const day = days[index] || `Day ${index + 1}`;
+        html += `
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 weekly-tip-card">
+                    <div class="card-header bg-gradient-secondary text-white">
+                        <h6 class="mb-0">
+                            <i class="fas fa-calendar-day me-2"></i>
+                            ${day}
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <span class="badge bg-outline-primary">${tip.category.replace('_', ' ')}</span>
+                        </div>
+                        <h6 class="card-title">${tip.title}</h6>
+                        <p class="card-text small">${tip.tip}</p>
+                        <div class="alert alert-light">
+                            <small><strong>Action:</strong> ${tip.action}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    content.innerHTML = html;
+    container.style.display = 'block';
+    
+    // Scroll to weekly tips
+    container.scrollIntoView({ behavior: 'smooth' });
+}
+
+function filterByCategory(category) {
+    // This would filter tips by category - for now, just show a message
+    alert(`Showing tips for: ${category.replace('_', ' ')}`);
+    // In a full implementation, you'd make an API call to get category-specific tips
+}
+
+function setupNotifications() {
+    if ('Notification' in window) {
+        Notification.requestPermission().then(function(permission) {
+            if (permission === 'granted') {
+                const time = document.getElementById('notificationTime').value;
+                localStorage.setItem('tipNotificationTime', time);
+                localStorage.setItem('tipNotificationsEnabled', 'true');
+                
+                alert('Notifications enabled! You\'ll receive daily career tips.');
+                scheduleNotification();
+            } else {
+                alert('Please enable notifications in your browser settings.');
+            }
+        });
+    } else {
+        alert('Your browser doesn\'t support notifications.');
+    }
+}
+
+function scheduleNotification() {
+    const time = localStorage.getItem('tipNotificationTime') || '09:00';
+    const [hours, minutes] = time.split(':');
+    
+    const now = new Date();
+    const scheduledTime = new Date();
+    scheduledTime.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+    
+    // If the time has passed today, schedule for tomorrow
+    if (scheduledTime <= now) {
+        scheduledTime.setDate(scheduledTime.getDate() + 1);
+    }
+    
+    const timeUntilNotification = scheduledTime.getTime() - now.getTime();
+    
+    setTimeout(() => {
+        showDailyNotification();
+        // Schedule the next notification (24 hours later)
+        setInterval(showDailyNotification, 24 * 60 * 60 * 1000);
+    }, timeUntilNotification);
+}
+
+function showDailyNotification() {
+    if (localStorage.getItem('tipNotificationsEnabled') === 'true') {
+        new Notification('Daily Career Tip', {
+            body: 'Your daily career development tip is ready! Click to view.',
+            icon: '/static/favicon.ico',
+            tag: 'daily-tip'
+        });
+    }
+}
+
+function checkNotificationPermission() {
+    if ('Notification' in window && Notification.permission === 'granted') {
+        document.getElementById('enableNotifications').checked = 
+            localStorage.getItem('tipNotificationsEnabled') === 'true';
+        
+        if (localStorage.getItem('tipNotificationsEnabled') === 'true') {
+            scheduleNotification();
+        }
+    }
+}
+
+// Handle notification checkbox
+document.getElementById('enableNotifications').addEventListener('change', function() {
+    if (this.checked) {
+        setupNotifications();
+    } else {
+        localStorage.setItem('tipNotificationsEnabled', 'false');
+    }
+});
+</script>
+
+<style>
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+.tip-category-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.tip-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.weekly-tip-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.weekly-tip-card:hover {
+    transform: translateY(-3px);
+}
+
+.alert-light {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-in;
+}
+</style>
+{% endblock %}

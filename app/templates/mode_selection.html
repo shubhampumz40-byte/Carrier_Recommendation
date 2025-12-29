@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+
+{% block title %}Choose Your Path{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h1 class="display-4">
+                <i class="fas fa-globe-asia me-3"></i>
+                Choose Your Career Path
+            </h1>
+            <p class="lead">Select your region and career stage for personalized recommendations</p>
+        </div>
+    </div>
+    
+    <!-- Region Selection -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h3 class="text-center mb-4">🌍 Select Your Region</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-5 mb-4">
+                    <div class="card region-card h-100" data-region="global" onclick="selectRegion('global')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-globe fa-4x text-primary mb-3"></i>
+                            <h4 class="card-title">Global</h4>
+                            <p class="card-text">International career opportunities with global salary standards</p>
+                            <div class="region-features">
+                                <div class="mb-2"><i class="fas fa-dollar-sign text-success me-2"></i>USD Salaries</div>
+                                <div class="mb-2"><i class="fas fa-laptop text-info me-2"></i>Remote Work Focus</div>
+                                <div class="mb-2"><i class="fas fa-rocket text-warning me-2"></i>Tech & Innovation</div>
+                                <div class="mb-2"><i class="fas fa-leaf text-success me-2"></i>Sustainability Careers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-4">
+                    <div class="card region-card h-100" data-region="india" onclick="selectRegion('india')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-flag fa-4x text-warning mb-3"></i>
+                            <h4 class="card-title">India</h4>
+                            <p class="card-text">Indian job market with local salary standards and career paths</p>
+                            <div class="region-features">
+                                <div class="mb-2"><i class="fas fa-rupee-sign text-success me-2"></i>INR Salaries</div>
+                                <div class="mb-2"><i class="fas fa-building text-info me-2"></i>IT Services & Startups</div>
+                                <div class="mb-2"><i class="fas fa-university text-warning me-2"></i>Government & PSU</div>
+                                <div class="mb-2"><i class="fas fa-stethoscope text-danger me-2"></i>Healthcare & CA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mode Selection -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h3 class="text-center mb-4">🎓 Select Your Career Stage</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-5 mb-4">
+                    <div class="card mode-card h-100" data-mode="student" onclick="selectMode('student')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-graduation-cap fa-4x text-success mb-3"></i>
+                            <h4 class="card-title">Student Mode</h4>
+                            <p class="card-text">For students exploring career options and planning education</p>
+                            <div class="mode-features">
+                                <div class="mb-2"><i class="fas fa-book text-primary me-2"></i>Educational Requirements</div>
+                                <div class="mb-2"><i class="fas fa-seedling text-success me-2"></i>Entry-level Positions</div>
+                                <div class="mb-2"><i class="fas fa-tools text-warning me-2"></i>Skill Development</div>
+                                <div class="mb-2"><i class="fas fa-handshake text-info me-2"></i>Internship Opportunities</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-4">
+                    <div class="card mode-card h-100" data-mode="professional" onclick="selectMode('professional')">
+                        <div class="card-body text-center">
+                            <i class="fas fa-briefcase fa-4x text-primary mb-3"></i>
+                            <h4 class="card-title">Professional Mode</h4>
+                            <p class="card-text">For working professionals looking to advance or change careers</p>
+                            <div class="mode-features">
+                                <div class="mb-2"><i class="fas fa-chart-line text-success me-2"></i>Career Advancement</div>
+                                <div class="mb-2"><i class="fas fa-exchange-alt text-warning me-2"></i>Career Transitions</div>
+                                <div class="mb-2"><i class="fas fa-crown text-primary me-2"></i>Leadership Development</div>
+                                <div class="mb-2"><i class="fas fa-money-bill-wave text-success me-2"></i>Salary Growth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Experience Level (for professionals) -->
+    <div class="row mb-5" id="experienceSection" style="display: none;">
+        <div class="col-12">
+            <h3 class="text-center mb-4">💼 Your Experience Level</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <select class="form-select form-select-lg" id="experienceLevel">
+                        <option value="">Select your experience level</option>
+                        <option value="1-3">Junior Professional (1-3 years)</option>
+                        <option value="3-7">Mid-level Professional (3-7 years)</option>
+                        <option value="7-12">Senior Professional (7-12 years)</option>
+                        <option value="12+">Executive Level (12+ years)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Selection Summary -->
+    <div class="row mb-5">
+        <div class="col-md-8 offset-md-2">
+            <div class="card border-primary" id="selectionSummary" style="display: none;">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Your Selection</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Region:</strong> <span id="selectedRegion">-</span><br>
+                            <strong>Mode:</strong> <span id="selectedMode">-</span>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Experience:</strong> <span id="selectedExperience">-</span><br>
+                            <strong>Focus:</strong> <span id="selectedFocus">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <button class="btn btn-primary btn-lg me-3" id="continueBtn" onclick="savePreferencesAndContinue()" disabled>
+                <i class="fas fa-arrow-right me-2"></i>
+                Continue to Assessment
+            </button>
+            <button class="btn btn-outline-secondary btn-lg" onclick="resetSelection()">
+                <i class="fas fa-redo me-2"></i>
+                Reset Selection
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let selectedRegion = null;
+let selectedMode = null;
+let selectedExperience = null;
+
+function selectRegion(region) {
+    selectedRegion = region;
+    
+    // Update UI
+    document.querySelectorAll('.region-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    document.querySelector(`[data-region="${region}"]`).classList.add('selected');
+    
+    updateSummary();
+}
+
+function selectMode(mode) {
+    selectedMode = mode;
+    
+    // Update UI
+    document.querySelectorAll('.mode-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    document.querySelector(`[data-mode="${mode}"]`).classList.add('selected');
+    
+    // Show/hide experience section
+    const experienceSection = document.getElementById('experienceSection');
+    if (mode === 'professional') {
+        experienceSection.style.display = 'block';
+    } else {
+        experienceSection.style.display = 'none';
+        selectedExperience = null;
+        document.getElementById('experienceLevel').value = '';
+    }
+    
+    updateSummary();
+}
+
+document.getElementById('experienceLevel').addEventListener('change', function() {
+    selectedExperience = this.value;
+    updateSummary();
+});
+
+function updateSummary() {
+    const summary = document.getElementById('selectionSummary');
+    const continueBtn = document.getElementById('continueBtn');
+    
+    if (selectedRegion && selectedMode) {
+        summary.style.display = 'block';
+        
+        document.getElementById('selectedRegion').textContent = selectedRegion === 'global' ? 'Global' : 'India';
+        document.getElementById('selectedMode').textContent = selectedMode === 'student' ? 'Student' : 'Professional';
+        document.getElementById('selectedExperience').textContent = selectedExperience || (selectedMode === 'student' ? 'N/A' : 'Not selected');
+        
+        // Set focus based on selections
+        let focus = '';
+        if (selectedRegion === 'global') {
+            focus = 'International opportunities, Remote work, Tech innovation';
+        } else {
+            focus = 'Indian market, Local companies, Regional opportunities';
+        }
+        
+        if (selectedMode === 'student') {
+            focus += ', Education planning, Skill development';
+        } else {
+            focus += ', Career advancement, Leadership growth';
+        }
+        
+        document.getElementById('selectedFocus').textContent = focus;
+        
+        // Enable continue button
+        const canContinue = selectedRegion && selectedMode && (selectedMode === 'student' || selectedExperience);
+        continueBtn.disabled = !canContinue;
+    } else {
+        summary.style.display = 'none';
+        continueBtn.disabled = true;
+    }
+}
+
+function resetSelection() {
+    selectedRegion = null;
+    selectedMode = null;
+    selectedExperience = null;
+    
+    document.querySelectorAll('.region-card, .mode-card').forEach(card => {
+        card.classList.remove('selected');
+    });
+    
+    document.getElementById('experienceLevel').value = '';
+    document.getElementById('experienceSection').style.display = 'none';
+    
+    updateSummary();
+}
+
+async function savePreferencesAndContinue() {
+    if (!selectedRegion || !selectedMode) {
+        alert('Please select both region and mode');
+        return;
+    }
+    
+    if (selectedMode === 'professional' && !selectedExperience) {
+        alert('Please select your experience level');
+        return;
+    }
+    
+    try {
+        // Save preferences to session
+        const response = await fetch('/api/set-preferences', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                region: selectedRegion,
+                mode: selectedMode,
+                experience_level: selectedExperience
+            })
+        });
+        
+        if (response.ok) {
+            // Redirect to assessment
+            window.location.href = '/assessment';
+        } else {
+            alert('Error saving preferences. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error saving preferences. Please try again.');
+    }
+}
+
+// Load existing preferences if any
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('/api/get-preferences');
+        const prefs = await response.json();
+        
+        if (prefs.region && prefs.mode) {
+            selectRegion(prefs.region);
+            selectMode(prefs.mode);
+            
+            if (prefs.experience_level) {
+                document.getElementById('experienceLevel').value = prefs.experience_level;
+                selectedExperience = prefs.experience_level;
+                updateSummary();
+            }
+        }
+    } catch (error) {
+        console.error('Error loading preferences:', error);
+    }
+});
+</script>
+
+<style>
+.region-card, .mode-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.region-card:hover, .mode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.region-card.selected, .mode-card.selected {
+    border-color: #0d6efd;
+    background-color: #f8f9ff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.2);
+}
+
+.region-features, .mode-features {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.region-features div, .mode-features div {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+#selectionSummary {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+{% endblock %}

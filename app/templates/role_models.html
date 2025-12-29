@@ -1,0 +1,374 @@
+{% extends "base.html" %}
+
+{% block title %}Career Role Models{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1 class="display-4">
+                <i class="fas fa-star me-3"></i>
+                Career Role Models
+            </h1>
+            <p class="lead">Get inspired by successful professionals in your field of interest</p>
+        </div>
+    </div>
+    
+    <!-- Search and Filter -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search role models...">
+                <button class="btn btn-primary" onclick="searchRoleModels()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <select class="form-select" id="careerFilter" onchange="filterByCareer()">
+                <option value="">All Careers</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="UX Designer">UX Designer</option>
+                <option value="Marketing Manager">Marketing Manager</option>
+                <option value="Research Scientist">Research Scientist</option>
+                <option value="Product Manager">Product Manager</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Role Models Grid -->
+    <div id="roleModelsContainer" class="row">
+        <!-- Role models will be loaded here -->
+    </div>
+    
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Loading inspiring role models...</p>
+    </div>
+</div>
+
+<!-- Role Model Detail Modal -->
+<div class="modal fade" id="roleModelModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Detailed role model info will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="getCareerPath()">View Career Path</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let allRoleModels = [];
+let currentRoleModel = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadRoleModels();
+});
+
+async function loadRoleModels() {
+    try {
+        const response = await fetch('/api/role-models');
+        const data = await response.json();
+        allRoleModels = data.role_models;
+        displayRoleModels(allRoleModels);
+    } catch (error) {
+        console.error('Error loading role models:', error);
+        document.getElementById('loadingSpinner').innerHTML = 
+            '<p class="text-danger">Error loading role models. Please try again.</p>';
+    }
+}
+
+function displayRoleModels(models) {
+    const container = document.getElementById('roleModelsContainer');
+    const spinner = document.getElementById('loadingSpinner');
+    
+    if (models.length === 0) {
+        container.innerHTML = '<div class="col-12 text-center"><p>No role models found.</p></div>';
+        spinner.style.display = 'none';
+        return;
+    }
+    
+    let html = '';
+    models.forEach(model => {
+        html += `
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm role-model-card" onclick="showRoleModelDetails('${model.name}')">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="avatar-circle me-3">
+                                ${model.name.split(' ').map(n => n[0]).join('')}
+                            </div>
+                            <div>
+                                <h5 class="card-title mb-1">${model.name}</h5>
+                                <p class="text-muted small mb-0">${model.career}</p>
+                            </div>
+                        </div>
+                        
+                        <h6 class="text-primary">${model.title}</h6>
+                        <p class="card-text small">${model.background.substring(0, 120)}...</p>
+                        
+                        <div class="mb-3">
+                            <small class="text-muted">Key Skills:</small>
+                            <div class="mt-1">
+                                ${model.key_skills.slice(0, 3).map(skill => 
+                                    `<span class="badge bg-light text-dark me-1">${skill}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="quote-section">
+                            <i class="fas fa-quote-left text-muted"></i>
+                            <em class="small">${model.inspiration_quote.substring(0, 80)}...</em>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <small class="text-muted">
+                            <i class="fas fa-graduation-cap me-1"></i>
+                            ${model.education.split(',')[0]}
+                        </small>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+    spinner.style.display = 'none';
+}
+
+function showRoleModelDetails(name) {
+    const model = allRoleModels.find(m => m.name === name);
+    if (!model) return;
+    
+    currentRoleModel = model;
+    
+    document.getElementById('modalTitle').textContent = `${model.name} - ${model.title}`;
+    
+    const modalBody = document.getElementById('modalBody');
+    modalBody.innerHTML = `
+        <div class="row">
+            <div class="col-md-4">
+                <div class="avatar-circle-large mx-auto mb-3">
+                    ${model.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div class="text-center">
+                    <h6>${model.career}</h6>
+                    <p class="text-muted">${model.title}</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h6>Background</h6>
+                <p>${model.background}</p>
+                
+                <h6>Education</h6>
+                <p>${model.education}</p>
+                
+                <h6>Key Achievements</h6>
+                <ul>
+                    ${model.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <h6><i class="fas fa-lightbulb me-2"></i>Career Advice</h6>
+                    <p class="mb-0">"${model.advice}"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h6>Key Skills</h6>
+                <div>
+                    ${model.key_skills.map(skill => 
+                        `<span class="badge bg-primary me-1 mb-1">${skill}</span>`
+                    ).join('')}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6>Connect</h6>
+                <div>
+                    ${Object.entries(model.social_links || {}).map(([platform, link]) => 
+                        `<a href="${link}" target="_blank" class="btn btn-sm btn-outline-primary me-2">
+                            <i class="fab fa-${platform}"></i> ${platform}
+                        </a>`
+                    ).join('')}
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="quote-highlight">
+                    <i class="fas fa-quote-left fa-2x text-primary mb-2"></i>
+                    <blockquote class="blockquote">
+                        <p>"${model.inspiration_quote}"</p>
+                        <footer class="blockquote-footer">${model.name}</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const modal = new bootstrap.Modal(document.getElementById('roleModelModal'));
+    modal.show();
+}
+
+function getCareerPath() {
+    if (!currentRoleModel) return;
+    
+    const pathHtml = `
+        <div class="career-path-timeline">
+            <h6><i class="fas fa-route me-2"></i>Career Journey of ${currentRoleModel.name}</h6>
+            <div class="timeline">
+                ${currentRoleModel.career_path.map((step, index) => `
+                    <div class="timeline-item">
+                        <div class="timeline-marker">${index + 1}</div>
+                        <div class="timeline-content">
+                            <h6>${step}</h6>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('modalBody').innerHTML += pathHtml;
+}
+
+function searchRoleModels() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = allRoleModels.filter(model => 
+        model.name.toLowerCase().includes(query) ||
+        model.career.toLowerCase().includes(query) ||
+        model.title.toLowerCase().includes(query) ||
+        model.key_skills.some(skill => skill.toLowerCase().includes(query))
+    );
+    displayRoleModels(filtered);
+}
+
+function filterByCareer() {
+    const career = document.getElementById('careerFilter').value;
+    if (career === '') {
+        displayRoleModels(allRoleModels);
+    } else {
+        const filtered = allRoleModels.filter(model => 
+            model.career.toLowerCase().includes(career.toLowerCase())
+        );
+        displayRoleModels(filtered);
+    }
+}
+
+// Enter key search
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        searchRoleModels();
+    }
+});
+</script>
+
+<style>
+.role-model-card {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.role-model-card:hover {
+    transform: translateY(-5px);
+}
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.avatar-circle-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.quote-section {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 3px solid #0d6efd;
+}
+
+.quote-highlight {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -35px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #0d6efd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 15px;
+    bottom: 0;
+    width: 2px;
+    background: #dee2e6;
+}
+</style>
+{% endblock %}

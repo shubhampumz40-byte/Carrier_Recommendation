@@ -1,0 +1,516 @@
+{% extends "base.html" %}
+
+{% block title %}Skills Gap Analyzer{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="display-4 mb-3">
+                <span class="skills-icon">📊</span> Skills Gap Analyzer
+            </h1>
+            <p class="lead text-muted">Discover what skills you need to develop for your target career</p>
+        </div>
+    </div>
+
+    <!-- Skills Input Form -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-user-cog me-2"></i>
+                        Analyze Your Skills Gap
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form id="skillsGapForm">
+                        <div class="row">
+                            <!-- Career Selection -->
+                            <div class="col-md-6 mb-3">
+                                <label for="targetCareer" class="form-label">Target Career</label>
+                                <select id="targetCareer" class="form-select" required>
+                                    <option value="">Select your target career...</option>
+                                    <option value="AI/ML Engineer">AI/ML Engineer</option>
+                                    <option value="Software Engineer">Software Engineer</option>
+                                    <option value="Product Manager">Product Manager</option>
+                                    <option value="Data Scientist">Data Scientist</option>
+                                    <option value="UX Designer">UX Designer</option>
+                                    <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                                    <option value="Digital Marketing Manager">Digital Marketing Manager</option>
+                                    <option value="Nurse Practitioner">Nurse Practitioner</option>
+                                    <option value="Renewable Energy Engineer">Renewable Energy Engineer</option>
+                                    <option value="Sustainability Specialist">Sustainability Specialist</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Region Selection -->
+                            <div class="col-md-6 mb-3">
+                                <label for="region" class="form-label">Region</label>
+                                <select id="region" class="form-select">
+                                    <option value="global">🌐 Global</option>
+                                    <option value="india">🇮🇳 India</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Current Skills -->
+                        <div class="mb-3">
+                            <label for="currentSkills" class="form-label">Your Current Skills</label>
+                            <div class="skills-input-container">
+                                <input type="text" id="skillInput" class="form-control" 
+                                       placeholder="Type a skill and press Enter (e.g., Python, Leadership, Communication)">
+                                <div id="selectedSkills" class="selected-skills mt-2"></div>
+                            </div>
+                            <small class="form-text text-muted">Add skills one by one. Click on a skill to remove it.</small>
+                        </div>
+                        
+                        <!-- Academic Subjects -->
+                        <div class="mb-3">
+                            <label class="form-label">Academic Background (Optional)</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="computer_science" id="cs">
+                                        <label class="form-check-label" for="cs">Computer Science</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="mathematics" id="math">
+                                        <label class="form-check-label" for="math">Mathematics</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="business" id="business">
+                                        <label class="form-check-label" for="business">Business</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="psychology" id="psychology">
+                                        <label class="form-check-label" for="psychology">Psychology</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="engineering" id="engineering">
+                                        <label class="form-check-label" for="engineering">Engineering</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="design" id="design">
+                                        <label class="form-check-label" for="design">Design</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="healthcare" id="healthcare">
+                                        <label class="form-check-label" for="healthcare">Healthcare</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="environmental_science" id="env">
+                                        <label class="form-check-label" for="env">Environmental Science</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-chart-line me-2"></i>
+                                Analyze Skills Gap
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="text-center py-5" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Analyzing skills gap...</span>
+        </div>
+        <p class="mt-3">Analyzing your skills gap...</p>
+    </div>
+
+    <!-- Results Section -->
+    <div id="resultsSection" style="display: none;">
+        <!-- Results will be populated by JavaScript -->
+    </div>
+</div>
+
+<style>
+.skills-icon {
+    font-size: 1.2em;
+    animation: analyze 2s infinite;
+}
+
+@keyframes analyze {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.skills-input-container {
+    position: relative;
+}
+
+.selected-skills {
+    min-height: 40px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 8px;
+    background: #f8f9fa;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.skill-tag:hover {
+    background: #dc3545;
+}
+
+.readiness-score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.readiness-level {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.learning-path-item {
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.development-phase {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f8f9fa;
+}
+
+.skills-gap-card {
+    transition: transform 0.2s ease;
+}
+
+.skills-gap-card:hover {
+    transform: translateY(-2px);
+}
+</style>
+
+<script>
+let selectedSkills = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const skillInput = document.getElementById('skillInput');
+    const selectedSkillsContainer = document.getElementById('selectedSkills');
+    const form = document.getElementById('skillsGapForm');
+    
+    // Handle skill input
+    skillInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            addSkill(this.value.trim());
+            this.value = '';
+        }
+    });
+    
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        analyzeSkillsGap();
+    });
+    
+    function addSkill(skill) {
+        if (skill && !selectedSkills.includes(skill)) {
+            selectedSkills.push(skill);
+            updateSkillsDisplay();
+        }
+    }
+    
+    function removeSkill(skill) {
+        selectedSkills = selectedSkills.filter(s => s !== skill);
+        updateSkillsDisplay();
+    }
+    
+    function updateSkillsDisplay() {
+        const container = selectedSkillsContainer;
+        container.innerHTML = selectedSkills.map(skill => 
+            `<span class="skill-tag" onclick="removeSkill('${skill}')">${skill} ×</span>`
+        ).join('');
+    }
+    
+    // Make removeSkill globally accessible
+    window.removeSkill = removeSkill;
+});
+
+function analyzeSkillsGap() {
+    const targetCareer = document.getElementById('targetCareer').value;
+    const region = document.getElementById('region').value;
+    
+    if (!targetCareer) {
+        alert('Please select a target career');
+        return;
+    }
+    
+    // Get selected subjects
+    const subjects = [];
+    document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        subjects.push(checkbox.value);
+    });
+    
+    // Show loading state
+    document.getElementById('loadingState').style.display = 'block';
+    document.getElementById('resultsSection').style.display = 'none';
+    
+    // Prepare data
+    const data = {
+        career_name: targetCareer,
+        user_skills: selectedSkills,
+        user_subjects: subjects,
+        region: region
+    };
+    
+    // Make API call
+    fetch('/api/skills-gap-analysis', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        displayResults(data);
+        document.getElementById('loadingState').style.display = 'none';
+        document.getElementById('resultsSection').style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('loadingState').innerHTML = 
+            '<div class="alert alert-danger">Error analyzing skills gap. Please try again.</div>';
+    });
+}
+
+function displayResults(data) {
+    const resultsSection = document.getElementById('resultsSection');
+    
+    const html = `
+        <div class="skills-gap-results">
+            <h2 class="text-center mb-4">Skills Gap Analysis: ${data.career_name}</h2>
+            
+            <!-- Readiness Overview -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card skills-gap-card">
+                        <div class="card-header bg-${data.readiness_level.color} text-white">
+                            <h4 class="mb-0">
+                                <i class="fas fa-gauge me-2"></i>
+                                Readiness Assessment
+                            </h4>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="readiness-score">${data.skill_match_percentage}%</div>
+                                    <div class="readiness-level">${data.readiness_level.level}</div>
+                                </div>
+                                <div class="col-md-8 text-start">
+                                    <p class="lead">${data.readiness_level.description}</p>
+                                    <p><strong>Estimated Time to Bridge Gap:</strong> ${data.time_estimate.total}</p>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar bg-${data.readiness_level.color}" 
+                                             style="width: ${data.skill_match_percentage}%">
+                                            ${data.skill_match_percentage}%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Comparison -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100 skills-gap-card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">✅ Skills You Have (${data.current_skills.count})</h5>
+                        </div>
+                        <div class="card-body">
+                            ${data.current_skills.skills.length > 0 ? 
+                                data.current_skills.skills.map(skill => 
+                                    `<span class="badge bg-success skill-badge mb-1">${skill.replace('_', ' ')}</span>`
+                                ).join('') : 
+                                '<p class="text-muted">No matching skills identified. Consider adding more skills to your profile.</p>'
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 skills-gap-card">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">📚 Skills to Learn (${data.missing_skills.count})</h5>
+                        </div>
+                        <div class="card-body">
+                            ${data.missing_skills.skills.length > 0 ? 
+                                data.missing_skills.skills.map(skill => 
+                                    `<span class="badge bg-warning skill-badge mb-1">${skill.replace('_', ' ')}</span>`
+                                ).join('') : 
+                                '<p class="text-success">Congratulations! You have all the required skills.</p>'
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Learning Path -->
+            ${data.learning_path.length > 0 ? `
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card skills-gap-card">
+                            <div class="card-header bg-info text-white">
+                                <h4 class="mb-0">
+                                    <i class="fas fa-route me-2"></i>
+                                    Your Learning Path
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                ${data.learning_path.map((path, idx) => `
+                                    <div class="learning-path-item">
+                                        <h5 class="text-primary">${idx + 1}. ${path.skill.replace('_', ' ')}</h5>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <strong>Recommended Resources:</strong>
+                                                <ul class="mt-2">
+                                                    ${path.resources.beginner ? path.resources.beginner.map(resource => 
+                                                        `<li>${resource}</li>`
+                                                    ).join('') : '<li>Online courses and tutorials</li>'}
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span class="badge bg-secondary fs-6">
+                                                    ⏱️ ${path.resources.time_estimate || '2-4 months'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ` : ''}
+            
+            <!-- Next Steps -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100 skills-gap-card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-tasks me-2"></i>
+                                Next Steps
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                ${data.next_steps.map(step => `<li>${step}</li>`).join('')}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 skills-gap-card">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-lightbulb me-2"></i>
+                                Quick Actions
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-primary" onclick="window.open('https://www.coursera.org/', '_blank')">
+                                    <i class="fas fa-graduation-cap me-2"></i>
+                                    Find Online Courses
+                                </button>
+                                <button class="btn btn-outline-success" onclick="window.open('https://github.com/', '_blank')">
+                                    <i class="fab fa-github me-2"></i>
+                                    Start Building Projects
+                                </button>
+                                <button class="btn btn-outline-info" onclick="window.open('https://www.linkedin.com/', '_blank')">
+                                    <i class="fab fa-linkedin me-2"></i>
+                                    Network with Professionals
+                                </button>
+                                <a href="/assessment" class="btn btn-outline-warning">
+                                    <i class="fas fa-compass me-2"></i>
+                                    Take Full Assessment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Development Plan -->
+            ${data.skill_development_plan && !data.skill_development_plan.message ? `
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card skills-gap-card">
+                            <div class="card-header bg-dark text-white">
+                                <h4 class="mb-0">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    6-Month Development Plan
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    ${Object.entries(data.skill_development_plan).map(([phase, phaseData]) => `
+                                        <div class="col-md-4 mb-3">
+                                            <div class="development-phase">
+                                                <h6 class="text-info">${phaseData.focus}</h6>
+                                                <p class="text-muted">${phaseData.duration}</p>
+                                                <p class="text-dark"><strong>Focus Skills:</strong></p>
+                                                <ul class="small text-dark">
+                                                    ${phaseData.skills ? phaseData.skills.map(skill => `<li>${skill}</li>`).join('') : ''}
+                                                </ul>
+                                                <p class="text-dark"><strong>Activities:</strong></p>
+                                                <ul class="small text-dark">
+                                                    ${phaseData.activities ? phaseData.activities.map(activity => `<li>${activity}</li>`).join('') : ''}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ` : data.skill_development_plan?.message ? `
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-success text-center">
+                            <i class="fas fa-check-circle fa-2x mb-3"></i>
+                            <h4>${data.skill_development_plan.message}</h4>
+                            <p>You're ready to start applying for positions in this field!</p>
+                        </div>
+                    </div>
+                </div>
+            ` : ''}
+        </div>
+    `;
+    
+    resultsSection.innerHTML = html;
+}
+</script>
+{% endblock %}

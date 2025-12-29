@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "category": "ai_skills",
+    "title": "Master AI and Machine Learning Fundamentals",
+    "tip": "With AI transforming every industry, spend time learning AI basics through platforms like Coursera's AI for Everyone or fast.ai. Focus on understanding how AI can enhance your field.",
+    "action": "Complete one AI fundamentals course this month and identify 3 ways AI could improve your target career.",
+    "career_focus": ["AI/ML Engineer", "Data Scientist", "Software Engineer"]
+  },
+  {
+    "id": 2,
+    "category": "networking",
+    "title": "Connect with Industry Professionals on LinkedIn",
+    "tip": "Reach out to professionals in your field with personalized messages. Ask about their career journey, current challenges, and advice for newcomers.",
+    "action": "Send 3 thoughtful LinkedIn messages to professionals in your target career this week.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 3,
+    "category": "portfolio",
+    "title": "Build Projects That Solve Real Problems",
+    "tip": "Create portfolio projects that address actual challenges in your field. For tech roles, contribute to open source. For healthcare, volunteer at clinics. For sustainability, work on environmental projects.",
+    "action": "Start one project this week that demonstrates skills relevant to your career goal.",
+    "career_focus": ["Software Engineer", "UX Designer", "Data Scientist", "Sustainability Specialist"]
+  },
+  {
+    "id": 4,
+    "category": "industry_knowledge",
+    "title": "Stay Updated with Industry Trends",
+    "tip": "Follow industry leaders, subscribe to relevant newsletters, and join professional communities. For tech: Hacker News, GitHub. For healthcare: NEJM, Medscape. For sustainability: GreenBiz, Sustainable Brands.",
+    "action": "Subscribe to 2 industry publications and follow 5 thought leaders in your field today.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 5,
+    "category": "soft_skills",
+    "title": "Develop Communication and Presentation Skills",
+    "tip": "Practice explaining complex concepts simply. Record yourself giving 2-minute explanations of topics in your field. Join Toastmasters or practice with friends.",
+    "action": "Record a 2-minute video explaining a concept from your field and share it on LinkedIn.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 6,
+    "category": "experience",
+    "title": "Gain Hands-on Experience Through Internships",
+    "tip": "Apply for internships, co-ops, or volunteer opportunities. Remote internships are now widely available. Consider micro-internships on platforms like Forage or Parker Dewey.",
+    "action": "Apply to 3 internship opportunities or volunteer positions this week.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 7,
+    "category": "cybersecurity",
+    "title": "Learn Cybersecurity Fundamentals",
+    "tip": "With cyber threats increasing, cybersecurity skills are valuable in every field. Learn about data protection, privacy, and basic security practices through free resources like Cybrary.",
+    "action": "Complete a free cybersecurity basics course and implement 3 security practices in your personal digital life.",
+    "career_focus": ["Cybersecurity Analyst", "Software Engineer", "Cloud Solutions Architect"]
+  },
+  {
+    "id": 8,
+    "category": "mentorship",
+    "title": "Find Multiple Mentors for Different Aspects",
+    "tip": "Seek mentors for technical skills, career navigation, and industry insights. Don't limit yourself to one mentor - build a diverse advisory network.",
+    "action": "Identify and reach out to 2 potential mentors: one for technical guidance and one for career advice.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 9,
+    "category": "sustainability",
+    "title": "Understand Sustainability in Your Field",
+    "tip": "Every career now has a sustainability component. Learn how your field contributes to environmental goals. Tech: green computing. Healthcare: sustainable practices. Business: ESG principles.",
+    "action": "Research and write a one-page summary of sustainability trends in your target career.",
+    "career_focus": ["Sustainability Specialist", "Renewable Energy Engineer", "All careers"]
+  },
+  {
+    "id": 10,
+    "category": "creativity",
+    "title": "Practice Design Thinking and Innovation",
+    "tip": "Learn design thinking methodology to approach problems creatively. Practice with daily challenges, hackathons, or innovation workshops. This skill is valuable across all careers.",
+    "action": "Use design thinking to solve one problem you encounter this week, documenting your process.",
+    "career_focus": ["UX Designer", "Product Manager", "AI/ML Engineer"]
+  },
+  {
+    "id": 11,
+    "category": "data_literacy",
+    "title": "Develop Data Analysis Skills",
+    "tip": "Data literacy is crucial in 2025. Learn Excel, SQL, Python, or R basics. Practice with public datasets from Kaggle, government sources, or your field of interest.",
+    "action": "Analyze one dataset relevant to your career and create a simple visualization or insight.",
+    "career_focus": ["Data Scientist", "Digital Marketing Manager", "Cybersecurity Analyst"]
+  },
+  {
+    "id": 12,
+    "category": "healthcare",
+    "title": "Understand Healthcare Technology Trends",
+    "tip": "Healthcare is rapidly digitizing. Learn about telemedicine, electronic health records, AI in diagnostics, and patient data privacy. These skills are increasingly important.",
+    "action": "Research 3 healthcare technology trends and how they impact patient care.",
+    "career_focus": ["Nurse Practitioner", "Physician Assistant", "Data Scientist"]
+  },
+  {
+    "id": 13,
+    "category": "leadership",
+    "title": "Practice Leading Without Authority",
+    "tip": "Leadership skills are valuable at every level. Lead study groups, organize events, mentor junior students, or coordinate volunteer projects to develop these skills early.",
+    "action": "Take leadership of one project or initiative this month, even if it's small.",
+    "career_focus": ["Product Manager", "Digital Marketing Manager", "Cloud Solutions Architect"]
+  },
+  {
+    "id": 14,
+    "category": "cloud_computing",
+    "title": "Learn Cloud Platforms and Services",
+    "tip": "Cloud computing is fundamental to modern technology. Get familiar with AWS, Azure, or Google Cloud through free tiers and certification programs. Many offer student credits.",
+    "action": "Create a free cloud account and deploy your first simple application or website.",
+    "career_focus": ["Cloud Solutions Architect", "Software Engineer", "Data Scientist"]
+  },
+  {
+    "id": 15,
+    "category": "reflection",
+    "title": "Regular Career Reflection and Goal Setting",
+    "tip": "Monthly reflection helps you stay aligned with your goals. What skills did you develop? What challenges did you overcome? What do you want to focus on next?",
+    "action": "Write a brief monthly reflection on your career development progress and set 3 goals for next month.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 16,
+    "category": "remote_work",
+    "title": "Master Remote Work and Digital Collaboration",
+    "tip": "Remote work skills are essential in 2025. Learn tools like Slack, Zoom, Asana, Figma, and GitHub. Practice virtual presentation and collaboration skills.",
+    "action": "Set up a professional home workspace and practice using 2 new collaboration tools this week.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 17,
+    "category": "continuous_learning",
+    "title": "Embrace Lifelong Learning Mindset",
+    "tip": "With rapid technological change, continuous learning is crucial. Set aside time weekly for learning new skills, reading industry publications, or taking online courses.",
+    "action": "Block 2 hours in your weekly calendar dedicated to learning and skill development.",
+    "career_focus": ["All careers"]
+  },
+  {
+    "id": 18,
+    "category": "personal_brand",
+    "title": "Build Your Professional Online Presence",
+    "tip": "Create a strong LinkedIn profile, consider starting a blog or newsletter, and share insights about your field. Your online presence is your 24/7 resume.",
+    "action": "Update your LinkedIn profile and publish one post about a topic in your field this week.",
+    "career_focus": ["All careers"]
+  }
+]

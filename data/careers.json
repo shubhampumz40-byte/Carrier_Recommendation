@@ -1,0 +1,137 @@
+[
+  {
+    "name": "AI/ML Engineer",
+    "required_skills": ["machine_learning", "programming", "data_analysis", "deep_learning", "python"],
+    "interests": ["technology", "artificial_intelligence", "problem_solving", "innovation"],
+    "subjects": ["computer_science", "mathematics", "statistics"],
+    "personality_traits": ["analytical", "detail_oriented", "innovative", "curious"],
+    "description": "Design and develop artificial intelligence and machine learning systems",
+    "growth_rate": "35%",
+    "median_salary": "$185,000",
+    "job_outlook": "Extremely high demand with AI boom",
+    "emerging_field": true
+  },
+  {
+    "name": "Software Engineer",
+    "required_skills": ["programming", "problem_solving", "logical_thinking", "software_development"],
+    "interests": ["technology", "computers", "innovation", "problem_solving"],
+    "subjects": ["computer_science", "mathematics", "physics"],
+    "personality_traits": ["analytical", "detail_oriented", "creative"],
+    "description": "Design and develop software applications and systems",
+    "growth_rate": "17%",
+    "median_salary": "$130,000",
+    "job_outlook": "Strong growth projected through 2034"
+  },
+  {
+    "name": "Data Scientist",
+    "required_skills": ["statistics", "programming", "data_analysis", "machine_learning", "python"],
+    "interests": ["data", "research", "patterns", "analytics"],
+    "subjects": ["mathematics", "statistics", "computer_science"],
+    "personality_traits": ["analytical", "curious", "detail_oriented"],
+    "description": "Extract insights from complex data sets using advanced analytics",
+    "growth_rate": "36%",
+    "median_salary": "$148,000",
+    "job_outlook": "Fastest growing data occupation"
+  },
+  {
+    "name": "Cybersecurity Analyst",
+    "required_skills": ["security", "networking", "risk_assessment", "incident_response"],
+    "interests": ["technology", "security", "problem_solving", "protection"],
+    "subjects": ["computer_science", "information_technology"],
+    "personality_traits": ["analytical", "detail_oriented", "vigilant"],
+    "description": "Protect organizations from cyber threats and security breaches",
+    "growth_rate": "32%",
+    "median_salary": "$125,000",
+    "job_outlook": "High demand due to increasing cyber threats"
+  },
+  {
+    "name": "Nurse Practitioner",
+    "required_skills": ["healthcare", "patient_care", "diagnosis", "treatment", "communication"],
+    "interests": ["healthcare", "helping_people", "medicine", "patient_care"],
+    "subjects": ["biology", "chemistry", "health_sciences"],
+    "personality_traits": ["empathetic", "detail_oriented", "caring", "decisive"],
+    "description": "Provide advanced nursing care and can diagnose and treat patients",
+    "growth_rate": "46%",
+    "median_salary": "$129,000",
+    "job_outlook": "Fastest growing healthcare occupation"
+  },
+  {
+    "name": "Physician Assistant",
+    "required_skills": ["medical_knowledge", "patient_care", "diagnosis", "treatment"],
+    "interests": ["healthcare", "medicine", "helping_people", "science"],
+    "subjects": ["biology", "chemistry", "health_sciences"],
+    "personality_traits": ["empathetic", "analytical", "decisive", "collaborative"],
+    "description": "Practice medicine under physician supervision, diagnose and treat patients",
+    "growth_rate": "28%",
+    "median_salary": "$130,000",
+    "job_outlook": "Excellent growth due to healthcare demand"
+  },
+  {
+    "name": "UX Designer",
+    "required_skills": ["design", "user_research", "prototyping", "empathy", "visual_design"],
+    "interests": ["design", "psychology", "user_experience", "creativity"],
+    "subjects": ["psychology", "art", "design", "computer_science"],
+    "personality_traits": ["creative", "empathetic", "collaborative", "analytical"],
+    "description": "Design user-friendly interfaces and experiences for digital products",
+    "growth_rate": "8%",
+    "median_salary": "$85,000",
+    "job_outlook": "Steady growth with digital transformation"
+  },
+  {
+    "name": "Product Manager",
+    "required_skills": ["strategy", "communication", "analysis", "leadership", "project_management"],
+    "interests": ["business", "technology", "strategy", "innovation"],
+    "subjects": ["business", "computer_science", "economics"],
+    "personality_traits": ["strategic", "collaborative", "analytical", "leadership"],
+    "description": "Guide product development from conception to launch",
+    "growth_rate": "19%",
+    "median_salary": "$142,000",
+    "job_outlook": "Strong demand in tech and business sectors"
+  },
+  {
+    "name": "Renewable Energy Engineer",
+    "required_skills": ["engineering", "sustainability", "renewable_energy", "project_management"],
+    "interests": ["environment", "sustainability", "engineering", "clean_energy"],
+    "subjects": ["engineering", "physics", "environmental_science"],
+    "personality_traits": ["innovative", "analytical", "environmentally_conscious"],
+    "description": "Design and develop renewable energy systems and technologies",
+    "growth_rate": "52%",
+    "median_salary": "$95,000",
+    "job_outlook": "Explosive growth in green energy sector",
+    "emerging_field": true
+  },
+  {
+    "name": "Sustainability Specialist",
+    "required_skills": ["environmental_analysis", "sustainability", "project_management", "policy"],
+    "interests": ["environment", "sustainability", "policy", "conservation"],
+    "subjects": ["environmental_science", "business", "policy"],
+    "personality_traits": ["environmentally_conscious", "analytical", "collaborative"],
+    "description": "Help organizations implement sustainable practices and meet environmental goals",
+    "growth_rate": "40%",
+    "median_salary": "$80,000",
+    "job_outlook": "High growth due to climate initiatives",
+    "emerging_field": true
+  },
+  {
+    "name": "Digital Marketing Manager",
+    "required_skills": ["digital_marketing", "analytics", "content_strategy", "social_media"],
+    "interests": ["marketing", "digital_media", "creativity", "analytics"],
+    "subjects": ["marketing", "communications", "business"],
+    "personality_traits": ["creative", "analytical", "strategic", "adaptable"],
+    "description": "Develop and execute digital marketing strategies across online channels",
+    "growth_rate": "10%",
+    "median_salary": "$75,000",
+    "job_outlook": "Steady growth with digital economy expansion"
+  },
+  {
+    "name": "Cloud Solutions Architect",
+    "required_skills": ["cloud_computing", "system_architecture", "programming", "security"],
+    "interests": ["technology", "cloud_computing", "system_design", "innovation"],
+    "subjects": ["computer_science", "information_technology"],
+    "personality_traits": ["analytical", "strategic", "detail_oriented", "innovative"],
+    "description": "Design and implement cloud computing solutions for organizations",
+    "growth_rate": "25%",
+    "median_salary": "$155,000",
+    "job_outlook": "High demand as companies migrate to cloud"
+  }
+]

@@ -1,0 +1,1550 @@
+{
+  "career_simulations": {
+    "Doctor": {
+      "career_title": "Doctor (General Practitioner)",
+      "overview": "Experience a typical day as a family doctor treating patients, managing emergencies, and maintaining medical records.",
+      "working_hours": {
+        "start_time": "7:00 AM",
+        "end_time": "7:00 PM",
+        "total_hours": 12,
+        "break_time": "30 minutes lunch",
+        "on_call": "2-3 nights per week"
+      },
+      "daily_schedule": [
+        {
+          "time": "7:00 AM",
+          "task": "Review patient charts and prepare for the day",
+          "duration": 30,
+          "stress_level": 2,
+          "description": "Check overnight messages, review scheduled appointments, and prepare treatment plans."
+        },
+        {
+          "time": "7:30 AM",
+          "task": "Hospital rounds (if applicable)",
+          "duration": 60,
+          "stress_level": 3,
+          "description": "Visit hospitalized patients, check progress, adjust medications, and coordinate with specialists."
+        },
+        {
+          "time": "8:30 AM",
+          "task": "First patient consultations",
+          "duration": 120,
+          "stress_level": 3,
+          "description": "See 6-8 patients: routine checkups, diagnose symptoms, prescribe treatments."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "Emergency patient - chest pain",
+          "duration": 45,
+          "stress_level": 5,
+          "description": "Urgent case: assess symptoms, order ECG, coordinate with cardiologist, manage patient anxiety."
+        },
+        {
+          "time": "11:15 AM",
+          "task": "Documentation and medical records",
+          "duration": 45,
+          "stress_level": 2,
+          "description": "Update patient files, write prescriptions, complete insurance forms, review lab results."
+        },
+        {
+          "time": "12:00 PM",
+          "task": "More patient consultations",
+          "duration": 150,
+          "stress_level": 3,
+          "description": "Continue seeing scheduled patients: chronic disease management, preventive care, minor procedures."
+        },
+        {
+          "time": "2:30 PM",
+          "task": "Lunch break",
+          "duration": 30,
+          "stress_level": 1,
+          "description": "Quick lunch while reviewing afternoon schedule and returning urgent calls."
+        },
+        {
+          "time": "3:00 PM",
+          "task": "Afternoon consultations",
+          "duration": 180,
+          "stress_level": 3,
+          "description": "See remaining patients, handle walk-ins, manage complex cases requiring longer consultation."
+        },
+        {
+          "time": "6:00 PM",
+          "task": "Administrative work",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Complete paperwork, return patient calls, coordinate referrals, update treatment plans."
+        },
+        {
+          "time": "7:00 PM",
+          "task": "On-call preparation",
+          "duration": 30,
+          "stress_level": 2,
+          "description": "Brief on-call doctor, review critical patients, ensure emergency protocols are ready."
+        }
+      ],
+      "stress_factors": [
+        "Life-and-death decisions",
+        "Long working hours",
+        "Emotional patient interactions",
+        "Medical malpractice concerns",
+        "Constant learning requirements"
+      ],
+      "rewards": [
+        "Saving lives and improving health",
+        "High respect in society",
+        "Good financial compensation",
+        "Intellectual challenges",
+        "Direct impact on people's lives"
+      ],
+      "skills_used": [
+        "Medical diagnosis",
+        "Patient communication",
+        "Critical thinking",
+        "Time management",
+        "Emotional resilience"
+      ],
+      "average_stress_level": 3.2,
+      "work_life_balance": "Challenging - long hours and on-call duties",
+      "salary_range": "$200,000 - $400,000",
+      "education_required": "Medical degree + residency (8-12 years)",
+      "region_specific": {
+        "global": {
+          "salary": "$200,000 - $400,000",
+          "work_culture": "Varies by country - US/UK have longer hours"
+        },
+        "india": {
+          "salary": "₹8-25 lakhs",
+          "work_culture": "Often includes private practice alongside hospital work"
+        }
+      }
+    },
+    "Game Developer": {
+      "career_title": "Game Developer (Software Engineer)",
+      "overview": "Experience the creative and technical challenges of developing video games, from coding gameplay mechanics to debugging complex systems.",
+      "working_hours": {
+        "start_time": "10:00 AM",
+        "end_time": "7:00 PM",
+        "total_hours": 9,
+        "break_time": "1 hour lunch + coffee breaks",
+        "crunch_time": "Up to 12-14 hours during release periods"
+      },
+      "daily_schedule": [
+        {
+          "time": "10:00 AM",
+          "task": "Daily standup meeting",
+          "duration": 30,
+          "stress_level": 1,
+          "description": "Team sync: discuss yesterday's progress, today's goals, and any blockers with designers and artists."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "Code review and planning",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Review teammates' code, plan implementation of new game features, check version control updates."
+        },
+        {
+          "time": "11:30 AM",
+          "task": "Implement player movement system",
+          "duration": 120,
+          "stress_level": 3,
+          "description": "Write C# code for character controller, handle physics interactions, test different movement speeds."
+        },
+        {
+          "time": "1:30 PM",
+          "task": "Lunch and team gaming session",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Lunch break often includes playing games with team for inspiration and bonding."
+        },
+        {
+          "time": "2:30 PM",
+          "task": "Debug collision detection issues",
+          "duration": 90,
+          "stress_level": 4,
+          "description": "Investigate why players are falling through platforms, test edge cases, fix physics bugs."
+        },
+        {
+          "time": "4:00 PM",
+          "task": "Collaborate with game designers",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Discuss gameplay mechanics, review design documents, provide technical feasibility feedback."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Implement UI features",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Code inventory system, health bars, menu navigation, integrate with art assets."
+        },
+        {
+          "time": "6:30 PM",
+          "task": "Playtesting and iteration",
+          "duration": 60,
+          "stress_level": 3,
+          "description": "Test latest build, identify bugs, gather feedback, document issues for tomorrow."
+        },
+        {
+          "time": "7:30 PM",
+          "task": "Optional: Personal game project",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Work on indie game side project, experiment with new technologies, build portfolio."
+        }
+      ],
+      "stress_factors": [
+        "Tight deadlines and crunch periods",
+        "Complex technical problems",
+        "Creative differences with team",
+        "Performance optimization challenges",
+        "Changing requirements"
+      ],
+      "rewards": [
+        "Creating entertainment for millions",
+        "Creative and technical challenges",
+        "Collaborative team environment",
+        "Seeing ideas come to life",
+        "Gaming industry perks"
+      ],
+      "skills_used": [
+        "Programming (C#, C++, Python)",
+        "Problem-solving",
+        "Game engine expertise",
+        "Mathematics and physics",
+        "Team collaboration"
+      ],
+      "average_stress_level": 2.4,
+      "work_life_balance": "Good normally, challenging during crunch periods",
+      "salary_range": "$70,000 - $150,000",
+      "education_required": "Computer Science degree or equivalent experience",
+      "region_specific": {
+        "global": {
+          "salary": "$70,000 - $150,000",
+          "work_culture": "Casual environment, flexible hours, but crunch periods common"
+        },
+        "india": {
+          "salary": "₹6-20 lakhs",
+          "work_culture": "Growing industry with both international and local game studios"
+        }
+      }
+    },
+    "IAS Officer": {
+      "career_title": "IAS Officer (Indian Administrative Service)",
+      "overview": "Experience the responsibilities of a senior civil servant managing government policies, public welfare programs, and administrative decisions.",
+      "working_hours": {
+        "start_time": "9:00 AM",
+        "end_time": "8:00 PM",
+        "total_hours": 11,
+        "break_time": "1 hour lunch",
+        "field_visits": "2-3 days per week outside office"
+      },
+      "daily_schedule": [
+        {
+          "time": "9:00 AM",
+          "task": "Review overnight reports and briefings",
+          "duration": 45,
+          "stress_level": 3,
+          "description": "Check district reports, emergency situations, media coverage, and priority issues requiring immediate attention."
+        },
+        {
+          "time": "9:45 AM",
+          "task": "Meeting with department heads",
+          "duration": 75,
+          "stress_level": 3,
+          "description": "Coordinate with police, health, education, and revenue departments on ongoing projects and issues."
+        },
+        {
+          "time": "11:00 AM",
+          "task": "Public grievance hearing",
+          "duration": 120,
+          "stress_level": 4,
+          "description": "Meet citizens with complaints, land disputes, welfare scheme issues, listen and provide solutions."
+        },
+        {
+          "time": "1:00 PM",
+          "task": "Lunch and informal consultations",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Working lunch with local leaders, MLAs, or senior officials to discuss ongoing issues."
+        },
+        {
+          "time": "2:00 PM",
+          "task": "Field visit - rural development project",
+          "duration": 180,
+          "stress_level": 3,
+          "description": "Visit villages to inspect road construction, school building, water supply projects, interact with beneficiaries."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Policy review and file work",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Review policy proposals, sign important files, approve budgets, coordinate with state government."
+        },
+        {
+          "time": "6:30 PM",
+          "task": "Emergency situation - flood response",
+          "duration": 90,
+          "stress_level": 5,
+          "description": "Coordinate disaster response, deploy rescue teams, arrange relief materials, brief media."
+        },
+        {
+          "time": "8:00 PM",
+          "task": "Evening calls and planning",
+          "duration": 60,
+          "stress_level": 3,
+          "description": "Calls with state secretariat, plan tomorrow's schedule, review pending issues."
+        }
+      ],
+      "stress_factors": [
+        "Political pressure and interference",
+        "Media scrutiny and public criticism",
+        "Balancing multiple stakeholder interests",
+        "Emergency and crisis management",
+        "Bureaucratic red tape and delays"
+      ],
+      "rewards": [
+        "Direct impact on society and governance",
+        "High social status and respect",
+        "Diverse and challenging work",
+        "Job security and benefits",
+        "Opportunity to serve the nation"
+      ],
+      "skills_used": [
+        "Public administration",
+        "Leadership and management",
+        "Policy analysis",
+        "Communication and negotiation",
+        "Crisis management"
+      ],
+      "average_stress_level": 3.4,
+      "work_life_balance": "Challenging - irregular hours and high responsibility",
+      "salary_range": "₹56,100 - ₹2,50,000 per month",
+      "education_required": "Graduate degree + UPSC Civil Services Exam",
+      "region_specific": {
+        "india": {
+          "salary": "₹56,100 - ₹2,50,000 per month + allowances",
+          "work_culture": "Hierarchical, protocol-driven, high public accountability"
+        }
+      }
+    },
+    "Software Engineer": {
+      "career_title": "Software Engineer (Full Stack Developer)",
+      "overview": "Experience the daily life of a software engineer building web applications, solving technical problems, and collaborating with cross-functional teams.",
+      "working_hours": {
+        "start_time": "9:00 AM",
+        "end_time": "6:00 PM",
+        "total_hours": 9,
+        "break_time": "1 hour lunch + coffee breaks",
+        "flexible": "Remote work options, flexible hours"
+      },
+      "daily_schedule": [
+        {
+          "time": "9:00 AM",
+          "task": "Check emails and daily standup",
+          "duration": 30,
+          "stress_level": 1,
+          "description": "Review overnight messages, join team standup to discuss progress and blockers."
+        },
+        {
+          "time": "9:30 AM",
+          "task": "Code review and planning",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Review teammates' pull requests, plan today's development tasks, check project timeline."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "Implement user authentication feature",
+          "duration": 150,
+          "stress_level": 3,
+          "description": "Write backend API for login/signup, implement JWT tokens, add password validation, write unit tests."
+        },
+        {
+          "time": "1:00 PM",
+          "task": "Lunch break",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Lunch with colleagues, sometimes walking meetings or casual discussions about tech trends."
+        },
+        {
+          "time": "2:00 PM",
+          "task": "Debug production issue",
+          "duration": 90,
+          "stress_level": 4,
+          "description": "Investigate user-reported bug, analyze logs, identify root cause, deploy hotfix to production."
+        },
+        {
+          "time": "3:30 PM",
+          "task": "Frontend development - React components",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Build responsive UI components, integrate with backend APIs, ensure cross-browser compatibility."
+        },
+        {
+          "time": "5:30 PM",
+          "task": "Team meeting and documentation",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Sprint planning meeting, update technical documentation, discuss architecture decisions."
+        },
+        {
+          "time": "6:30 PM",
+          "task": "Personal learning time",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Learn new framework, contribute to open source, work on side projects, read tech blogs."
+        }
+      ],
+      "stress_factors": [
+        "Tight project deadlines",
+        "Complex technical problems",
+        "Production bugs and outages",
+        "Keeping up with new technologies",
+        "Code quality and performance pressure"
+      ],
+      "rewards": [
+        "Creating solutions that impact users",
+        "Continuous learning opportunities",
+        "Good work-life balance",
+        "High demand and job security",
+        "Creative problem-solving"
+      ],
+      "skills_used": [
+        "Programming languages (JavaScript, Python, Java)",
+        "Problem-solving and debugging",
+        "System design and architecture",
+        "Version control and collaboration",
+        "Testing and quality assurance"
+      ],
+      "average_stress_level": 2.3,
+      "work_life_balance": "Good - flexible hours and remote work options",
+      "salary_range": "$80,000 - $180,000",
+      "education_required": "Computer Science degree or bootcamp/self-taught",
+      "region_specific": {
+        "global": {
+          "salary": "$80,000 - $180,000",
+          "work_culture": "Flexible, collaborative, emphasis on work-life balance"
+        },
+        "india": {
+          "salary": "₹4-25 lakhs",
+          "work_culture": "Growing tech ecosystem, increasing focus on employee well-being"
+        }
+      }
+    },
+    "Teacher": {
+      "career_title": "High School Teacher (Mathematics)",
+      "overview": "Experience the rewarding yet challenging life of an educator, shaping young minds while managing classroom dynamics and administrative responsibilities.",
+      "working_hours": {
+        "start_time": "7:30 AM",
+        "end_time": "4:00 PM",
+        "total_hours": 8.5,
+        "break_time": "30 minutes lunch + planning periods",
+        "after_hours": "Grading, lesson planning, parent meetings"
+      },
+      "daily_schedule": [
+        {
+          "time": "7:30 AM",
+          "task": "Prepare classroom and review lesson plans",
+          "duration": 30,
+          "stress_level": 2,
+          "description": "Set up materials, review today's lessons, check for any last-minute changes or announcements."
+        },
+        {
+          "time": "8:00 AM",
+          "task": "First period - Algebra II",
+          "duration": 50,
+          "stress_level": 3,
+          "description": "Teach quadratic equations, manage 28 students, handle disruptions, ensure everyone understands."
+        },
+        {
+          "time": "8:50 AM",
+          "task": "Second period - Geometry",
+          "duration": 50,
+          "stress_level": 3,
+          "description": "Explain triangle proofs, use visual aids, help struggling students, maintain classroom discipline."
+        },
+        {
+          "time": "9:40 AM",
+          "task": "Planning period",
+          "duration": 50,
+          "stress_level": 2,
+          "description": "Grade assignments, prepare materials for next class, respond to parent emails, make copies."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "Third period - Pre-Calculus",
+          "duration": 50,
+          "stress_level": 3,
+          "description": "Advanced students, teach trigonometric functions, encourage questions, prepare for AP exams."
+        },
+        {
+          "time": "11:20 AM",
+          "task": "Fourth period - Remedial Math",
+          "duration": 50,
+          "stress_level": 4,
+          "description": "Work with struggling students, different learning styles, build confidence, individual attention."
+        },
+        {
+          "time": "12:10 PM",
+          "task": "Lunch and duty supervision",
+          "duration": 30,
+          "stress_level": 2,
+          "description": "Quick lunch while supervising cafeteria, handle student conflicts, brief break from teaching."
+        },
+        {
+          "time": "12:40 PM",
+          "task": "Fifth period - Statistics",
+          "duration": 50,
+          "stress_level": 2,
+          "description": "Teach probability concepts, use real-world examples, engage students with data analysis projects."
+        },
+        {
+          "time": "1:30 PM",
+          "task": "Sixth period - Study Hall supervision",
+          "duration": 50,
+          "stress_level": 2,
+          "description": "Monitor students doing homework, provide help when needed, maintain quiet environment."
+        },
+        {
+          "time": "2:20 PM",
+          "task": "After-school tutoring",
+          "duration": 60,
+          "stress_level": 3,
+          "description": "Help students who are falling behind, prepare for tests, one-on-one instruction."
+        },
+        {
+          "time": "3:20 PM",
+          "task": "Administrative tasks and planning",
+          "duration": 40,
+          "stress_level": 2,
+          "description": "Update gradebook, plan tomorrow's lessons, attend department meeting, parent communication."
+        }
+      ],
+      "stress_factors": [
+        "Managing diverse student needs",
+        "Classroom discipline challenges",
+        "Administrative paperwork",
+        "Parent and administrator pressure",
+        "Limited resources and budget"
+      ],
+      "rewards": [
+        "Shaping future generations",
+        "Student success and breakthrough moments",
+        "Summer breaks and holidays",
+        "Job security and benefits",
+        "Making a difference in community"
+      ],
+      "skills_used": [
+        "Subject matter expertise",
+        "Communication and presentation",
+        "Classroom management",
+        "Patience and empathy",
+        "Adaptability and creativity"
+      ],
+      "average_stress_level": 2.7,
+      "work_life_balance": "Moderate - good holidays but evening work required",
+      "salary_range": "$40,000 - $80,000",
+      "education_required": "Bachelor's degree + teaching certification",
+      "region_specific": {
+        "global": {
+          "salary": "$40,000 - $80,000",
+          "work_culture": "Varies by country - Finland has high respect, US faces challenges"
+        },
+        "india": {
+          "salary": "₹3-8 lakhs",
+          "work_culture": "Traditional respect for teachers, but increasing pressure for results"
+        }
+      }
+    },
+    "Data Scientist": {
+      "career_title": "Data Scientist (Analytics Professional)",
+      "overview": "Experience the analytical world of data science, extracting insights from complex datasets and building predictive models.",
+      "working_hours": {
+        "start_time": "9:00 AM",
+        "end_time": "6:00 PM",
+        "total_hours": 9,
+        "break_time": "1 hour lunch + coffee breaks",
+        "flexible": "Remote work options, flexible hours"
+      },
+      "daily_schedule": [
+        {
+          "time": "9:00 AM",
+          "task": "Check emails and review project status",
+          "duration": 30,
+          "stress_level": 1,
+          "description": "Review overnight model runs, check for any data pipeline issues, plan the day's work."
+        },
+        {
+          "time": "9:30 AM",
+          "task": "Data exploration and cleaning",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Analyze new dataset, identify missing values, outliers, and data quality issues using Python/R."
+        },
+        {
+          "time": "11:30 AM",
+          "task": "Team standup and collaboration",
+          "duration": 30,
+          "stress_level": 2,
+          "description": "Sync with engineering team, discuss model deployment, share findings with stakeholders."
+        },
+        {
+          "time": "12:00 PM",
+          "task": "Feature engineering and model building",
+          "duration": 150,
+          "stress_level": 3,
+          "description": "Create new features, test different algorithms, tune hyperparameters, validate model performance."
+        },
+        {
+          "time": "2:30 PM",
+          "task": "Lunch break",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Lunch while reading research papers or discussing ideas with colleagues."
+        },
+        {
+          "time": "3:30 PM",
+          "task": "Statistical analysis and hypothesis testing",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Run A/B tests, perform statistical significance tests, analyze experiment results."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Create visualizations and reports",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Build dashboards, create charts, prepare presentation for business stakeholders."
+        },
+        {
+          "time": "6:30 PM",
+          "task": "Learning and research time",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Read latest research papers, learn new techniques, contribute to open source projects."
+        }
+      ],
+      "stress_factors": [
+        "Messy and incomplete data",
+        "Unrealistic business expectations",
+        "Complex statistical concepts",
+        "Model performance pressure",
+        "Translating technical results to business"
+      ],
+      "rewards": [
+        "Discovering insights from data",
+        "High demand and good salary",
+        "Intellectual challenges",
+        "Flexible work environment",
+        "Impact on business decisions"
+      ],
+      "skills_used": [
+        "Statistics and mathematics",
+        "Programming (Python, R, SQL)",
+        "Machine learning algorithms",
+        "Data visualization",
+        "Business communication"
+      ],
+      "average_stress_level": 2.3,
+      "work_life_balance": "Good - flexible hours and remote work options",
+      "salary_range": "$90,000 - $180,000",
+      "education_required": "Statistics/Math/CS degree + specialized training",
+      "region_specific": {
+        "global": {
+          "salary": "$90,000 - $180,000",
+          "work_culture": "Collaborative, research-oriented, flexible"
+        },
+        "india": {
+          "salary": "₹8-30 lakhs",
+          "work_culture": "Growing field with increasing demand in tech companies"
+        }
+      }
+    },
+    "DevOps Engineer": {
+      "career_title": "DevOps Engineer (Infrastructure & Automation)",
+      "overview": "Experience the fast-paced world of DevOps, managing cloud infrastructure, automating deployments, and ensuring system reliability.",
+      "working_hours": {
+        "start_time": "9:00 AM",
+        "end_time": "6:00 PM",
+        "total_hours": 9,
+        "break_time": "1 hour lunch + coffee breaks",
+        "on_call": "24/7 rotation for production issues"
+      },
+      "daily_schedule": [
+        {
+          "time": "9:00 AM",
+          "task": "Check system alerts and overnight deployments",
+          "duration": 30,
+          "stress_level": 3,
+          "description": "Review monitoring dashboards, check for any production issues, analyze deployment logs."
+        },
+        {
+          "time": "9:30 AM",
+          "task": "Infrastructure automation scripting",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Write Terraform scripts, update Kubernetes configurations, automate CI/CD pipelines."
+        },
+        {
+          "time": "11:30 AM",
+          "task": "Production incident response",
+          "duration": 90,
+          "stress_level": 5,
+          "description": "Critical server outage - diagnose issue, coordinate with teams, implement fix, post-mortem."
+        },
+        {
+          "time": "1:00 PM",
+          "task": "Lunch break",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Quick lunch while monitoring alerts, sometimes working lunch during incidents."
+        },
+        {
+          "time": "2:00 PM",
+          "task": "Cloud infrastructure optimization",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Optimize AWS/Azure costs, scale resources, implement security best practices."
+        },
+        {
+          "time": "4:00 PM",
+          "task": "Team collaboration and planning",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Sprint planning, architecture discussions, knowledge sharing with development teams."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Monitoring and alerting setup",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Configure Prometheus, set up Grafana dashboards, fine-tune alert thresholds."
+        }
+      ],
+      "stress_factors": [
+        "24/7 on-call responsibilities",
+        "Production outages and downtime",
+        "Rapid technology changes",
+        "High-pressure incident response",
+        "Balancing automation vs manual work"
+      ],
+      "rewards": [
+        "High salary growth (12% YoY)",
+        "Cutting-edge technology exposure",
+        "Critical role in company success",
+        "Remote work flexibility",
+        "Strong job market demand"
+      ],
+      "skills_used": [
+        "Cloud platforms (AWS, Azure, GCP)",
+        "Infrastructure as Code (Terraform)",
+        "Container orchestration (Kubernetes)",
+        "CI/CD pipeline management",
+        "Monitoring and observability"
+      ],
+      "average_stress_level": 2.8,
+      "work_life_balance": "Challenging - on-call duties but flexible hours",
+      "salary_range": "$120,000 - $200,000",
+      "education_required": "Computer Science degree or equivalent experience",
+      "region_specific": {
+        "global": {
+          "salary": "$120,000 - $200,000",
+          "work_culture": "Fast-paced, collaborative, high-responsibility environment"
+        },
+        "india": {
+          "salary": "₹12-35 lakhs",
+          "work_culture": "Growing DevOps adoption in Indian tech companies"
+        }
+      }
+    },
+    "Cybersecurity Analyst": {
+      "career_title": "Cybersecurity Analyst (Information Security)",
+      "overview": "Protect organizations from cyber threats through monitoring, analysis, and incident response in an increasingly dangerous digital landscape.",
+      "working_hours": {
+        "start_time": "8:00 AM",
+        "end_time": "6:00 PM",
+        "total_hours": 10,
+        "break_time": "45 minutes lunch",
+        "shift_work": "24/7 SOC coverage with rotating shifts"
+      },
+      "daily_schedule": [
+        {
+          "time": "8:00 AM",
+          "task": "Security Operations Center (SOC) briefing",
+          "duration": 30,
+          "stress_level": 3,
+          "description": "Review overnight security events, threat intelligence updates, ongoing investigations."
+        },
+        {
+          "time": "8:30 AM",
+          "task": "Threat hunting and analysis",
+          "duration": 120,
+          "stress_level": 4,
+          "description": "Analyze suspicious network traffic, investigate potential malware, hunt for advanced threats."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "Security incident response",
+          "duration": 90,
+          "stress_level": 5,
+          "description": "Major ransomware attack detected - isolate systems, analyze impact, coordinate response team."
+        },
+        {
+          "time": "12:00 PM",
+          "task": "Vulnerability assessment",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Scan systems for vulnerabilities, prioritize patches, work with IT teams on remediation."
+        },
+        {
+          "time": "1:30 PM",
+          "task": "Lunch break",
+          "duration": 45,
+          "stress_level": 1,
+          "description": "Quick lunch while monitoring critical alerts, staying available for emergencies."
+        },
+        {
+          "time": "2:15 PM",
+          "task": "Security awareness training",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Conduct phishing simulation, train employees on security best practices."
+        },
+        {
+          "time": "3:15 PM",
+          "task": "Compliance and documentation",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Update security policies, prepare compliance reports, document incident responses."
+        },
+        {
+          "time": "4:45 PM",
+          "task": "Threat intelligence research",
+          "duration": 75,
+          "stress_level": 3,
+          "description": "Research new attack vectors, update security tools, analyze threat actor tactics."
+        }
+      ],
+      "stress_factors": [
+        "Constant threat of cyber attacks",
+        "High-pressure incident response",
+        "24/7 monitoring requirements",
+        "Rapidly evolving threat landscape",
+        "Responsibility for organizational security"
+      ],
+      "rewards": [
+        "Protecting organizations from threats",
+        "High demand and job security",
+        "Intellectual challenges",
+        "Competitive salaries",
+        "Critical role in digital safety"
+      ],
+      "skills_used": [
+        "Security information and event management (SIEM)",
+        "Incident response procedures",
+        "Network security analysis",
+        "Malware analysis",
+        "Risk assessment"
+      ],
+      "average_stress_level": 3.2,
+      "work_life_balance": "Challenging - high stress and on-call requirements",
+      "salary_range": "$85,000 - $150,000",
+      "education_required": "Cybersecurity degree + certifications (CISSP, CEH)",
+      "region_specific": {
+        "global": {
+          "salary": "$85,000 - $150,000",
+          "work_culture": "High-stress, mission-critical, continuous learning required"
+        },
+        "india": {
+          "salary": "₹8-25 lakhs",
+          "work_culture": "Growing cybersecurity awareness, increasing investment in security"
+        }
+      }
+    },
+    "UX/UI Designer": {
+      "career_title": "UX/UI Designer (Digital Product Design)",
+      "overview": "Create intuitive and beautiful digital experiences by researching user needs and designing interfaces that delight users.",
+      "working_hours": {
+        "start_time": "10:00 AM",
+        "end_time": "7:00 PM",
+        "total_hours": 9,
+        "break_time": "1 hour lunch + creative breaks",
+        "flexible": "Flexible hours and remote work options"
+      },
+      "daily_schedule": [
+        {
+          "time": "10:00 AM",
+          "task": "Design team standup and planning",
+          "duration": 30,
+          "stress_level": 1,
+          "description": "Sync with design team, review project timelines, discuss design challenges."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "User research and persona development",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Analyze user interviews, create user personas, map user journeys and pain points."
+        },
+        {
+          "time": "12:30 PM",
+          "task": "Wireframing and prototyping",
+          "duration": 150,
+          "stress_level": 2,
+          "description": "Create wireframes in Figma, build interactive prototypes, iterate on design concepts."
+        },
+        {
+          "time": "3:00 PM",
+          "task": "Lunch and inspiration time",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Lunch while browsing design inspiration, visiting design galleries, creative recharge."
+        },
+        {
+          "time": "4:00 PM",
+          "task": "Design critique and feedback session",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Present designs to stakeholders, receive feedback, defend design decisions, iterate."
+        },
+        {
+          "time": "5:30 PM",
+          "task": "Visual design and UI refinement",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Create high-fidelity mockups, design system components, ensure brand consistency."
+        },
+        {
+          "time": "7:30 PM",
+          "task": "Design handoff and documentation",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Prepare design specs for developers, update design system, document interactions."
+        }
+      ],
+      "stress_factors": [
+        "Subjective feedback and criticism",
+        "Tight project deadlines",
+        "Balancing user needs vs business goals",
+        "Keeping up with design trends",
+        "Stakeholder management"
+      ],
+      "rewards": [
+        "Creating beautiful user experiences",
+        "High creativity and variety",
+        "Strong job market demand",
+        "Flexible work arrangements",
+        "Seeing designs come to life"
+      ],
+      "skills_used": [
+        "Design tools (Figma, Sketch, Adobe)",
+        "User research methods",
+        "Prototyping and wireframing",
+        "Design systems",
+        "Visual design principles"
+      ],
+      "average_stress_level": 2.1,
+      "work_life_balance": "Good - creative environment with flexible hours",
+      "salary_range": "$70,000 - $140,000",
+      "education_required": "Design degree or portfolio-based experience",
+      "region_specific": {
+        "global": {
+          "salary": "$70,000 - $140,000",
+          "work_culture": "Creative, collaborative, user-focused environment"
+        },
+        "india": {
+          "salary": "₹6-20 lakhs",
+          "work_culture": "Growing design awareness in Indian startups and tech companies"
+        }
+      }
+    },
+    "Digital Marketing Manager": {
+      "career_title": "Digital Marketing Manager (Growth & Analytics)",
+      "overview": "Drive business growth through digital channels, managing campaigns, analyzing data, and optimizing customer acquisition strategies.",
+      "working_hours": {
+        "start_time": "9:00 AM",
+        "end_time": "6:00 PM",
+        "total_hours": 9,
+        "break_time": "1 hour lunch",
+        "flexible": "Some evening work for campaign monitoring"
+      },
+      "daily_schedule": [
+        {
+          "time": "9:00 AM",
+          "task": "Campaign performance review",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Analyze overnight campaign performance, check Google Ads, Facebook metrics, ROI analysis."
+        },
+        {
+          "time": "10:00 AM",
+          "task": "Content strategy and creation",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Plan social media content, write blog posts, create email campaigns, coordinate with designers."
+        },
+        {
+          "time": "12:00 PM",
+          "task": "Marketing automation setup",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Configure email sequences, set up lead nurturing workflows, A/B test campaigns."
+        },
+        {
+          "time": "1:30 PM",
+          "task": "Lunch and networking",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Lunch while checking industry news, networking with other marketers, learning new trends."
+        },
+        {
+          "time": "2:30 PM",
+          "task": "Paid advertising optimization",
+          "duration": 120,
+          "stress_level": 4,
+          "description": "Optimize Google Ads campaigns, adjust Facebook targeting, manage budget allocation, crisis management."
+        },
+        {
+          "time": "4:30 PM",
+          "task": "Analytics and reporting",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Create performance dashboards, analyze conversion funnels, prepare executive reports."
+        },
+        {
+          "time": "6:00 PM",
+          "task": "Strategy planning and research",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Research competitors, plan next quarter campaigns, explore new marketing channels."
+        }
+      ],
+      "stress_factors": [
+        "Campaign performance pressure",
+        "Rapidly changing digital platforms",
+        "Budget management responsibility",
+        "Attribution and measurement challenges",
+        "Keeping up with algorithm changes"
+      ],
+      "rewards": [
+        "Direct impact on business growth",
+        "Creative and analytical work",
+        "Fast-paced and dynamic environment",
+        "Strong career progression",
+        "Measurable results and ROI"
+      ],
+      "skills_used": [
+        "Digital advertising platforms",
+        "Analytics and data interpretation",
+        "Content creation and strategy",
+        "Marketing automation tools",
+        "A/B testing and optimization"
+      ],
+      "average_stress_level": 2.4,
+      "work_life_balance": "Good - flexible but results-driven environment",
+      "salary_range": "$65,000 - $120,000",
+      "education_required": "Marketing degree or digital marketing certifications",
+      "region_specific": {
+        "global": {
+          "salary": "$65,000 - $120,000",
+          "work_culture": "Fast-paced, data-driven, creative problem-solving"
+        },
+        "india": {
+          "salary": "₹5-18 lakhs",
+          "work_culture": "Rapidly growing digital marketing ecosystem in India"
+        }
+      }
+    },
+    "Chartered Accountant": {
+      "career_title": "Chartered Accountant (CA) - India",
+      "overview": "Manage financial reporting, taxation, auditing, and business advisory services as one of India's most prestigious professional careers.",
+      "working_hours": {
+        "start_time": "9:00 AM",
+        "end_time": "8:00 PM",
+        "total_hours": 11,
+        "break_time": "1 hour lunch",
+        "busy_season": "12-14 hours during audit/tax season"
+      },
+      "daily_schedule": [
+        {
+          "time": "9:00 AM",
+          "task": "Client meetings and consultation",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Meet with business clients, discuss financial strategies, tax planning, compliance issues."
+        },
+        {
+          "time": "10:30 AM",
+          "task": "Financial statement preparation",
+          "duration": 150,
+          "stress_level": 3,
+          "description": "Prepare balance sheets, P&L statements, cash flow statements, ensure accuracy and compliance."
+        },
+        {
+          "time": "1:00 PM",
+          "task": "Lunch break",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Quick lunch while reviewing client files, sometimes working lunch during busy season."
+        },
+        {
+          "time": "2:00 PM",
+          "task": "Tax return filing and GST compliance",
+          "duration": 180,
+          "stress_level": 4,
+          "description": "Prepare income tax returns, GST filings, handle tax notices, ensure regulatory compliance."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Audit fieldwork",
+          "duration": 120,
+          "stress_level": 3,
+          "description": "Conduct statutory audits, internal audits, verify financial records, test internal controls."
+        },
+        {
+          "time": "7:00 PM",
+          "task": "Business advisory and planning",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Provide business advice, financial planning, investment guidance, strategic consulting."
+        },
+        {
+          "time": "8:30 PM",
+          "task": "Professional development",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Study new regulations, attend CPE programs, research industry trends."
+        }
+      ],
+      "stress_factors": [
+        "Strict regulatory compliance deadlines",
+        "High responsibility for financial accuracy",
+        "Long working hours during busy season",
+        "Complex tax regulations",
+        "Client pressure and expectations"
+      ],
+      "rewards": [
+        "High social status and respect",
+        "Excellent career prospects",
+        "Diverse client interactions",
+        "Strong earning potential",
+        "Professional independence"
+      ],
+      "skills_used": [
+        "Financial accounting and reporting",
+        "Taxation and GST knowledge",
+        "Auditing and assurance",
+        "Business advisory skills",
+        "Regulatory compliance"
+      ],
+      "average_stress_level": 3.1,
+      "work_life_balance": "Challenging - long hours especially during peak seasons",
+      "salary_range": "₹6-25 lakhs (practice), ₹8-40 lakhs (industry)",
+      "education_required": "CA qualification from ICAI (3-5 years)",
+      "region_specific": {
+        "india": {
+          "salary": "₹6-25 lakhs (practice), ₹8-40 lakhs (industry)",
+          "work_culture": "Traditional professional practice with high respect and responsibility"
+        }
+      }
+    },
+    "Civil Services Officer (IPS)": {
+      "career_title": "IPS Officer (Indian Police Service)",
+      "overview": "Maintain law and order, investigate crimes, and ensure public safety as a senior police officer in India's premier police service.",
+      "working_hours": {
+        "start_time": "8:00 AM",
+        "end_time": "9:00 PM",
+        "total_hours": 13,
+        "break_time": "30 minutes lunch",
+        "emergency_calls": "24/7 availability for emergencies"
+      },
+      "daily_schedule": [
+        {
+          "time": "8:00 AM",
+          "task": "Morning briefing and situation review",
+          "duration": 45,
+          "stress_level": 3,
+          "description": "Review overnight incidents, crime reports, security briefings, plan day's operations."
+        },
+        {
+          "time": "8:45 AM",
+          "task": "Field inspection and patrol",
+          "duration": 120,
+          "stress_level": 3,
+          "description": "Visit police stations, inspect security arrangements, interact with ground staff."
+        },
+        {
+          "time": "10:45 AM",
+          "task": "Crime investigation supervision",
+          "duration": 150,
+          "stress_level": 4,
+          "description": "Supervise major crime investigations, coordinate with forensics, guide investigation teams."
+        },
+        {
+          "time": "1:15 PM",
+          "task": "Administrative work and meetings",
+          "duration": 105,
+          "stress_level": 3,
+          "description": "Meet with senior officials, handle administrative matters, policy implementation."
+        },
+        {
+          "time": "3:00 PM",
+          "task": "Public grievance and court appearances",
+          "duration": 120,
+          "stress_level": 3,
+          "description": "Address public complaints, appear in court for cases, interact with legal system."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Emergency response - riot control",
+          "duration": 180,
+          "stress_level": 5,
+          "description": "Handle communal tension, deploy forces, coordinate with administration, ensure peace."
+        },
+        {
+          "time": "8:00 PM",
+          "task": "Evening review and planning",
+          "duration": 60,
+          "stress_level": 3,
+          "description": "Review day's operations, plan security for events, coordinate with intelligence."
+        }
+      ],
+      "stress_factors": [
+        "Life-threatening situations",
+        "Political and media pressure",
+        "24/7 responsibility for public safety",
+        "Handling riots and emergencies",
+        "Balancing law enforcement with human rights"
+      ],
+      "rewards": [
+        "Serving society and maintaining order",
+        "High respect and authority",
+        "Diverse and challenging work",
+        "Good salary and benefits",
+        "Opportunity to make real impact"
+      ],
+      "skills_used": [
+        "Leadership and command",
+        "Crisis management",
+        "Investigation and analysis",
+        "Public relations",
+        "Strategic planning"
+      ],
+      "average_stress_level": 3.6,
+      "work_life_balance": "Very challenging - irregular hours and high responsibility",
+      "salary_range": "₹56,100 - ₹2,50,000 per month + allowances",
+      "education_required": "Graduate degree + UPSC Civil Services Exam",
+      "region_specific": {
+        "india": {
+          "salary": "₹56,100 - ₹2,50,000 per month + allowances",
+          "work_culture": "Hierarchical, disciplined, high public accountability and responsibility"
+        }
+      }
+    },
+    "Investment Banker": {
+      "career_title": "Investment Banker (Corporate Finance)",
+      "overview": "Facilitate major financial transactions, mergers, acquisitions, and capital raising for corporations in high-stakes financial markets.",
+      "working_hours": {
+        "start_time": "7:00 AM",
+        "end_time": "11:00 PM",
+        "total_hours": 16,
+        "break_time": "30 minutes dinner",
+        "weekend_work": "Frequent weekend work during deals"
+      },
+      "daily_schedule": [
+        {
+          "time": "7:00 AM",
+          "task": "Market analysis and research",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Review overnight market movements, analyze sector trends, prepare morning briefings."
+        },
+        {
+          "time": "8:30 AM",
+          "task": "Client pitch preparation",
+          "duration": 180,
+          "stress_level": 4,
+          "description": "Create pitch decks, financial models, valuation analysis for potential M&A deals."
+        },
+        {
+          "time": "11:30 AM",
+          "task": "Client meetings and presentations",
+          "duration": 150,
+          "stress_level": 4,
+          "description": "Present to C-suite executives, discuss deal structures, negotiate terms."
+        },
+        {
+          "time": "2:00 PM",
+          "task": "Due diligence and analysis",
+          "duration": 240,
+          "stress_level": 4,
+          "description": "Analyze target companies, review financial statements, assess risks and synergies."
+        },
+        {
+          "time": "6:00 PM",
+          "task": "Deal execution and documentation",
+          "duration": 180,
+          "stress_level": 5,
+          "description": "Coordinate with lawyers, prepare transaction documents, manage deal timeline."
+        },
+        {
+          "time": "9:00 PM",
+          "task": "Working dinner and team coordination",
+          "duration": 60,
+          "stress_level": 3,
+          "description": "Team dinner while discussing deal progress, coordinate with global offices."
+        },
+        {
+          "time": "10:00 PM",
+          "task": "Financial modeling and analysis",
+          "duration": 120,
+          "stress_level": 4,
+          "description": "Build complex financial models, sensitivity analysis, scenario planning."
+        }
+      ],
+      "stress_factors": [
+        "Extremely long working hours",
+        "High-pressure deal deadlines",
+        "Demanding clients and senior bankers",
+        "Market volatility impact",
+        "Intense competition"
+      ],
+      "rewards": [
+        "Very high compensation",
+        "Prestigious career path",
+        "Exposure to major deals",
+        "Excellent exit opportunities",
+        "Global business exposure"
+      ],
+      "skills_used": [
+        "Financial modeling and valuation",
+        "Deal structuring and negotiation",
+        "Market analysis",
+        "Client relationship management",
+        "Presentation and communication"
+      ],
+      "average_stress_level": 4.1,
+      "work_life_balance": "Very poor - extremely long hours and high pressure",
+      "salary_range": "$150,000 - $500,000+ (including bonuses)",
+      "education_required": "Top MBA or Finance degree + CFA preferred",
+      "region_specific": {
+        "global": {
+          "salary": "$150,000 - $500,000+ (including bonuses)",
+          "work_culture": "Extremely demanding, high-pressure, results-driven environment"
+        },
+        "india": {
+          "salary": "₹15-80 lakhs + bonuses",
+          "work_culture": "Growing investment banking sector with international standards"
+        }
+      }
+    },
+    "Renewable Energy Engineer": {
+      "career_title": "Renewable Energy Engineer (Solar/Wind)",
+      "overview": "Design and implement sustainable energy solutions, working on solar, wind, and other renewable energy projects to combat climate change.",
+      "working_hours": {
+        "start_time": "8:00 AM",
+        "end_time": "6:00 PM",
+        "total_hours": 10,
+        "break_time": "1 hour lunch",
+        "field_work": "30% time on-site at project locations"
+      },
+      "daily_schedule": [
+        {
+          "time": "8:00 AM",
+          "task": "Project planning and design review",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Review solar farm designs, wind turbine layouts, energy yield calculations, site assessments."
+        },
+        {
+          "time": "9:30 AM",
+          "task": "Site visit - wind farm inspection",
+          "duration": 180,
+          "stress_level": 3,
+          "description": "Travel to wind farm site, inspect turbine performance, coordinate with maintenance teams."
+        },
+        {
+          "time": "12:30 PM",
+          "task": "Lunch break",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Lunch at project site or office, often discussing technical challenges with team."
+        },
+        {
+          "time": "1:30 PM",
+          "task": "Energy modeling and simulation",
+          "duration": 120,
+          "stress_level": 2,
+          "description": "Use software to model energy production, optimize system design, analyze performance data."
+        },
+        {
+          "time": "3:30 PM",
+          "task": "Regulatory compliance and permits",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Work on environmental permits, grid connection approvals, safety compliance documentation."
+        },
+        {
+          "time": "5:00 PM",
+          "task": "Client presentations and proposals",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Present project proposals to clients, discuss technical specifications, cost-benefit analysis."
+        },
+        {
+          "time": "6:30 PM",
+          "task": "Research and development",
+          "duration": 60,
+          "stress_level": 1,
+          "description": "Research new technologies, attend webinars, study latest renewable energy innovations."
+        }
+      ],
+      "stress_factors": [
+        "Weather-dependent project timelines",
+        "Complex regulatory requirements",
+        "Technology integration challenges",
+        "Project financing pressures",
+        "Environmental impact considerations"
+      ],
+      "rewards": [
+        "Contributing to environmental sustainability",
+        "Working with cutting-edge technology",
+        "Growing industry with job security",
+        "Diverse project locations",
+        "Making positive global impact"
+      ],
+      "skills_used": [
+        "Engineering design and analysis",
+        "Project management",
+        "Environmental assessment",
+        "Energy modeling software",
+        "Regulatory compliance"
+      ],
+      "average_stress_level": 2.3,
+      "work_life_balance": "Good - meaningful work with reasonable hours",
+      "salary_range": "$75,000 - $130,000",
+      "education_required": "Engineering degree (Electrical/Mechanical/Environmental)",
+      "region_specific": {
+        "global": {
+          "salary": "$75,000 - $130,000",
+          "work_culture": "Mission-driven, collaborative, environmentally conscious"
+        },
+        "india": {
+          "salary": "₹6-20 lakhs",
+          "work_culture": "Rapidly growing renewable energy sector with government support"
+        }
+      }
+    },
+    "Content Creator/Influencer": {
+      "career_title": "Content Creator & Social Media Influencer",
+      "overview": "Create engaging digital content across platforms, build audience communities, and monetize through sponsorships and brand partnerships.",
+      "working_hours": {
+        "start_time": "10:00 AM",
+        "end_time": "8:00 PM",
+        "total_hours": 10,
+        "break_time": "Flexible breaks",
+        "weekend_work": "Content creation often extends to weekends"
+      },
+      "daily_schedule": [
+        {
+          "time": "10:00 AM",
+          "task": "Content planning and strategy",
+          "duration": 90,
+          "stress_level": 2,
+          "description": "Plan content calendar, research trending topics, brainstorm creative ideas for posts."
+        },
+        {
+          "time": "11:30 AM",
+          "task": "Content creation - filming/photography",
+          "duration": 180,
+          "stress_level": 3,
+          "description": "Film videos, take photos, create graphics, set up lighting and equipment."
+        },
+        {
+          "time": "2:30 PM",
+          "task": "Lunch and social media engagement",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Lunch while responding to comments, engaging with followers, networking with other creators."
+        },
+        {
+          "time": "3:30 PM",
+          "task": "Content editing and post-production",
+          "duration": 150,
+          "stress_level": 3,
+          "description": "Edit videos, enhance photos, create thumbnails, add captions and effects."
+        },
+        {
+          "time": "6:00 PM",
+          "task": "Brand collaboration and business",
+          "duration": 90,
+          "stress_level": 4,
+          "description": "Negotiate sponsorship deals, create branded content, manage business partnerships."
+        },
+        {
+          "time": "7:30 PM",
+          "task": "Analytics and performance review",
+          "duration": 60,
+          "stress_level": 2,
+          "description": "Analyze content performance, track engagement metrics, optimize posting strategies."
+        },
+        {
+          "time": "8:30 PM",
+          "task": "Community management",
+          "duration": 90,
+          "stress_level": 3,
+          "description": "Respond to DMs, engage with audience, moderate comments, build community."
+        }
+      ],
+      "stress_factors": [
+        "Inconsistent income and algorithm changes",
+        "Public scrutiny and online criticism",
+        "Constant pressure to create content",
+        "Burnout from always being 'on'",
+        "Platform dependency and policy changes"
+      ],
+      "rewards": [
+        "Creative freedom and self-expression",
+        "Flexible schedule and location independence",
+        "Direct connection with audience",
+        "Potential for high earnings",
+        "Building personal brand"
+      ],
+      "skills_used": [
+        "Content creation and storytelling",
+        "Video editing and photography",
+        "Social media marketing",
+        "Brand partnerships and negotiation",
+        "Community management"
+      ],
+      "average_stress_level": 2.8,
+      "work_life_balance": "Flexible but blurred boundaries between work and personal life",
+      "salary_range": "$25,000 - $500,000+ (highly variable)",
+      "education_required": "No formal requirements - portfolio and audience matter most",
+      "region_specific": {
+        "global": {
+          "salary": "$25,000 - $500,000+ (highly variable)",
+          "work_culture": "Independent, creative, entrepreneurial, platform-dependent"
+        },
+        "india": {
+          "salary": "₹2-50 lakhs (highly variable)",
+          "work_culture": "Growing creator economy with increasing brand investment"
+        }
+      }
+    }
+  },
+  "simulation_metadata": {
+    "stress_scale": {
+      "1": "Very Low - Relaxed, minimal pressure",
+      "2": "Low - Comfortable, routine tasks",
+      "3": "Medium - Normal work pressure",
+      "4": "High - Challenging, time pressure",
+      "5": "Very High - Crisis mode, intense pressure"
+    },
+    "time_format": "12-hour format with AM/PM",
+    "duration_unit": "minutes",
+    "last_updated": "2025-01-01"
+  }
+}

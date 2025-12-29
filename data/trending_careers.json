@@ -1,0 +1,259 @@
+{
+  "trending_careers_2025_2035": {
+    "global": [
+      {
+        "name": "AI/ML Engineer",
+        "category": "Technology",
+        "trend_score": 95,
+        "growth_projection": "40% by 2030",
+        "median_salary": "$185,000",
+        "hot_factor": "Extreme",
+        "description": "Design and develop artificial intelligence and machine learning systems",
+        "key_skills": ["Python", "TensorFlow", "Deep Learning", "Data Science"],
+        "why_trending": "AI revolution across all industries, massive investment in AI startups",
+        "future_outlook": "Will be the most in-demand tech role of the decade",
+        "entry_requirements": "Computer Science degree, strong math background",
+        "remote_friendly": true
+      },
+      {
+        "name": "Cybersecurity Specialist",
+        "category": "Technology",
+        "trend_score": 92,
+        "growth_projection": "35% by 2030",
+        "median_salary": "$165,000",
+        "hot_factor": "Extreme",
+        "description": "Protect organizations from cyber threats and data breaches",
+        "key_skills": ["Network Security", "Ethical Hacking", "Risk Assessment", "Compliance"],
+        "why_trending": "Increasing cyber attacks, remote work security needs, regulatory requirements",
+        "future_outlook": "Critical shortage of professionals, high job security",
+        "entry_requirements": "IT background, security certifications (CISSP, CEH)",
+        "remote_friendly": true
+      },
+      {
+        "name": "Space Technology Engineer",
+        "category": "Aerospace",
+        "trend_score": 88,
+        "growth_projection": "30% by 2030",
+        "median_salary": "$145,000",
+        "hot_factor": "High",
+        "description": "Develop spacecraft, satellites, and space exploration technologies",
+        "key_skills": ["Aerospace Engineering", "Robotics", "Materials Science", "Systems Design"],
+        "why_trending": "Commercial space race, Mars missions, satellite internet expansion",
+        "future_outlook": "New space economy creating thousands of jobs",
+        "entry_requirements": "Aerospace/Mechanical Engineering degree",
+        "remote_friendly": false
+      },
+      {
+        "name": "Climate Data Analyst",
+        "category": "Environment",
+        "trend_score": 85,
+        "growth_projection": "28% by 2030",
+        "median_salary": "$125,000",
+        "hot_factor": "High",
+        "description": "Analyze climate data to support environmental decision-making",
+        "key_skills": ["Data Analysis", "Climate Modeling", "GIS", "Statistical Analysis"],
+        "why_trending": "Climate crisis urgency, ESG reporting requirements, green transition",
+        "future_outlook": "Essential for climate adaptation and mitigation strategies",
+        "entry_requirements": "Environmental Science, Statistics, or related degree",
+        "remote_friendly": true
+      },
+      {
+        "name": "Quantum Computing Researcher",
+        "category": "Technology",
+        "trend_score": 82,
+        "growth_projection": "45% by 2035",
+        "median_salary": "$195,000",
+        "hot_factor": "High",
+        "description": "Research and develop quantum computing systems and algorithms",
+        "key_skills": ["Quantum Physics", "Advanced Mathematics", "Programming", "Research"],
+        "why_trending": "Quantum computing breakthroughs, major tech company investments",
+        "future_outlook": "Will revolutionize computing in the 2030s",
+        "entry_requirements": "PhD in Physics, Computer Science, or Mathematics",
+        "remote_friendly": false
+      },
+      {
+        "name": "Renewable Energy Engineer",
+        "category": "Energy",
+        "trend_score": 80,
+        "growth_projection": "25% by 2030",
+        "median_salary": "$135,000",
+        "hot_factor": "High",
+        "description": "Design and optimize renewable energy systems",
+        "key_skills": ["Solar/Wind Technology", "Energy Storage", "Grid Integration", "Project Management"],
+        "why_trending": "Global shift to clean energy, massive infrastructure investments",
+        "future_outlook": "Critical for achieving net-zero emissions goals",
+        "entry_requirements": "Electrical/Mechanical Engineering degree",
+        "remote_friendly": false
+      },
+      {
+        "name": "Biotech Research Scientist",
+        "category": "Healthcare",
+        "trend_score": 78,
+        "growth_projection": "22% by 2030",
+        "median_salary": "$155,000",
+        "hot_factor": "Medium-High",
+        "description": "Develop new biotechnology solutions for medicine and agriculture",
+        "key_skills": ["Molecular Biology", "Genetic Engineering", "Lab Techniques", "Data Analysis"],
+        "why_trending": "Gene therapy advances, personalized medicine, aging population",
+        "future_outlook": "Breakthrough treatments and life extension technologies",
+        "entry_requirements": "PhD in Biology, Biochemistry, or related field",
+        "remote_friendly": false
+      },
+      {
+        "name": "Digital Health Specialist",
+        "category": "Healthcare",
+        "trend_score": 75,
+        "growth_projection": "32% by 2030",
+        "median_salary": "$140,000",
+        "hot_factor": "Medium-High",
+        "description": "Implement and manage digital health technologies",
+        "key_skills": ["Health Informatics", "Telemedicine", "Data Privacy", "User Experience"],
+        "why_trending": "Post-pandemic digital health adoption, aging population",
+        "future_outlook": "Healthcare digitization accelerating globally",
+        "entry_requirements": "Healthcare background + IT skills or Health Informatics degree",
+        "remote_friendly": true
+      }
+    ],
+    "india": [
+      {
+        "name": "AI/ML Engineer",
+        "category": "Technology",
+        "trend_score": 95,
+        "growth_projection": "45% by 2030",
+        "median_salary": "Rs 25,00,000",
+        "salary_range": "Rs 15,00,000 - Rs 45,00,000",
+        "hot_factor": "Extreme",
+        "description": "Design and develop AI/ML systems for Indian and global markets",
+        "key_skills": ["Python", "TensorFlow", "Deep Learning", "Data Science"],
+        "why_trending": "India's AI mission, startup ecosystem, global outsourcing demand",
+        "future_outlook": "India to become global AI hub with millions of jobs",
+        "entry_requirements": "B.Tech/M.Tech in CS/IT, strong programming skills",
+        "top_companies": ["TCS", "Infosys", "Wipro", "Flipkart", "Ola"],
+        "remote_friendly": true,
+        "indian_context": "Government's National AI Strategy creating massive opportunities"
+      },
+      {
+        "name": "Cybersecurity Analyst",
+        "category": "Technology",
+        "trend_score": 90,
+        "growth_projection": "38% by 2030",
+        "median_salary": "Rs 18,00,000",
+        "salary_range": "Rs 12,00,000 - Rs 35,00,000",
+        "hot_factor": "Extreme",
+        "description": "Protect Indian organizations from increasing cyber threats",
+        "key_skills": ["Network Security", "Incident Response", "Compliance", "Risk Assessment"],
+        "why_trending": "Digital India initiatives, increasing cyber attacks, data protection laws",
+        "future_outlook": "Critical shortage with 3.5 million unfilled positions globally",
+        "entry_requirements": "B.Tech/BCA + security certifications",
+        "top_companies": ["IBM India", "Accenture", "Deloitte", "PwC", "EY"],
+        "remote_friendly": true,
+        "indian_context": "Personal Data Protection Bill creating compliance demand"
+      },
+      {
+        "name": "Space Technology Engineer",
+        "category": "Aerospace",
+        "trend_score": 85,
+        "growth_projection": "35% by 2030",
+        "median_salary": "Rs 22,00,000",
+        "salary_range": "Rs 15,00,000 - Rs 40,00,000",
+        "hot_factor": "High",
+        "description": "Work on India's space missions and satellite technologies",
+        "key_skills": ["Aerospace Engineering", "Satellite Technology", "Mission Planning", "Systems Design"],
+        "why_trending": "ISRO expansion, private space companies, Chandrayaan success",
+        "future_outlook": "India's space economy to reach $50 billion by 2030",
+        "entry_requirements": "B.Tech/M.Tech in Aerospace/Mechanical Engineering",
+        "top_companies": ["ISRO", "Skyroot Aerospace", "Agnikul Cosmos", "Bellatrix Aerospace"],
+        "remote_friendly": false,
+        "indian_context": "India's space privatization opening new opportunities"
+      },
+      {
+        "name": "Climate Tech Specialist",
+        "category": "Environment",
+        "trend_score": 82,
+        "growth_projection": "30% by 2030",
+        "median_salary": "Rs 16,00,000",
+        "salary_range": "Rs 10,00,000 - Rs 28,00,000",
+        "hot_factor": "High",
+        "description": "Develop climate solutions for India's environmental challenges",
+        "key_skills": ["Environmental Science", "Data Analysis", "Sustainability", "Policy Analysis"],
+        "why_trending": "India's net-zero commitment, climate adaptation needs, green finance",
+        "future_outlook": "Essential for India's climate goals and sustainable development",
+        "entry_requirements": "Environmental Science/Engineering degree",
+        "top_companies": ["Tata Power", "Adani Green", "ReNew Power", "Ola Electric"],
+        "remote_friendly": true,
+        "indian_context": "India's ambitious renewable energy and EV targets"
+      },
+      {
+        "name": "Fintech Developer",
+        "category": "Finance",
+        "trend_score": 80,
+        "growth_projection": "40% by 2030",
+        "median_salary": "Rs 20,00,000",
+        "salary_range": "Rs 12,00,000 - Rs 35,00,000",
+        "hot_factor": "High",
+        "description": "Build digital payment and financial technology solutions",
+        "key_skills": ["Mobile Development", "Blockchain", "Payment Systems", "Security"],
+        "why_trending": "UPI success, digital payments growth, financial inclusion drive",
+        "future_outlook": "India's fintech market to reach $200 billion by 2030",
+        "entry_requirements": "B.Tech in CS/IT, understanding of financial systems",
+        "top_companies": ["Paytm", "PhonePe", "Razorpay", "CRED", "Zerodha"],
+        "remote_friendly": true,
+        "indian_context": "India leading global fintech innovation with UPI model"
+      },
+      {
+        "name": "Healthcare Data Scientist",
+        "category": "Healthcare",
+        "trend_score": 78,
+        "growth_projection": "35% by 2030",
+        "median_salary": "Rs 19,00,000",
+        "salary_range": "Rs 13,00,000 - Rs 32,00,000",
+        "hot_factor": "Medium-High",
+        "description": "Analyze healthcare data to improve patient outcomes",
+        "key_skills": ["Data Science", "Healthcare Analytics", "Machine Learning", "Medical Knowledge"],
+        "why_trending": "Digital health adoption, telemedicine growth, health data explosion",
+        "future_outlook": "Critical for India's healthcare digitization",
+        "entry_requirements": "Data Science background + healthcare domain knowledge",
+        "top_companies": ["Apollo Hospitals", "Practo", "1mg", "Portea", "Lybrate"],
+        "remote_friendly": true,
+        "indian_context": "Ayushman Bharat and digital health mission creating opportunities"
+      }
+    ]
+  },
+  "trend_categories": {
+    "Technology": {
+      "icon": "💻",
+      "description": "AI, cybersecurity, and emerging tech roles",
+      "growth_driver": "Digital transformation and AI revolution"
+    },
+    "Healthcare": {
+      "icon": "🏥",
+      "description": "Digital health and biotechnology careers",
+      "growth_driver": "Aging population and health tech adoption"
+    },
+    "Environment": {
+      "icon": "🌱",
+      "description": "Climate and sustainability-focused roles",
+      "growth_driver": "Climate crisis and green transition"
+    },
+    "Aerospace": {
+      "icon": "🚀",
+      "description": "Space technology and exploration careers",
+      "growth_driver": "Commercial space race and exploration"
+    },
+    "Energy": {
+      "icon": "⚡",
+      "description": "Renewable energy and clean tech roles",
+      "growth_driver": "Clean energy transition and net-zero goals"
+    },
+    "Finance": {
+      "icon": "💰",
+      "description": "Financial technology and digital banking",
+      "growth_driver": "Digital payments and financial inclusion"
+    }
+  },
+  "time_horizons": {
+    "2025": "Immediate opportunities - skills in high demand now",
+    "2030": "Medium-term growth - emerging roles gaining momentum",
+    "2035": "Future careers - next-generation opportunities"
+  }
+}

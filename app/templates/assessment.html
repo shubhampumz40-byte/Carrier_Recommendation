@@ -1,0 +1,489 @@
+{% extends "base.html" %}
+
+{% block title %}Career Assessment{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">
+                    <i class="fas fa-clipboard-list me-2"></i>
+                    Career Assessment
+                </h3>
+            </div>
+            <div class="card-body">
+                <form id="assessmentForm">
+                    <!-- Mode and Region Display -->
+                    <div class="mb-4" id="modeRegionDisplay">
+                        <div class="alert alert-info">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Region:</strong> <span id="currentRegion">Global</span>
+                                    <br><strong>Mode:</strong> <span id="currentMode">Student</span>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <a href="/mode-selection" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-edit me-1"></i>Change
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Level (for professionals) -->
+                    <div class="mb-4" id="experienceSection" style="display: none;">
+                        <h5 class="text-primary">
+                            <i class="fas fa-briefcase me-2"></i>
+                            Your Experience Level
+                        </h5>
+                        <select class="form-select" name="experience_level" id="experienceLevel">
+                            <option value="">Select your experience level</option>
+                            <option value="1-3">Junior Professional (1-3 years)</option>
+                            <option value="3-7">Mid-level Professional (3-7 years)</option>
+                            <option value="7-12">Senior Professional (7-12 years)</option>
+                            <option value="12+">Executive Level (12+ years)</option>
+                        </select>
+                    </div>
+                    <!-- Interests Section -->
+                    <div class="mb-4">
+                        <h5 class="text-primary">
+                            <i class="fas fa-heart me-2"></i>
+                            What are your interests?
+                        </h5>
+                        <p class="text-muted">Select all that apply:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="technology" id="tech">
+                                    <label class="form-check-label" for="tech">Technology</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="design" id="design">
+                                    <label class="form-check-label" for="design">Design</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="business" id="business">
+                                    <label class="form-check-label" for="business">Business</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="research" id="research">
+                                    <label class="form-check-label" for="research">Research</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="creativity" id="creativity">
+                                    <label class="form-check-label" for="creativity">Creativity</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="problem_solving" id="problem_solving">
+                                    <label class="form-check-label" for="problem_solving">Problem Solving</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="communication" id="communication">
+                                    <label class="form-check-label" for="communication">Communication</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" value="science" id="science">
+                                    <label class="form-check-label" for="science">Science</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="mb-4">
+                        <h5 class="text-primary">
+                            <i class="fas fa-tools me-2"></i>
+                            What skills do you have or want to develop?
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="programming" id="programming">
+                                    <label class="form-check-label" for="programming">Programming</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="data_analysis" id="data_analysis">
+                                    <label class="form-check-label" for="data_analysis">Data Analysis</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="design" id="design_skill">
+                                    <label class="form-check-label" for="design_skill">Design</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="writing" id="writing">
+                                    <label class="form-check-label" for="writing">Writing</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="leadership" id="leadership">
+                                    <label class="form-check-label" for="leadership">Leadership</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="research" id="research_skill">
+                                    <label class="form-check-label" for="research_skill">Research</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="strategy" id="strategy">
+                                    <label class="form-check-label" for="strategy">Strategy</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skills" value="analytics" id="analytics">
+                                    <label class="form-check-label" for="analytics">Analytics</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subjects Section -->
+                    <div class="mb-4">
+                        <h5 class="text-primary">
+                            <i class="fas fa-book me-2"></i>
+                            What are your favorite subjects?
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="mathematics" id="mathematics">
+                                    <label class="form-check-label" for="mathematics">Mathematics</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="computer_science" id="computer_science">
+                                    <label class="form-check-label" for="computer_science">Computer Science</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="psychology" id="psychology">
+                                    <label class="form-check-label" for="psychology">Psychology</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="business" id="business_subject">
+                                    <label class="form-check-label" for="business_subject">Business</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="art" id="art">
+                                    <label class="form-check-label" for="art">Art</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="physics" id="physics">
+                                    <label class="form-check-label" for="physics">Physics</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="biology" id="biology">
+                                    <label class="form-check-label" for="biology">Biology</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="subjects" value="chemistry" id="chemistry">
+                                    <label class="form-check-label" for="chemistry">Chemistry</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search me-2"></i>
+                            Get Career Recommendations
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Modal -->
+<div class="modal fade" id="resultsModal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Your Career Recommendations</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="resultsContent">
+                <!-- Results will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadUserPreferences();
+});
+
+async function loadUserPreferences() {
+    try {
+        const response = await fetch('/api/get-preferences');
+        const prefs = await response.json();
+        
+        document.getElementById('currentRegion').textContent = prefs.region === 'india' ? 'India' : 'Global';
+        document.getElementById('currentMode').textContent = prefs.mode === 'professional' ? 'Professional' : 'Student';
+        
+        // Show experience section for professionals
+        if (prefs.mode === 'professional') {
+            document.getElementById('experienceSection').style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Error loading preferences:', error);
+    }
+}
+
+document.getElementById('assessmentForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get current preferences
+    const prefsResponse = await fetch('/api/get-preferences');
+    const prefs = await prefsResponse.json();
+    
+    // Collect form data
+    const formData = new FormData(this);
+    const data = {
+        interests: formData.getAll('interests'),
+        skills: formData.getAll('skills'),
+        subjects: formData.getAll('subjects'),
+        personality: {}, // Will be filled if personality test was taken
+        experience_level: formData.get('experience_level'),
+        region: prefs.region,
+        mode: prefs.mode
+    };
+    
+    // Show loading
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Analyzing...';
+    submitBtn.disabled = true;
+    
+    try {
+        const response = await fetch('/api/recommend', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        displayResults(result);
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while getting recommendations. Please try again.');
+    } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+function displayResults(result) {
+    const resultsContent = document.getElementById('resultsContent');
+    let html = `
+        <div class="mb-3">
+            <div class="alert alert-success">
+                <div class="row">
+                    <div class="col-md-8">
+                        <strong>Recommendations for:</strong> ${result.region_info?.name || result.region} | ${result.mode} Mode
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <small>Currency: ${result.region_info?.currency || 'USD'}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+    `;
+    
+    result.recommendations.forEach((rec, index) => {
+        const career = rec.career;
+        const explanation = rec.explanation;
+        
+        html += `
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">${career.name}</h5>
+                        <small>Match: ${explanation.overall_match}%</small>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">${career.description}</p>
+                        <div class="mb-3">
+                            <strong>Why this matches you:</strong>
+                            <ul class="mt-2">
+                                ${explanation.reasons.map(reason => `<li>${reason}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <small class="text-muted">Median Salary</small>
+                                <div class="fw-bold">${career.median_salary}</div>
+                                ${career.salary_range ? `<small class="text-muted">Range: ${career.salary_range}</small>` : ''}
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted">Growth Rate</small>
+                                <div class="fw-bold text-success">${career.growth_rate}</div>
+                            </div>
+                        </div>
+                        ${career.top_companies ? `
+                            <div class="mt-3">
+                                <small class="text-muted">Top Companies:</small>
+                                <div class="mt-1">
+                                    ${career.top_companies.slice(0, 3).map(company => `<span class="badge bg-info me-1">${company}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        ${career.education_path ? `
+                            <div class="mt-3">
+                                <small class="text-muted">Education Path:</small>
+                                <div class="mt-1 small">${career.education_path}</div>
+                            </div>
+                        ` : ''}
+                        ${explanation.skill_gaps.length > 0 ? `
+                            <div class="mt-3">
+                                <small class="text-muted">Skills to develop:</small>
+                                <div class="mt-1">
+                                    ${explanation.skill_gaps.map(skill => `<span class="badge bg-warning me-1">${skill}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    
+    // Add role models section
+    if (result.role_models && result.role_models.length > 0) {
+        html += `
+            <div class="mt-4">
+                <h5><i class="fas fa-star me-2"></i>Inspiring Role Models from ${result.region_info?.name || result.region}</h5>
+                <div class="row">
+                    ${result.role_models.map(model => `
+                        <div class="col-md-4 mb-3">
+                            <div class="card border-success">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="avatar-sm me-2">
+                                            ${model.name.split(' ').map(n => n[0]).join('')}
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0">${model.name}</h6>
+                                            <small class="text-muted">${model.career}</small>
+                                        </div>
+                                    </div>
+                                    <p class="small">${model.title}</p>
+                                    ${model.indian_context ? `<p class="small text-info"><i class="fas fa-flag me-1"></i>${model.indian_context}</p>` : ''}
+                                    <div class="quote-mini">
+                                        <em>"${model.inspiration_quote.substring(0, 80)}..."</em>
+                                    </div>
+                                    <div class="mt-2">
+                                        <a href="/role-models" class="btn btn-sm btn-outline-success">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    // Add daily tip section
+    if (result.daily_tip) {
+        html += `
+            <div class="mt-4">
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <h6 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Today's Career Tip (${result.mode} Mode)</h6>
+                    </div>
+                    <div class="card-body">
+                        <h6>${result.daily_tip.title}</h6>
+                        <p>${result.daily_tip.tip}</p>
+                        <div class="alert alert-light">
+                            <strong>Action:</strong> ${result.daily_tip.action}
+                        </div>
+                        <a href="/daily-tips" class="btn btn-info btn-sm">More Tips</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Add inspiration quote
+    if (result.inspiration) {
+        html += `
+            <div class="mt-4">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
+                        <blockquote class="blockquote">
+                            <p>"${result.inspiration.quote}"</p>
+                            <footer class="blockquote-footer">
+                                ${result.inspiration.author}, <cite title="Source Title">${result.inspiration.title}</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Add visualization
+    html += `
+        <div class="mt-4">
+            <h5>Career Match Visualization</h5>
+            <div id="careerChart" style="height: 400px;"></div>
+        </div>
+    `;
+    
+    resultsContent.innerHTML = html;
+    
+    // Show modal
+    const modal = new bootstrap.Modal(document.getElementById('resultsModal'));
+    modal.show();
+    
+    // Create visualization
+    createVisualization(result.visualization_data);
+}
+
+function createVisualization(vizData) {
+    // Simple bar chart showing match percentages
+    const careers = [];
+    const scores = [];
+    
+    document.querySelectorAll('.card-header small').forEach(el => {
+        const text = el.textContent;
+        const match = text.match(/Match: (\d+)%/);
+        if (match) {
+            const careerName = el.parentElement.querySelector('h5').textContent;
+            careers.push(careerName);
+            scores.push(parseInt(match[1]));
+        }
+    });
+    
+    const trace = {
+        x: careers,
+        y: scores,
+        type: 'bar',
+        marker: {
+            color: ['#0d6efd', '#198754', '#ffc107', '#dc3545', '#6f42c1']
+        }
+    };
+    
+    const layout = {
+        title: 'Career Match Scores',
+        xaxis: { title: 'Careers' },
+        yaxis: { title: 'Match Percentage' }
+    };
+    
+    Plotly.newPlot('careerChart', [trace], layout);
+}
+</script>
+{% endblock %}

@@ -1,0 +1,555 @@
+{% extends "base.html" %}
+
+{% block title %}Career Simulation - A Day in the Life{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center mb-4">
+                <h1 class="display-4 text-primary">
+                    <i class="fas fa-play-circle me-3"></i>Career Simulation
+                </h1>
+                <p class="lead text-muted">Experience "A Day in the Life" of different careers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Selection -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fas fa-search me-2"></i>Choose a Career to Simulate
+                    </h5>
+                    
+                    <!-- Region Selection -->
+                    <div class="mb-3">
+                        <label class="form-label">Region:</label>
+                        <div class="btn-group" role="group">
+                            <input type="radio" class="btn-check" name="region" id="global" value="global" checked>
+                            <label class="btn btn-outline-primary" for="global">
+                                <i class="fas fa-globe me-1"></i>Global
+                            </label>
+                            <input type="radio" class="btn-check" name="region" id="india" value="india">
+                            <label class="btn btn-outline-primary" for="india">
+                                <i class="fas fa-flag me-1"></i>India
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Career Cards -->
+                    <div class="row" id="career-cards">
+                        <!-- Career cards will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulation Results -->
+    <div id="simulation-results" class="d-none">
+        <!-- Career Overview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm simulation-header-card">
+                    <div class="card-body text-center text-white">
+                        <h2 id="career-title" class="mb-3"></h2>
+                        <p id="career-overview" class="lead mb-4"></p>
+                        
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="simulation-stat">
+                                    <div class="stat-value" id="working-hours"></div>
+                                    <div class="stat-label">Working Hours</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="simulation-stat">
+                                    <div class="stat-value" id="stress-level"></div>
+                                    <div class="stat-label">Avg Stress Level</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="simulation-stat">
+                                    <div class="stat-value" id="salary-range"></div>
+                                    <div class="stat-label">Salary Range</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="simulation-stat">
+                                    <div class="stat-value" id="work-life-balance"></div>
+                                    <div class="stat-label">Work-Life Balance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Schedule Timeline -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-clock me-2"></i>Daily Schedule Timeline
+                        </h5>
+                        <div id="timeline-container">
+                            <!-- Timeline will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stress Level Chart -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-chart-line me-2"></i>Stress Level Throughout the Day
+                        </h5>
+                        <div id="stress-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-thermometer-half me-2"></i>Stress Distribution
+                        </h5>
+                        <div id="stress-distribution"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Insights -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">
+                            <i class="fas fa-exclamation-triangle me-2"></i>Stress Factors
+                        </h5>
+                        <ul id="stress-factors" class="list-unstyled">
+                            <!-- Stress factors will be populated here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">
+                            <i class="fas fa-trophy me-2"></i>Career Rewards
+                        </h5>
+                        <ul id="career-rewards" class="list-unstyled">
+                            <!-- Career rewards will be populated here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Used -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-cogs me-2"></i>Skills Used Daily
+                        </h5>
+                        <div id="skills-used">
+                            <!-- Skills badges will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Insights -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-lightbulb me-2"></i>Career Insights
+                        </h5>
+                        <div id="career-insights" class="row">
+                            <!-- Insights will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="text-center d-none">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Loading career simulation...</p>
+    </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+class CareerSimulation {
+    constructor() {
+        this.currentRegion = 'global';
+        this.availableCareers = [];
+        this.init();
+    }
+
+    init() {
+        this.loadAvailableCareers();
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        // Region change
+        document.querySelectorAll('input[name="region"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                this.currentRegion = e.target.value;
+                this.loadAvailableCareers();
+            });
+        });
+    }
+
+    async loadAvailableCareers() {
+        try {
+            const response = await fetch('/api/career-simulation/careers');
+            const data = await response.json();
+            this.availableCareers = data.careers || [];
+            this.renderCareerCards();
+        } catch (error) {
+            console.error('Error loading careers:', error);
+        }
+    }
+
+    renderCareerCards() {
+        const container = document.getElementById('career-cards');
+        container.innerHTML = '';
+
+        const careerIcons = {
+            'Doctor': 'fas fa-user-md',
+            'Game Developer': 'fas fa-gamepad',
+            'IAS Officer': 'fas fa-landmark',
+            'Software Engineer': 'fas fa-code',
+            'Teacher': 'fas fa-chalkboard-teacher',
+            'Data Scientist': 'fas fa-chart-bar',
+            'DevOps Engineer': 'fas fa-server',
+            'Cybersecurity Analyst': 'fas fa-shield-alt',
+            'UX/UI Designer': 'fas fa-paint-brush',
+            'Digital Marketing Manager': 'fas fa-bullhorn',
+            'Chartered Accountant': 'fas fa-calculator',
+            'Civil Services Officer (IPS)': 'fas fa-balance-scale',
+            'Investment Banker': 'fas fa-chart-line',
+            'Renewable Energy Engineer': 'fas fa-solar-panel',
+            'Content Creator/Influencer': 'fas fa-video'
+        };
+
+        const careerColors = {
+            'Doctor': 'danger',
+            'Game Developer': 'success',
+            'IAS Officer': 'warning',
+            'Software Engineer': 'info',
+            'Teacher': 'primary',
+            'Data Scientist': 'secondary',
+            'DevOps Engineer': 'dark',
+            'Cybersecurity Analyst': 'danger',
+            'UX/UI Designer': 'info',
+            'Digital Marketing Manager': 'warning',
+            'Chartered Accountant': 'success',
+            'Civil Services Officer (IPS)': 'primary',
+            'Investment Banker': 'dark',
+            'Renewable Energy Engineer': 'success',
+            'Content Creator/Influencer': 'warning'
+        };
+
+        const careerCategories = {
+            'Technology': ['Software Engineer', 'Game Developer', 'Data Scientist', 'DevOps Engineer', 'Cybersecurity Analyst', 'UX/UI Designer'],
+            'Healthcare & Public Service': ['Doctor', 'Teacher'],
+            'Government & Administration': ['IAS Officer', 'Civil Services Officer (IPS)'],
+            'Business & Finance': ['Investment Banker', 'Chartered Accountant', 'Digital Marketing Manager'],
+            'Emerging & Creative': ['Renewable Energy Engineer', 'Content Creator/Influencer']
+        };
+
+        this.availableCareers.forEach(career => {
+            const col = document.createElement('div');
+            col.className = 'col-md-6 col-lg-4 mb-3';
+            
+            const icon = careerIcons[career] || 'fas fa-briefcase';
+            const color = careerColors[career] || 'secondary';
+            
+            col.innerHTML = `
+                <div class="card h-100 career-simulation-card border-${color}" data-career="${career}">
+                    <div class="card-body text-center">
+                        <i class="${icon} fa-3x text-${color} mb-3"></i>
+                        <h6 class="card-title">${career}</h6>
+                        <button class="btn btn-${color} btn-sm simulate-btn" data-career="${career}">
+                            <i class="fas fa-play me-1"></i>Simulate Day
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(col);
+        });
+
+        // Add event listeners to simulate buttons
+        document.querySelectorAll('.simulate-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const career = e.target.getAttribute('data-career');
+                this.simulateCareer(career);
+            });
+        });
+    }
+
+    async simulateCareer(careerName) {
+        // Show loading
+        document.getElementById('loading-spinner').classList.remove('d-none');
+        document.getElementById('simulation-results').classList.add('d-none');
+
+        try {
+            const response = await fetch(`/api/career-simulation/${encodeURIComponent(careerName)}?region=${this.currentRegion}`);
+            const data = await response.json();
+            
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+
+            this.renderSimulationResults(data);
+        } catch (error) {
+            console.error('Error loading simulation:', error);
+            alert('Error loading career simulation. Please try again.');
+        } finally {
+            document.getElementById('loading-spinner').classList.add('d-none');
+        }
+    }
+
+    renderSimulationResults(data) {
+        // Show results section
+        document.getElementById('simulation-results').classList.remove('d-none');
+        
+        // Populate overview
+        document.getElementById('career-title').textContent = data.career_title;
+        document.getElementById('career-overview').textContent = data.overview;
+        document.getElementById('working-hours').textContent = `${data.working_hours.total_hours} hours`;
+        document.getElementById('stress-level').textContent = `${data.average_stress_level}/5`;
+        document.getElementById('salary-range').textContent = data.salary_range;
+        document.getElementById('work-life-balance').textContent = data.work_life_balance;
+        
+        // Render timeline
+        this.renderTimeline(data.daily_schedule);
+        
+        // Render stress chart
+        this.renderStressChart(data.daily_schedule);
+        
+        // Render stress distribution
+        this.renderStressDistribution(data.stress_distribution);
+        
+        // Populate stress factors and rewards
+        this.populateList('stress-factors', data.stress_factors, 'text-danger');
+        this.populateList('career-rewards', data.rewards, 'text-success');
+        
+        // Populate skills
+        this.populateSkills(data.skills_used);
+        
+        // Render insights
+        this.renderInsights(data);
+        
+        // Scroll to results
+        document.getElementById('simulation-results').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    renderTimeline(schedule) {
+        const container = document.getElementById('timeline-container');
+        container.innerHTML = '';
+
+        schedule.forEach((task, index) => {
+            const timelineItem = document.createElement('div');
+            timelineItem.className = 'timeline-item mb-3';
+            
+            const stressColor = this.getStressColor(task.stress_level);
+            const stressText = this.getStressText(task.stress_level);
+            
+            timelineItem.innerHTML = `
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <div class="timeline-time">
+                            <strong>${task.time}</strong>
+                            <small class="d-block text-muted">${task.duration} min</small>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="timeline-content p-3 border-start border-3" style="border-color: ${stressColor} !important;">
+                            <h6 class="mb-1">${task.task}</h6>
+                            <p class="mb-1 text-muted">${task.description}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <span class="badge" style="background-color: ${stressColor}">
+                            ${stressText}
+                        </span>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(timelineItem);
+        });
+    }
+
+    renderStressChart(schedule) {
+        const times = schedule.map(task => task.time);
+        const stressLevels = schedule.map(task => task.stress_level);
+        const tasks = schedule.map(task => task.task);
+
+        const trace = {
+            x: times,
+            y: stressLevels,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: 'Stress Level',
+            line: { color: '#dc3545', width: 3 },
+            marker: { size: 8, color: '#dc3545' },
+            hovertemplate: '<b>%{text}</b><br>Time: %{x}<br>Stress: %{y}/5<extra></extra>',
+            text: tasks
+        };
+
+        const layout = {
+            title: 'Stress Level Timeline',
+            xaxis: { title: 'Time of Day' },
+            yaxis: { title: 'Stress Level (1-5)', range: [0, 5] },
+            height: 400,
+            showlegend: false
+        };
+
+        Plotly.newPlot('stress-chart', [trace], layout);
+    }
+
+    renderStressDistribution(distribution) {
+        const labels = ['Very Low (1)', 'Low (2)', 'Medium (3)', 'High (4)', 'Very High (5)'];
+        const values = [distribution[1], distribution[2], distribution[3], distribution[4], distribution[5]];
+        const colors = ['#28a745', '#6c757d', '#ffc107', '#fd7e14', '#dc3545'];
+
+        const trace = {
+            labels: labels,
+            values: values,
+            type: 'pie',
+            marker: { colors: colors },
+            hovertemplate: '<b>%{label}</b><br>Tasks: %{value}<br>Percentage: %{percent}<extra></extra>'
+        };
+
+        const layout = {
+            height: 300,
+            showlegend: false,
+            margin: { t: 0, b: 0, l: 0, r: 0 }
+        };
+
+        Plotly.newPlot('stress-distribution', [trace], layout);
+    }
+
+    populateList(elementId, items, className = '') {
+        const container = document.getElementById(elementId);
+        container.innerHTML = '';
+
+        items.forEach(item => {
+            const li = document.createElement('li');
+            li.className = `mb-2 ${className}`;
+            li.innerHTML = `<i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>${item}`;
+            container.appendChild(li);
+        });
+    }
+
+    populateSkills(skills) {
+        const container = document.getElementById('skills-used');
+        container.innerHTML = '';
+
+        skills.forEach(skill => {
+            const badge = document.createElement('span');
+            badge.className = 'badge bg-primary me-2 mb-2';
+            badge.textContent = skill;
+            container.appendChild(badge);
+        });
+    }
+
+    renderInsights(data) {
+        const container = document.getElementById('career-insights');
+        container.innerHTML = '';
+
+        const insights = [
+            {
+                title: 'Peak Stress Time',
+                value: `${data.peak_stress_time.time}`,
+                description: data.peak_stress_time.task,
+                icon: 'fas fa-exclamation-triangle',
+                color: 'danger'
+            },
+            {
+                title: 'Work Intensity',
+                value: `${data.work_intensity.average_intensity}/5`,
+                description: 'Average task intensity',
+                icon: 'fas fa-tachometer-alt',
+                color: 'warning'
+            },
+            {
+                title: 'Total Tasks',
+                value: data.total_tasks,
+                description: 'Different activities per day',
+                icon: 'fas fa-tasks',
+                color: 'info'
+            },
+            {
+                title: 'Education Required',
+                value: data.education_required.split(' ')[0],
+                description: data.education_required,
+                icon: 'fas fa-graduation-cap',
+                color: 'success'
+            }
+        ];
+
+        insights.forEach(insight => {
+            const col = document.createElement('div');
+            col.className = 'col-md-6 col-lg-3 mb-3';
+            
+            col.innerHTML = `
+                <div class="card h-100 border-${insight.color}">
+                    <div class="card-body text-center">
+                        <i class="${insight.icon} fa-2x text-${insight.color} mb-2"></i>
+                        <h6 class="card-title">${insight.title}</h6>
+                        <div class="h4 text-${insight.color}">${insight.value}</div>
+                        <small class="text-muted">${insight.description}</small>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(col);
+        });
+    }
+
+    getStressColor(stressLevel) {
+        const colors = ['#28a745', '#6c757d', '#ffc107', '#fd7e14', '#dc3545'];
+        return colors[stressLevel - 1] || '#6c757d';
+    }
+
+    getStressText(stressLevel) {
+        const texts = ['Very Low', 'Low', 'Medium', 'High', 'Very High'];
+        return texts[stressLevel - 1] || 'Medium';
+    }
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    new CareerSimulation();
+});
+</script>
+{% endblock %}
